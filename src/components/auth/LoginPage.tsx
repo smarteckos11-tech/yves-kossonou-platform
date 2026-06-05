@@ -12,11 +12,12 @@ import {
   onAuthStateChanged,
   GoogleAuthProvider,
   User as FirebaseUser,
+  sendPasswordResetEmail,
 } from 'firebase/auth';
 import { auth, googleProvider, db } from '@/lib/firebase';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 
-type AuthMode = 'login' | 'register';
+type AuthMode = 'login' | 'register' | 'reset';
 
 export default function LoginPage() {
   const { setView, setUser, setFirebaseUser } = useAppStore();
@@ -98,6 +99,28 @@ export default function LoginPage() {
       else if (errorCode === 'auth/invalid-email') setError('Email invalide');
       else if (errorCode === 'auth/invalid-credential') setError('Identifiants incorrects');
       else setError(err?.message || 'Une erreur est survenue');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handlePasswordReset = async () => {
+    if (!email) {
+      setError('Veuillez entrer votre email pour réinitialiser votre mot de passe');
+      return;
+    }
+    setError('');
+    setLoading(true);
+    try {
+      await sendPasswordResetEmail(auth, email);
+      setMode('login');
+      setError('');
+      alert('Un email de réinitialisation a été envoyé à ' + email);
+    } catch (err: any) {
+      const errorCode = err?.code || '';
+      if (errorCode === 'auth/user-not-found') setError('Aucun compte trouvé avec cet email');
+      else if (errorCode === 'auth/invalid-email') setError('Email invalide');
+      else setError(err?.message || 'Erreur lors de l\'envoi de l\'email');
     } finally {
       setLoading(false);
     }
@@ -277,7 +300,7 @@ export default function LoginPage() {
                   <input type="checkbox" className="w-4 h-4 rounded bg-white/5 border-white/10 text-[#D4AF37] focus:ring-[#D4AF37]/30" />
                   <span className="text-xs text-[#94A3B8]">Se souvenir de moi</span>
                 </label>
-                <button type="button" className="text-xs text-[#D4AF37] hover:underline">
+                <button type="button" onClick={handlePasswordReset} className="text-xs text-[#D4AF37] hover:underline">
                   Mot de passe oublié ?
                 </button>
               </div>

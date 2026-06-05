@@ -3,44 +3,47 @@
 import { motion } from 'framer-motion';
 import { useAppStore } from '@/store/useAppStore';
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { toast } from 'sonner';
 
 const footerLinks = {
   'Plateforme': [
-    { label: 'Expertise', href: '#expertise' },
-    { label: 'Livres', href: '#books' },
-    { label: 'Formations', href: '#formations' },
-    { label: 'Événements', href: '#events' },
+    { label: 'Expertise', href: '#expertise', external: false },
+    { label: 'Livres', href: '#books', external: false },
+    { label: 'Formations', href: '#formations', external: false },
+    { label: 'Événements', href: '#events', external: false },
   ],
   'Ressources': [
-    { label: 'Blog', href: '#' },
-    { label: 'Podcast', href: '#' },
-    { label: 'Cas d\'études', href: '#' },
-    { label: 'FAQ', href: '#' },
+    { label: 'Blog', href: '#blog', external: true },
+    { label: 'Podcast', href: '#podcast', external: true },
+    { label: 'Cas d\'études', href: '#case-studies', external: true },
+    { label: 'FAQ', href: '#faq', external: true },
   ],
   'Légal': [
-    { label: 'Mentions légales', href: '#' },
-    { label: 'Politique de confidentialité', href: '#' },
-    { label: 'CGV', href: '#' },
-    { label: 'Cookies', href: '#' },
+    { label: 'Mentions légales', href: '#legal', external: true },
+    { label: 'Politique de confidentialité', href: '#privacy', external: true },
+    { label: 'CGV', href: '#terms', external: true },
+    { label: 'Cookies', href: '#cookies', external: true },
   ],
 };
 
 const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Youtube, href: '#', label: 'YouTube' },
+  { icon: Facebook, href: 'https://facebook.com/yveskossonou', label: 'Facebook' },
+  { icon: Twitter, href: 'https://twitter.com/yveskossonou', label: 'Twitter' },
+  { icon: Instagram, href: 'https://instagram.com/yveskossonou', label: 'Instagram' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/yveskossonou', label: 'LinkedIn' },
+  { icon: Youtube, href: 'https://youtube.com/@yveskossonou', label: 'YouTube' },
 ];
 
 export default function Footer() {
   const { logos } = useAppStore();
 
-  const handleNavClick = (href: string) => {
-    if (href.startsWith('#')) {
-      const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+  const handleNavClick = (href: string, label: string, external: boolean) => {
+    if (external) {
+      toast.info(`${label} — Bientôt disponible`);
+      return;
     }
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -91,7 +94,7 @@ export default function Footer() {
                 {links.map((link) => (
                   <li key={link.label}>
                     <button
-                      onClick={() => handleNavClick(link.href)}
+                      onClick={() => handleNavClick(link.href, link.label, link.external)}
                       className="text-sm text-[#64748B] hover:text-[#D4AF37] transition-colors"
                     >
                       {link.label}
@@ -113,6 +116,8 @@ export default function Footer() {
               <motion.a
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
                 className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-[#64748B] hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-300"
                 aria-label={social.label}

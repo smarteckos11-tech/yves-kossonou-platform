@@ -1,9 +1,9 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { Calendar, MapPin, Clock, ArrowRight } from 'lucide-react';
-import { useAppStore } from '@/store/useAppStore';
+import { Calendar, MapPin, ArrowRight, X, CreditCard, CheckCircle, User, Mail, Phone } from 'lucide-react';
+import { useAppStore, Event } from '@/store/useAppStore';
 
 function calculateTimeLeft(targetDate: string) {
   const diff = new Date(targetDate).getTime() - Date.now();
@@ -46,7 +46,30 @@ function CountdownTimer({ targetDate }: { targetDate: string }) {
 export default function Events() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const { events } = useAppStore();
+  const { events, addLead } = useAppStore();
+  const [registerEvent, setRegisterEvent] = useState<Event | null>(null);
+  const [registerStep, setRegisterStep] = useState<'form' | 'success'>('form');
+  const [form, setForm] = useState({ name: '', email: '', phone: '' });
+
+  const handleRegister = (e: React.FormEvent) => {
+    e.preventDefault();
+    addLead({
+      id: `lead-${Date.now()}`,
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      interest: `Événement: ${registerEvent?.title}`,
+      status: 'Nouveau',
+      date: new Date().toISOString().split('T')[0],
+      source: 'Événement',
+    });
+    setRegisterStep('success');
+    setTimeout(() => {
+      setRegisterEvent(null);
+      setRegisterStep('form');
+      setForm({ name: '', email: '', phone: '' });
+    }, 3000);
+  };
 
   return (
     <section id="events" className="section-padding relative">
@@ -128,7 +151,7 @@ export default function Events() {
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#D4AF37]">
+                    <h3 className="text-xl font-bold text-white mb-2">
                       {event.title}
                     </h3>
                     <p className="text-sm text-[#94A3B8] mb-4">{event.description}</p>
@@ -142,6 +165,7 @@ export default function Events() {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
+                        onClick={() => setRegisterEvent(event)}
                         className="px-5 py-2 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold text-sm rounded-xl flex items-center gap-2"
                       >
                         S&apos;inscrire
@@ -155,6 +179,109 @@ export default function Events() {
           ))}
         </div>
       </div>
+
+      {/* Registration Modal */}
+      <AnimatePresence>
+        {registerEvent && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+            onClick={() => { setRegisterEvent(null); setRegisterStep('form'); }}
+          >
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative glass-strong rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl"
+            >
+              <button
+                onClick={() => { setRegisterEvent(null); setRegisterStep('form'); }}
+                className="absolute top-4 right-4 p-2 rounded-xl hover:bg-white/5 text-[#64748B] hover:text-white transition-colors"
+              >
+                <X size={20} />
+              </button>
+
+              {registerStep === 'form' ? (
+                <>
+                  <h3 className="text-xl font-bold text-white mb-2">Inscription</h3>
+                  <p className="text-sm text-[#94A3B8] mb-6">{registerEvent.title} — {registerEvent.price.toLocaleString()} FCFA</p>
+
+                  <form onSubmit={handleRegister} className="space-y-4">
+                    <div>
+                      <label className="text-sm text-[#94A3B8] mb-1.5 block">Nom complet</label>
+                      <div className="relative">
+                        <User size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#64748B]" />
+                        <input
+                          type="text"
+                          value={form.name}
+                          onChange={(e) => setForm({ ...form, name: e.target.value })}
+                          placeholder="Votre nom"
+                          required
+                          className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30 transition-all"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="text-sm text-[#94A3B8] mb-1.5 block">Email</label>
+                      <div className="relative">
+                        <Mail size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#64748B]" />
+                        <input
+                          type="email"
+                          value={form.email}
+                          onChange={(e) => setForm({ ...form, email: e.target.value })}
+                          placeholder="votre@email.com"
+                          required
+                          className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30 transition-all"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="text-sm text-[#94A3B8] mb-1.5 block">Téléphone</label>
+                      <div className="relative">
+                        <Phone size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#64748B]" />
+                        <input
+                          type="tel"
+                          value={form.phone}
+                          onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                          placeholder="+225 07 12 34 56"
+                          required
+                          className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30 transition-all"
+                        />
+                      </div>
+                    </div>
+                    <motion.button
+                      type="submit"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="w-full py-4 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-bold text-base rounded-2xl flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-shadow"
+                    >
+                      <CreditCard size={18} />
+                      S&apos;inscrire — {registerEvent.price.toLocaleString()} FCFA
+                    </motion.button>
+                  </form>
+                </>
+              ) : (
+                <div className="text-center py-6">
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: 'spring', stiffness: 200 }}
+                  >
+                    <CheckCircle size={64} className="text-[#10B981] mx-auto mb-4" />
+                  </motion.div>
+                  <h3 className="text-xl font-bold text-white mb-2">Inscription réussie !</h3>
+                  <p className="text-[#94A3B8]">Vous recevrez un email de confirmation pour &ldquo;{registerEvent.title}&rdquo;.</p>
+                </div>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
