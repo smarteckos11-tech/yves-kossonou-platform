@@ -87,24 +87,24 @@ export default function LoginPage() {
         <div className="relative z-10 flex flex-col justify-center px-16">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8962E] flex items-center justify-center">
-                <Zap className="w-6 h-6 text-[#06080f]" />
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8962E] flex items-center justify-center text-[#06080f] font-bold text-xl">
+                YK
               </div>
-              <span className="text-3xl font-bold tracking-wider">KONNECT</span>
+              <span className="text-3xl font-bold tracking-wider">Yves Kossonou</span>
             </div>
             <h1 className="text-4xl font-bold mb-4 leading-tight">
-              Votre Écosystème<br />
-              <span className="bg-gradient-to-r from-[#D4AF37] to-emerald-400 bg-clip-text text-transparent">d'Automatisation</span><br />
-              Marketing Privé
+              Votre Plateforme<br />
+              <span className="bg-gradient-to-r from-[#D4AF37] to-emerald-400 bg-clip-text text-transparent">Transformation Digitale</span><br />
+              & Marketing
             </h1>
             <p className="text-slate-400 text-lg mb-10 max-w-md">
-              SMS & WhatsApp automatisés. Pages de capture. Séquences intelligentes. Le tout dans un seul écosystème.
+              Formations, livres, événements et automatisation marketing. Un écosystème complet pour propulser votre business.
             </p>
             <div className="space-y-4">
               {[
-                { icon: MessageSquare, text: 'Relances programmées SMS & WhatsApp' },
-                { icon: Smartphone, text: 'Pages de capture prêtes à l\'emploi' },
-                { icon: Sparkles, text: 'IA pour composer vos messages' },
+                { icon: Sparkles, text: 'Formations & Masterclasses Premium' },
+                { icon: MessageSquare, text: 'Automatisation SMS & WhatsApp' },
+                { icon: Smartphone, text: 'Pages de capture & Événements' },
               ].map((item, i) => (
                 <motion.div key={i} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 + i * 0.15 }} className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center">
@@ -125,10 +125,10 @@ export default function LoginPage() {
             <ArrowLeft className="w-4 h-4" />Retour au site
           </button>
           <div className="lg:hidden flex items-center gap-3 mb-8 justify-center">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8962E] flex items-center justify-center">
-              <Zap className="w-5 h-5 text-[#06080f]" />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8962E] flex items-center justify-center text-[#06080f] font-bold text-lg">
+              YK
             </div>
-            <span className="text-2xl font-bold tracking-wider">KONNECT</span>
+            <span className="text-2xl font-bold tracking-wider">Yves Kossonou</span>
           </div>
 
           <AnimatePresence mode="wait">
@@ -152,7 +152,7 @@ export default function LoginPage() {
             ) : (
               <motion.div key="auth" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
                 <h2 className="text-2xl font-bold mb-2">{isLogin ? 'Connexion' : 'Créer un compte'}</h2>
-                <p className="text-slate-400 mb-6">{isLogin ? 'Accédez à votre écosystème KONNECT' : 'Rejoignez l\'écosystème KONNECT'}</p>
+                <p className="text-slate-400 mb-6">{isLogin ? 'Accédez à votre plateforme Yves Kossonou' : 'Rejoignez la plateforme Yves Kossonou'}</p>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {!isLogin && (

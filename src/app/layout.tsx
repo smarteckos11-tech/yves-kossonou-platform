@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KONNECT — Écosystème d'Automatisation Marketing",
-  description: "Plateforme privée d'automatisation marketing SMS & WhatsApp pour la transformation digitale.",
+  title: "Yves Kossonou — Transformation Digitale & Marketing",
+  description: "Plateforme premium de Yves Kossonou : Formations, Livres, Événements et Écosystème d'Automatisation Marketing.",
 };
 
 export default function RootLayout({

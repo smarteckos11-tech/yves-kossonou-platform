@@ -3,6 +3,16 @@
 import { motion } from 'framer-motion';
 import { useAppStore } from '@/store/useAppStore';
 import Sidebar from './Sidebar';
+
+// Original components
+import CMSManager from './CMSManager';
+import LeadManager from './LeadManager';
+import CRM from './CRM';
+import LandingPageBuilder from './LandingPageBuilder';
+import Payments from './Payments';
+import Settings from './Settings';
+
+// KONNECT components
 import Overview from './Overview';
 import Contacts from './Contacts';
 import Campagnes from './Campagnes';
@@ -16,31 +26,54 @@ import AIAssistant from './AIAssistant';
 import Parametres from './Parametres';
 
 const tabComponents: Record<string, React.ComponentType> = {
+  // Principal
   overview: Overview,
+  // Contenu (Original)
+  cms: CMSManager,
+  leads: LeadManager,
+  crm: CRM,
+  'landing-pages': LandingPageBuilder,
+  // KONNECT Marketing
   contacts: Contacts,
   campagnes: Campagnes,
   sequences: Sequences,
   'capture-pages': CapturePages,
   evenements: Evenements,
   automatisations: Automatisations,
+  // Finance & Analyse
   analytics: Analytics,
   paiements: Paiements,
+  'payments-old': Payments,
+  // Outils
   ia: AIAssistant,
   parametres: Parametres,
+  // Alias: Settings is also accessible via parametres
+  settings: Settings,
 };
 
 const tabTitles: Record<string, string> = {
+  // Principal
   overview: 'Tableau de bord',
+  // Contenu
+  cms: 'Gestion du Contenu (CMS)',
+  leads: 'Gestion des Leads',
+  crm: 'CRM Pipeline',
+  'landing-pages': 'Landing Pages',
+  // KONNECT Marketing
   contacts: 'Contacts & CRM',
   campagnes: 'Campagnes SMS & WhatsApp',
   sequences: 'Séquences Automatisées',
   'capture-pages': 'Pages de Capture',
   evenements: 'Événements',
   automatisations: 'Automatisations',
+  // Finance & Analyse
   analytics: 'Analytics',
-  paiements: 'Paiements',
+  paiements: 'Paiements KONNECT',
+  'payments-old': 'Transactions',
+  // Outils
   ia: 'IA Assistant',
   parametres: 'Paramètres',
+  settings: 'Paramètres',
 };
 
 export default function DashboardLayout() {
