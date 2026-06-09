@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 import {
   LayoutDashboard, Users, Megaphone, GitBranch, FileText, Calendar,
   Workflow, BarChart3, CreditCard, Bot, Settings, LogOut, Zap,
-  ChevronLeft, ChevronRight, MessageSquare, Smartphone
+  ChevronLeft, ChevronRight, MessageSquare, Smartphone, Globe
 } from 'lucide-react';
 import { signOut } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
@@ -120,6 +120,13 @@ export default function Sidebar() {
             </div>
           </div>
         )}
+        <button
+          onClick={() => setView('landing')}
+          className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-colors"
+        >
+          <Globe className="w-5 h-5 shrink-0" />
+          {sidebarOpen && <span className="text-sm">Retour au site</span>}
+        </button>
         <button
           onClick={handleLogout}
           className="w-full flex items-center gap-3 px-3 py-2 mt-1 rounded-lg text-slate-400 hover:text-red-400 hover:bg-red-500/10 transition-colors"

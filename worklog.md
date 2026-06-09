@@ -31,3 +31,25 @@ Stage Summary:
 - Premium dark theme with gold/emerald accents
 - All text in French
 - Lint clean, server running on port 3000
+
+---
+Task ID: 2
+Agent: Main Agent
+Task: Fusionner le landing page Yves Kossonou avec le dashboard KONNECT
+
+Work Log:
+- Restauré le ViewType en 'landing' | 'auth' | 'dashboard'
+- Ajouté les types Landing (Book, Formation, Event, Logo, Photo, Lead, LandingPage) au store fusionné
+- Ajouté les sample data du landing (books, formations, events, logos, photos, leads)
+- Ajouté les actions landing au store (addBook, updateBook, deleteBook, addFormation, etc.)
+- Restauré page.tsx avec les 3 vues: Landing (défaut), Auth, Dashboard
+- Ajouté bouton "Retour au site" (ArrowLeft) sur la page de connexion
+- Ajouté bouton "Retour au site" (Globe) dans la sidebar du dashboard
+- Vérifié avec Agent Browser: Landing page complète visible par défaut, Connexion → Auth → Dashboard fonctionne
+
+Stage Summary:
+- Site fusionné avec succès: Landing Yves Kossonou + Dashboard KONNECT
+- Vue par défaut = Landing page (Hero, Books, Formations, Events, etc.)
+- Bouton "Connexion" dans navbar → Page Auth → Dashboard KONNECT
+- Bouton "Retour au site" dans Auth et Sidebar Dashboard
+- Lint clean, site accessible sur port 3000

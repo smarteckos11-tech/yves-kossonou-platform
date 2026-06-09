@@ -5,8 +5,41 @@ import { useAppStore } from '@/store/useAppStore';
 import { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
-import LoginPage from '@/components/auth/LoginPage';
+
+// Landing
+import Navbar from '@/components/landing/Navbar';
+import Hero from '@/components/landing/Hero';
+import Expertise from '@/components/landing/Expertise';
+import Books from '@/components/landing/Books';
+import Formations from '@/components/landing/Formations';
+import Events from '@/components/landing/Events';
+import Testimonials from '@/components/landing/Testimonials';
+import Stats from '@/components/landing/Stats';
+import CTA from '@/components/landing/CTA';
+import Footer from '@/components/landing/Footer';
+
+// Dashboard
 import DashboardLayout from '@/components/dashboard/DashboardLayout';
+
+// Auth
+import LoginPage from '@/components/auth/LoginPage';
+
+function LandingPage() {
+  return (
+    <div className="min-h-screen bg-[#081120]">
+      <Navbar />
+      <Hero />
+      <Expertise />
+      <Books />
+      <Formations />
+      <Events />
+      <Stats />
+      <Testimonials />
+      <CTA />
+      <Footer />
+    </div>
+  );
+}
 
 export default function Home() {
   const { currentView, setView, setFirebaseUser, setUser, setAuthLoading, authLoading } = useAppStore();
@@ -21,11 +54,9 @@ export default function Home() {
           avatar: user.photoURL || '',
           uid: user.uid,
         });
-        setView('dashboard');
       } else {
         setFirebaseUser(null);
         setUser(null);
-        setView('auth');
       }
       setAuthLoading(false);
     });
@@ -34,7 +65,7 @@ export default function Home() {
 
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-[#06080f] flex items-center justify-center">
+      <div className="min-h-screen bg-[#081120] flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -44,7 +75,7 @@ export default function Home() {
             <div className="w-16 h-16 border-4 border-[#D4AF37]/30 rounded-full" />
             <div className="absolute top-0 left-0 w-16 h-16 border-4 border-transparent border-t-[#D4AF37] rounded-full animate-spin" />
           </div>
-          <span className="text-[#D4AF37] font-semibold tracking-wider text-lg">KONNECT</span>
+          <span className="text-[#D4AF37] font-semibold tracking-wider text-lg">Yves Kossonou</span>
         </motion.div>
       </div>
     );
@@ -59,6 +90,7 @@ export default function Home() {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
       >
+        {currentView === 'landing' && <LandingPage />}
         {currentView === 'auth' && <LoginPage />}
         {currentView === 'dashboard' && <DashboardLayout />}
       </motion.div>

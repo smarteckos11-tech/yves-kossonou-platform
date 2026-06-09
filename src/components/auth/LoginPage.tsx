@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
-import { Mail, Lock, User, ArrowRight, Sparkles, MessageSquare, Smartphone, Zap, Eye, EyeOff } from 'lucide-react';
+import { Mail, Lock, User, ArrowRight, Sparkles, MessageSquare, Smartphone, Zap, Eye, EyeOff, ArrowLeft } from 'lucide-react';
 
 export default function LoginPage() {
   const [isLogin, setIsLogin] = useState(true);
@@ -121,6 +121,9 @@ export default function LoginPage() {
       {/* Right Panel — Form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center px-6">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md">
+          <button onClick={() => setView('landing')} className="flex items-center gap-2 text-slate-400 hover:text-[#D4AF37] mb-6 transition-colors">
+            <ArrowLeft className="w-4 h-4" />Retour au site
+          </button>
           <div className="lg:hidden flex items-center gap-3 mb-8 justify-center">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8962E] flex items-center justify-center">
               <Zap className="w-5 h-5 text-[#06080f]" />
