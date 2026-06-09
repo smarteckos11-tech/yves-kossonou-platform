@@ -60,11 +60,11 @@ export default function Footer() {
                   className="h-10 w-10 rounded-lg object-cover"
                 />
               ) : (
-                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#E8C84A] flex items-center justify-center text-[#081120] font-bold text-lg">
+                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-[#06B6D4] to-[#22D3EE] flex items-center justify-center text-[#081120] font-bold text-lg">
                   YK
                 </div>
               )}
-              <span className="text-xl font-bold gold-gradient-text">Yves Kossonou</span>
+              <span className="text-xl font-bold turquoise-gradient-text">Yves Kossonou</span>
             </div>
             <p className="text-[#94A3B8] text-sm leading-relaxed mb-6 max-w-sm">
               Expert en transformation digitale, je accompagne les entrepreneurs et organisations
@@ -72,15 +72,15 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-2 text-sm text-[#64748B]">
               <span className="flex items-center gap-2">
-                <Mail size={14} className="text-[#D4AF37]" />
+                <Mail size={14} className="text-[#06B6D4]" />
                 contact@yveskossonou.com
               </span>
               <span className="flex items-center gap-2">
-                <Phone size={14} className="text-[#D4AF37]" />
+                <Phone size={14} className="text-[#06B6D4]" />
                 +225 07 00 00 00 00
               </span>
               <span className="flex items-center gap-2">
-                <MapPin size={14} className="text-[#D4AF37]" />
+                <MapPin size={14} className="text-[#06B6D4]" />
                 Abidjan, Côte d&apos;Ivoire
               </span>
             </div>
@@ -95,7 +95,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <button
                       onClick={() => handleNavClick(link.href, link.label, link.external)}
-                      className="text-sm text-[#64748B] hover:text-[#D4AF37] transition-colors"
+                      className="text-sm text-[#64748B] hover:text-[#06B6D4] transition-colors"
                     >
                       {link.label}
                     </button>
@@ -119,7 +119,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
-                className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-[#64748B] hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-300"
+                className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-[#64748B] hover:text-[#06B6D4] hover:bg-[#06B6D4]/10 transition-all duration-300"
                 aria-label={social.label}
               >
                 <social.icon size={16} />

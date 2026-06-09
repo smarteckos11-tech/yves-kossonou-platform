@@ -122,7 +122,7 @@ export default function Contacts() {
   const formDialog = (open: boolean, onClose: () => void) => (
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="bg-[#0d1117] border-[#1e293b] text-white max-h-[90vh] overflow-y-auto max-w-lg">
-        <DialogHeader><DialogTitle className="text-[#D4AF37]">{editContact ? 'Modifier le contact' : 'Nouveau contact'}</DialogTitle></DialogHeader>
+        <DialogHeader><DialogTitle className="text-[#06B6D4]">{editContact ? 'Modifier le contact' : 'Nouveau contact'}</DialogTitle></DialogHeader>
         <div className="space-y-4 mt-4">
           <div><Label className="text-slate-400 text-xs">Nom *</Label><Input value={form.name || ''} onChange={e => setForm({ ...form, name: e.target.value })} className="bg-[#06080f] border-[#1e293b] mt-1" /></div>
           <div><Label className="text-slate-400 text-xs">Téléphone *</Label><Input value={form.phone || ''} onChange={e => setForm({ ...form, phone: e.target.value })} className="bg-[#06080f] border-[#1e293b] mt-1" placeholder="+225 07 XX XX XX" /></div>
@@ -135,14 +135,14 @@ export default function Contacts() {
             <div><Label className="text-slate-400 text-xs">Segment</Label><Select value={form.segment || 'Nouveaux'} onValueChange={v => setForm({ ...form, segment: v })}><SelectTrigger className="bg-[#06080f] border-[#1e293b] mt-1"><SelectValue /></SelectTrigger><SelectContent className="bg-[#0d1117] border-[#1e293b]">{segments.map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent></Select></div>
             <div><Label className="text-slate-400 text-xs">Source</Label><Select value={form.source || 'Site web'} onValueChange={v => setForm({ ...form, source: v })}><SelectTrigger className="bg-[#06080f] border-[#1e293b] mt-1"><SelectValue /></SelectTrigger><SelectContent className="bg-[#0d1117] border-[#1e293b]">{sources.map(s => <SelectItem key={s} value={s}>{s}</SelectItem>)}</SelectContent></Select></div>
           </div>
-          <div><Label className="text-slate-400 text-xs">Score: {form.score || 50}</Label><input type="range" min="0" max="100" value={form.score || 50} onChange={e => setForm({ ...form, score: parseInt(e.target.value) })} className="w-full mt-1 accent-[#D4AF37]" /></div>
+          <div><Label className="text-slate-400 text-xs">Score: {form.score || 50}</Label><input type="range" min="0" max="100" value={form.score || 50} onChange={e => setForm({ ...form, score: parseInt(e.target.value) })} className="w-full mt-1 accent-[#06B6D4]" /></div>
           <div><Label className="text-slate-400 text-xs">Notes</Label><Textarea value={form.notes || ''} onChange={e => setForm({ ...form, notes: e.target.value })} className="bg-[#06080f] border-[#1e293b] mt-1" rows={3} /></div>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2"><Switch checked={form.whatsappOptIn ?? true} onCheckedChange={v => setForm({ ...form, whatsappOptIn: v })} /><Label className="text-slate-400 text-xs">WhatsApp Opt-in</Label></div>
             <div className="flex items-center gap-2"><Switch checked={form.smsOptIn ?? true} onCheckedChange={v => setForm({ ...form, smsOptIn: v })} /><Label className="text-slate-400 text-xs">SMS Opt-in</Label></div>
           </div>
           <div className="flex gap-3 pt-2">
-            <Button onClick={handleSave} className="flex-1 bg-[#D4AF37] hover:bg-[#B8962E] text-[#06080f] font-semibold">{editContact ? 'Mettre à jour' : 'Ajouter'}</Button>
+            <Button onClick={handleSave} className="flex-1 bg-[#06B6D4] hover:bg-[#0891B2] text-[#06080f] font-semibold">{editContact ? 'Mettre à jour' : 'Ajouter'}</Button>
             <Button variant="outline" onClick={() => { onClose(); resetForm(); }} className="border-[#1e293b]">Annuler</Button>
           </div>
         </div>
@@ -155,7 +155,7 @@ export default function Contacts() {
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <StatCard icon={Users} label="Total Contacts" value={contacts.length} color="emerald-400" />
-        <StatCard icon={Star} label="Score Moyen" value={avgScore} color="[#D4AF37]" />
+        <StatCard icon={Star} label="Score Moyen" value={avgScore} color="[#06B6D4]" />
         <StatCard icon={MessageSquare} label="WhatsApp Opt-in" value={waOpt} color="emerald-400" />
         <StatCard icon={Smartphone} label="SMS Opt-in" value={smsOpt} color="amber-400" />
       </div>
@@ -180,7 +180,7 @@ export default function Contacts() {
             {allTags.map(t => <SelectItem key={t} value={t}>{t}</SelectItem>)}
           </SelectContent>
         </Select>
-        <Button onClick={openAdd} className="bg-[#D4AF37] hover:bg-[#B8962E] text-[#06080f] font-semibold">
+        <Button onClick={openAdd} className="bg-[#06B6D4] hover:bg-[#0891B2] text-[#06080f] font-semibold">
           <UserPlus className="w-4 h-4 mr-2" />Ajouter
         </Button>
       </div>
@@ -207,13 +207,13 @@ export default function Contacts() {
                     className="border-white/5 hover:bg-white/5 cursor-pointer" onClick={() => setDetailContact(c)}>
                     <TableCell>
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-emerald-500 flex items-center justify-center text-[#06080f] font-bold text-xs shrink-0">{c.name.charAt(0)}</div>
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#06B6D4] to-emerald-500 flex items-center justify-center text-[#06080f] font-bold text-xs shrink-0">{c.name.charAt(0)}</div>
                         <div><p className="font-medium text-sm">{c.name}</p><p className="text-xs text-slate-500">{c.email}</p></div>
                       </div>
                     </TableCell>
                     <TableCell className="hidden md:table-cell text-slate-400 text-sm">{c.phone}</TableCell>
                     <TableCell>
-                      <div className="flex gap-1 flex-wrap">{c.tags.slice(0, 2).map(t => <Badge key={t} variant="outline" className="text-[10px] border-[#D4AF37]/30 text-[#D4AF37]">{t}</Badge>)}{c.tags.length > 2 && <Badge variant="outline" className="text-[10px] border-white/20 text-slate-400">+{c.tags.length - 2}</Badge>}</div>
+                      <div className="flex gap-1 flex-wrap">{c.tags.slice(0, 2).map(t => <Badge key={t} variant="outline" className="text-[10px] border-[#06B6D4]/30 text-[#06B6D4]">{t}</Badge>)}{c.tags.length > 2 && <Badge variant="outline" className="text-[10px] border-white/20 text-slate-400">+{c.tags.length - 2}</Badge>}</div>
                     </TableCell>
                     <TableCell className="hidden sm:table-cell"><Badge variant="outline" className="text-[10px] border-white/20 text-slate-300">{c.segment}</Badge></TableCell>
                     <TableCell>
@@ -264,7 +264,7 @@ export default function Contacts() {
             <div className="mt-6 space-y-6">
               <SheetHeader>
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#D4AF37] to-emerald-500 flex items-center justify-center text-[#06080f] font-bold text-2xl">{detailContact.name.charAt(0)}</div>
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#06B6D4] to-emerald-500 flex items-center justify-center text-[#06080f] font-bold text-2xl">{detailContact.name.charAt(0)}</div>
                   <div>
                     <SheetTitle className="text-lg">{detailContact.name}</SheetTitle>
                     <Badge className={`mt-1 ${scoreBg(detailContact.score)} text-white text-xs`}>Score: {detailContact.score}</Badge>
@@ -281,7 +281,7 @@ export default function Contacts() {
 
               <div>
                 <p className="text-xs text-slate-400 mb-2">Tags</p>
-                <div className="flex gap-2 flex-wrap">{detailContact.tags.map(t => <Badge key={t} variant="outline" className="border-[#D4AF37]/30 text-[#D4AF37]">{t}</Badge>)}</div>
+                <div className="flex gap-2 flex-wrap">{detailContact.tags.map(t => <Badge key={t} variant="outline" className="border-[#06B6D4]/30 text-[#06B6D4]">{t}</Badge>)}</div>
               </div>
 
               <div className="flex gap-2">
@@ -309,7 +309,7 @@ export default function Contacts() {
               </div>
 
               <div className="flex gap-2 pt-4">
-                <Button onClick={() => { openEdit(detailContact); setDetailContact(null); }} className="flex-1 bg-[#D4AF37] hover:bg-[#B8962E] text-[#06080f] font-semibold"><Edit className="w-4 h-4 mr-2" />Modifier</Button>
+                <Button onClick={() => { openEdit(detailContact); setDetailContact(null); }} className="flex-1 bg-[#06B6D4] hover:bg-[#0891B2] text-[#06080f] font-semibold"><Edit className="w-4 h-4 mr-2" />Modifier</Button>
                 <Button variant="outline" onClick={() => { handleDelete(detailContact.id); setDetailContact(null); }} className="border-red-500/30 text-red-400 hover:bg-red-500/10"><Trash2 className="w-4 h-4" /></Button>
               </div>
             </div>

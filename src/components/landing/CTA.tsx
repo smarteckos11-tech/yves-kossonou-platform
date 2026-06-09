@@ -35,7 +35,7 @@ export default function CTA() {
       <div className="absolute inset-0 animated-gradient-bg" />
       <div
         className="absolute top-0 left-1/3 w-[500px] h-[500px] rounded-full opacity-20 blur-[120px]"
-        style={{ background: 'radial-gradient(circle, #D4AF37, transparent)' }}
+        style={{ background: 'radial-gradient(circle, #06B6D4, transparent)' }}
       />
       <div
         className="absolute bottom-0 right-1/3 w-[400px] h-[400px] rounded-full opacity-15 blur-[100px]"
@@ -44,7 +44,7 @@ export default function CTA() {
 
       {/* Floating Orbs */}
       <motion.div
-        className="absolute top-20 left-10 w-4 h-4 rounded-full bg-[#D4AF37]/40"
+        className="absolute top-20 left-10 w-4 h-4 rounded-full bg-[#06B6D4]/40"
         animate={{ y: [0, -30, 0], x: [0, 15, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
       />
@@ -67,13 +67,13 @@ export default function CTA() {
             initial={{ scale: 0 }}
             animate={isInView ? { scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.2, type: 'spring' }}
-            className="w-16 h-16 rounded-2xl bg-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center justify-center mx-auto mb-8"
+            className="w-16 h-16 rounded-2xl bg-[#06B6D4]/10 border border-[#06B6D4]/20 flex items-center justify-center mx-auto mb-8"
           >
-            <Sparkles size={32} className="text-[#D4AF37]" />
+            <Sparkles size={32} className="text-[#06B6D4]" />
           </motion.div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            Prêt à <span className="gold-gradient-text">Transformer</span> votre Business ?
+            Prêt à <span className="turquoise-gradient-text">Transformer</span> votre Business ?
           </h2>
           <p className="text-[#94A3B8] text-lg mb-10 max-w-2xl mx-auto">
             Rejoignez des centaines d&apos;entrepreneurs qui ont déjà accéléré leur croissance grâce à nos solutions.
@@ -98,7 +98,7 @@ export default function CTA() {
                 required
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30 transition-all"
+                className="px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none focus:ring-1 focus:ring-[#06B6D4]/30 transition-all"
               />
               <input
                 type="email"
@@ -106,20 +106,20 @@ export default function CTA() {
                 required
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30 transition-all"
+                className="px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none focus:ring-1 focus:ring-[#06B6D4]/30 transition-all"
               />
               <input
                 type="tel"
                 placeholder="Votre téléphone"
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                className="px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30 transition-all"
+                className="px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none focus:ring-1 focus:ring-[#06B6D4]/30 transition-all"
               />
               <select
                 value={form.interest}
                 onChange={(e) => setForm({ ...form, interest: e.target.value })}
                 required
-                className="px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30 transition-all appearance-none"
+                className="px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#06B6D4]/50 focus:outline-none focus:ring-1 focus:ring-[#06B6D4]/30 transition-all appearance-none"
               >
                 <option value="" className="bg-[#0F172A]">Centre d&apos;intérêt</option>
                 <option value="Transformation Digitale" className="bg-[#0F172A]">Transformation Digitale</option>
@@ -131,7 +131,7 @@ export default function CTA() {
                 type="submit"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="sm:col-span-2 px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-bold text-base rounded-2xl flex items-center justify-center gap-2 pulse-glow hover:shadow-xl hover:shadow-[#D4AF37]/30 transition-shadow"
+                className="sm:col-span-2 px-8 py-4 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-bold text-base rounded-2xl flex items-center justify-center gap-2 pulse-glow hover:shadow-xl hover:shadow-[#06B6D4]/30 transition-shadow"
               >
                 <Send size={18} />
                 Commencer Maintenant

@@ -10,7 +10,7 @@ const expertises = [
     title: 'Transformation Digitale',
     description:
       'Accompagnement stratégique et opérationnel pour digitaliser votre entreprise. Du diagnostic à l\'implémentation, une approche sur mesure pour chaque organisation.',
-    color: '#D4AF37',
+    color: '#06B6D4',
   },
   {
     icon: TrendingUp,
@@ -50,11 +50,11 @@ export default function Expertise() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-[#D4AF37] text-sm font-semibold tracking-widest uppercase mb-4 block">
+          <span className="text-[#06B6D4] text-sm font-semibold tracking-widest uppercase mb-4 block">
             Expertise
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            Mes Domaines d&apos;<span className="gold-gradient-text">Excellence</span>
+            Mes Domaines d&apos;<span className="turquoise-gradient-text">Excellence</span>
           </h2>
           <p className="max-w-2xl mx-auto text-[#94A3B8] text-lg">
             Des compétences pointues au service de votre transformation digitale
@@ -70,7 +70,7 @@ export default function Expertise() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group glass-card rounded-2xl p-6 sm:p-8 cursor-pointer transition-all duration-500 hover:border-[#D4AF37]/30 hover:shadow-lg hover:shadow-[#D4AF37]/10"
+              className="group glass-card rounded-2xl p-6 sm:p-8 cursor-pointer transition-all duration-500 hover:border-[#06B6D4]/30 hover:shadow-lg hover:shadow-[#06B6D4]/10"
             >
               {/* Icon */}
               <motion.div
@@ -82,7 +82,7 @@ export default function Expertise() {
               </motion.div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#D4AF37] transition-colors duration-300">
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#06B6D4] transition-colors duration-300">
                 {item.title}
               </h3>
               <p className="text-[#94A3B8] text-sm leading-relaxed">

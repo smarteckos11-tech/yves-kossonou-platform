@@ -79,22 +79,22 @@ export default function LoginPage() {
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#06080f] via-[#0d1117] to-[#081120]" />
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-[#D4AF37]/10 rounded-full blur-3xl" />
+          <div className="absolute top-20 left-20 w-72 h-72 bg-[#06B6D4]/10 rounded-full blur-3xl" />
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-emerald-500/8 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-[#D4AF37]/10 rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-[#06B6D4]/10 rounded-full" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-emerald-500/10 rounded-full" />
         </div>
         <div className="relative z-10 flex flex-col justify-center px-16">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8962E] flex items-center justify-center text-[#06080f] font-bold text-xl">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#06B6D4] to-[#0891B2] flex items-center justify-center text-[#06080f] font-bold text-xl">
                 YK
               </div>
               <span className="text-3xl font-bold tracking-wider">Yves Kossonou</span>
             </div>
             <h1 className="text-4xl font-bold mb-4 leading-tight">
               Votre Plateforme<br />
-              <span className="bg-gradient-to-r from-[#D4AF37] to-emerald-400 bg-clip-text text-transparent">Transformation Digitale</span><br />
+              <span className="bg-gradient-to-r from-[#06B6D4] to-emerald-400 bg-clip-text text-transparent">Transformation Digitale</span><br />
               & Marketing
             </h1>
             <p className="text-slate-400 text-lg mb-10 max-w-md">
@@ -107,8 +107,8 @@ export default function LoginPage() {
                 { icon: Smartphone, text: 'Pages de capture & Événements' },
               ].map((item, i) => (
                 <motion.div key={i} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 + i * 0.15 }} className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-[#D4AF37]" />
+                  <div className="w-10 h-10 rounded-lg bg-[#06B6D4]/10 flex items-center justify-center">
+                    <item.icon className="w-5 h-5 text-[#06B6D4]" />
                   </div>
                   <span className="text-slate-300">{item.text}</span>
                 </motion.div>
@@ -121,11 +121,11 @@ export default function LoginPage() {
       {/* Right Panel — Form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center px-6">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md">
-          <button onClick={() => setView('landing')} className="flex items-center gap-2 text-slate-400 hover:text-[#D4AF37] mb-6 transition-colors">
+          <button onClick={() => setView('landing')} className="flex items-center gap-2 text-slate-400 hover:text-[#06B6D4] mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" />Retour au site
           </button>
           <div className="lg:hidden flex items-center gap-3 mb-8 justify-center">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D4AF37] to-[#B8962E] flex items-center justify-center text-[#06080f] font-bold text-lg">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#06B6D4] to-[#0891B2] flex items-center justify-center text-[#06080f] font-bold text-lg">
               YK
             </div>
             <span className="text-2xl font-bold tracking-wider">Yves Kossonou</span>
@@ -141,7 +141,7 @@ export default function LoginPage() {
                     <Label htmlFor="reset-email">Email</Label>
                     <Input id="reset-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="votre@email.com" className="mt-1.5 bg-[#0d1117] border-[#1e293b]" />
                   </div>
-                  <Button onClick={handleResetPassword} className="w-full bg-[#D4AF37] hover:bg-[#B8962E] text-[#06080f] font-semibold">
+                  <Button onClick={handleResetPassword} className="w-full bg-[#06B6D4] hover:bg-[#0891B2] text-[#06080f] font-semibold">
                     Envoyer le lien
                   </Button>
                   <Button variant="ghost" onClick={() => setResetMode(false)} className="w-full text-slate-400">
@@ -174,7 +174,7 @@ export default function LoginPage() {
                   <div>
                     <div className="flex justify-between items-center">
                       <Label htmlFor="password">Mot de passe</Label>
-                      {isLogin && <button type="button" onClick={() => setResetMode(true)} className="text-xs text-[#D4AF37] hover:underline">Mot de passe oublié ?</button>}
+                      {isLogin && <button type="button" onClick={() => setResetMode(true)} className="text-xs text-[#06B6D4] hover:underline">Mot de passe oublié ?</button>}
                     </div>
                     <div className="relative mt-1.5">
                       <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
@@ -184,7 +184,7 @@ export default function LoginPage() {
                       </button>
                     </div>
                   </div>
-                  <Button type="submit" disabled={loading} className="w-full bg-[#D4AF37] hover:bg-[#B8962E] text-[#06080f] font-semibold group">
+                  <Button type="submit" disabled={loading} className="w-full bg-[#06B6D4] hover:bg-[#0891B2] text-[#06080f] font-semibold group">
                     {loading ? 'Chargement...' : isLogin ? 'Se connecter' : 'Créer le compte'}
                     {!loading && <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />}
                   </Button>
@@ -202,7 +202,7 @@ export default function LoginPage() {
 
                 <p className="text-center mt-6 text-sm text-slate-400">
                   {isLogin ? 'Pas encore de compte ?' : 'Déjà un compte ?'}{' '}
-                  <button onClick={() => setIsLogin(!isLogin)} className="text-[#D4AF37] hover:underline font-medium">
+                  <button onClick={() => setIsLogin(!isLogin)} className="text-[#06B6D4] hover:underline font-medium">
                     {isLogin ? 'Créer un compte' : 'Se connecter'}
                   </button>
                 </p>

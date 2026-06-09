@@ -50,7 +50,7 @@ export default function Books() {
     { id: 'wave', name: 'Wave', icon: '🌊', color: '#1DC7EA' },
     { id: 'orange', name: 'Orange Money', icon: '🟠', color: '#FF6600' },
     { id: 'mtn', name: 'MTN Money', icon: '🟡', color: '#FFCC00' },
-    { id: 'card', name: 'Carte Bancaire', icon: '💳', color: '#D4AF37' },
+    { id: 'card', name: 'Carte Bancaire', icon: '💳', color: '#06B6D4' },
   ];
 
   return (
@@ -65,25 +65,25 @@ export default function Books() {
           className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12"
         >
           <div>
-            <span className="text-[#D4AF37] text-sm font-semibold tracking-widest uppercase mb-4 block">
+            <span className="text-[#06B6D4] text-sm font-semibold tracking-widest uppercase mb-4 block">
               Bibliothèque
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-              Mes <span className="gold-gradient-text">Livres</span>
+              Mes <span className="turquoise-gradient-text">Livres</span>
             </h2>
           </div>
           <div className="flex gap-2 mt-4 sm:mt-0">
             <button
               onClick={() => scroll('left')}
               disabled={!canScrollLeft}
-              className="p-2.5 glass rounded-xl hover:border-[#D4AF37]/30 transition-all disabled:opacity-30"
+              className="p-2.5 glass rounded-xl hover:border-[#06B6D4]/30 transition-all disabled:opacity-30"
             >
               <ChevronLeft size={20} className="text-[#CBD5E1]" />
             </button>
             <button
               onClick={() => scroll('right')}
               disabled={!canScrollRight}
-              className="p-2.5 glass rounded-xl hover:border-[#D4AF37]/30 transition-all disabled:opacity-30"
+              className="p-2.5 glass rounded-xl hover:border-[#06B6D4]/30 transition-all disabled:opacity-30"
             >
               <ChevronRight size={20} className="text-[#CBD5E1]" />
             </button>
@@ -109,7 +109,7 @@ export default function Books() {
                 transition={{ duration: 0.3 }}
                 className="perspective-1000 group"
               >
-                <div className="glass-card rounded-2xl overflow-hidden hover:border-[#D4AF37]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[#D4AF37]/10">
+                <div className="glass-card rounded-2xl overflow-hidden hover:border-[#06B6D4]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[#06B6D4]/10">
                   {/* Cover */}
                   <div className="relative aspect-[3/4] overflow-hidden">
                     <img
@@ -118,14 +118,14 @@ export default function Books() {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#081120] via-transparent to-transparent" />
-                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#D4AF37] text-[#081120] text-xs font-bold">
+                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#06B6D4] text-[#081120] text-xs font-bold">
                       {book.price.toLocaleString()} FCFA
                     </div>
                   </div>
 
                   {/* Info */}
                   <div className="p-5">
-                    <h3 className="text-lg font-bold text-white mb-1 line-clamp-2 group-hover:text-[#D4AF37] transition-colors">
+                    <h3 className="text-lg font-bold text-white mb-1 line-clamp-2 group-hover:text-[#06B6D4] transition-colors">
                       {book.title}
                     </h3>
                     <p className="text-sm text-[#94A3B8] mb-3">{book.author}</p>
@@ -136,7 +136,7 @@ export default function Books() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => setPurchaseBook(book)}
-                      className="w-full py-2.5 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold text-sm rounded-xl flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-[#D4AF37]/20 transition-shadow"
+                      className="w-full py-2.5 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold text-sm rounded-xl flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-[#06B6D4]/20 transition-shadow"
                     >
                       <ShoppingCart size={16} />
                       Acheter
@@ -185,7 +185,7 @@ export default function Books() {
                     <div>
                       <h3 className="text-lg font-bold text-white mb-1">{purchaseBook.title}</h3>
                       <p className="text-sm text-[#94A3B8] mb-2">{purchaseBook.author}</p>
-                      <p className="text-xl font-bold gold-gradient-text">{purchaseBook.price.toLocaleString()} FCFA</p>
+                      <p className="text-xl font-bold turquoise-gradient-text">{purchaseBook.price.toLocaleString()} FCFA</p>
                     </div>
                   </div>
 
@@ -200,7 +200,7 @@ export default function Books() {
                         onClick={() => setSelectedPayment(method.id)}
                         className={`p-3 rounded-xl text-left transition-all duration-300 ${
                           selectedPayment === method.id
-                            ? 'bg-[#D4AF37]/10 border-2 border-[#D4AF37]/50'
+                            ? 'bg-[#06B6D4]/10 border-2 border-[#06B6D4]/50'
                             : 'glass border border-white/5 hover:border-white/20'
                         }`}
                       >
@@ -215,7 +215,7 @@ export default function Books() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={handlePurchase}
-                    className="w-full py-4 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-bold text-base rounded-2xl flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-shadow"
+                    className="w-full py-4 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-bold text-base rounded-2xl flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-[#06B6D4]/30 transition-shadow"
                   >
                     <CreditCard size={18} />
                     Payer {purchaseBook.price.toLocaleString()} FCFA

@@ -41,7 +41,7 @@ function CloudinaryUpload({ onUpload, currentImage }: { onUpload: (url: string) 
       </p>
       <div
         onClick={() => !uploading && fileRef.current?.click()}
-        className={`relative border-2 border-dashed border-white/10 rounded-xl p-4 text-center cursor-pointer hover:border-[#D4AF37]/30 hover:bg-[#D4AF37]/5 transition-all ${uploading ? 'opacity-50 pointer-events-none' : ''}`}
+        className={`relative border-2 border-dashed border-white/10 rounded-xl p-4 text-center cursor-pointer hover:border-[#06B6D4]/30 hover:bg-[#06B6D4]/5 transition-all ${uploading ? 'opacity-50 pointer-events-none' : ''}`}
       >
         {currentImage ? (
           <div className="flex items-center gap-3">
@@ -60,7 +60,7 @@ function CloudinaryUpload({ onUpload, currentImage }: { onUpload: (url: string) 
         )}
         {uploading && (
           <div className="absolute inset-0 flex items-center justify-center bg-[#0F172A]/80 rounded-xl">
-            <Loader2 size={24} className="animate-spin text-[#D4AF37]" />
+            <Loader2 size={24} className="animate-spin text-[#06B6D4]" />
           </div>
         )}
       </div>
@@ -94,19 +94,19 @@ export default function CMSManager({ initialTab = 'cms-logos' }: CMSManagerProps
 
       <Tabs value={activeTab} onValueChange={setActiveTab}>
         <TabsList className="bg-white/5 border border-white/10 p-1 rounded-xl flex flex-wrap">
-          <TabsTrigger value="logos" className="data-[state=active]:bg-[#D4AF37]/10 data-[state=active]:text-[#D4AF37] text-[#94A3B8] text-xs sm:text-sm">
+          <TabsTrigger value="logos" className="data-[state=active]:bg-[#06B6D4]/10 data-[state=active]:text-[#06B6D4] text-[#94A3B8] text-xs sm:text-sm">
             <ImageIcon size={14} className="mr-1.5" /> Logos
           </TabsTrigger>
-          <TabsTrigger value="photos" className="data-[state=active]:bg-[#D4AF37]/10 data-[state=active]:text-[#D4AF37] text-[#94A3B8] text-xs sm:text-sm">
+          <TabsTrigger value="photos" className="data-[state=active]:bg-[#06B6D4]/10 data-[state=active]:text-[#06B6D4] text-[#94A3B8] text-xs sm:text-sm">
             <Camera size={14} className="mr-1.5" /> Photos
           </TabsTrigger>
-          <TabsTrigger value="books" className="data-[state=active]:bg-[#D4AF37]/10 data-[state=active]:text-[#D4AF37] text-[#94A3B8] text-xs sm:text-sm">
+          <TabsTrigger value="books" className="data-[state=active]:bg-[#06B6D4]/10 data-[state=active]:text-[#06B6D4] text-[#94A3B8] text-xs sm:text-sm">
             <BookOpen size={14} className="mr-1.5" /> Livres
           </TabsTrigger>
-          <TabsTrigger value="formations" className="data-[state=active]:bg-[#D4AF37]/10 data-[state=active]:text-[#D4AF37] text-[#94A3B8] text-xs sm:text-sm">
+          <TabsTrigger value="formations" className="data-[state=active]:bg-[#06B6D4]/10 data-[state=active]:text-[#06B6D4] text-[#94A3B8] text-xs sm:text-sm">
             <GraduationCap size={14} className="mr-1.5" /> Formations
           </TabsTrigger>
-          <TabsTrigger value="events" className="data-[state=active]:bg-[#D4AF37]/10 data-[state=active]:text-[#D4AF37] text-[#94A3B8] text-xs sm:text-sm">
+          <TabsTrigger value="events" className="data-[state=active]:bg-[#06B6D4]/10 data-[state=active]:text-[#06B6D4] text-[#94A3B8] text-xs sm:text-sm">
             <CalendarDays size={14} className="mr-1.5" /> Événements
           </TabsTrigger>
         </TabsList>
@@ -141,7 +141,7 @@ function LogosManager() {
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-semibold text-white">Logos ({logos.length})</h3>
         <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setDialogOpen(true)}
-          className="px-4 py-2 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold text-sm rounded-xl flex items-center gap-2">
+          className="px-4 py-2 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold text-sm rounded-xl flex items-center gap-2">
           <Plus size={16} /> Ajouter
         </motion.button>
       </div>
@@ -167,13 +167,13 @@ function LogosManager() {
           <DialogHeader><DialogTitle>Ajouter un Logo</DialogTitle></DialogHeader>
           <div className="space-y-4 mt-4">
             <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Nom du logo"
-              className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none" />
+              className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none" />
             <CloudinaryUpload onUpload={setUploadUrl} currentImage={uploadUrl} />
             <div>
               <p className="text-sm text-[#94A3B8] mb-2">Ou choisir une image existante</p>
               <div className="grid grid-cols-4 gap-2">
                 {uploadedImages.map((url) => (
-                  <button key={url} onClick={() => handleAdd(url)} className="aspect-square rounded-xl overflow-hidden hover:ring-2 hover:ring-[#D4AF37] transition-all">
+                  <button key={url} onClick={() => handleAdd(url)} className="aspect-square rounded-xl overflow-hidden hover:ring-2 hover:ring-[#06B6D4] transition-all">
                     <img src={url} alt="" className="w-full h-full object-cover" />
                   </button>
                 ))}
@@ -181,7 +181,7 @@ function LogosManager() {
             </div>
             {uploadUrl && (
               <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onClick={() => handleAdd()}
-                className="w-full py-3 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold rounded-xl">
+                className="w-full py-3 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold rounded-xl">
                 Ajouter ce logo
               </motion.button>
             )}
@@ -210,7 +210,7 @@ function PhotosManager() {
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-semibold text-white">Photos ({photos.length})</h3>
         <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setDialogOpen(true)}
-          className="px-4 py-2 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold text-sm rounded-xl flex items-center gap-2">
+          className="px-4 py-2 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold text-sm rounded-xl flex items-center gap-2">
           <Plus size={16} /> Ajouter
         </motion.button>
       </div>
@@ -240,7 +240,7 @@ function PhotosManager() {
               <p className="text-sm text-[#94A3B8] mb-2">Ou choisir une image existante</p>
               <div className="grid grid-cols-4 gap-2">
                 {uploadedImages.map((url) => (
-                  <button key={url} onClick={() => handleAdd(url)} className="aspect-square rounded-xl overflow-hidden hover:ring-2 hover:ring-[#D4AF37] transition-all">
+                  <button key={url} onClick={() => handleAdd(url)} className="aspect-square rounded-xl overflow-hidden hover:ring-2 hover:ring-[#06B6D4] transition-all">
                     <img src={url} alt="" className="w-full h-full object-cover" />
                   </button>
                 ))}
@@ -279,7 +279,7 @@ function BooksManager() {
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-semibold text-white">Livres ({books.length})</h3>
         <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={openNew}
-          className="px-4 py-2 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold text-sm rounded-xl flex items-center gap-2">
+          className="px-4 py-2 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold text-sm rounded-xl flex items-center gap-2">
           <Plus size={16} /> Ajouter
         </motion.button>
       </div>
@@ -294,9 +294,9 @@ function BooksManager() {
               <div className="flex-1 p-3 flex flex-col">
                 <h4 className="text-sm font-semibold text-white line-clamp-2">{book.title}</h4>
                 <p className="text-xs text-[#64748B] mt-1">{book.author}</p>
-                <p className="text-sm font-bold gold-gradient-text mt-auto">{book.price.toLocaleString()} FCFA</p>
+                <p className="text-sm font-bold turquoise-gradient-text mt-auto">{book.price.toLocaleString()} FCFA</p>
                 <div className="flex gap-2 mt-2">
-                  <button onClick={() => openEdit(book)} className="p-1.5 rounded-lg bg-white/5 hover:bg-[#D4AF37]/10 text-[#94A3B8] hover:text-[#D4AF37] transition-colors"><Pencil size={12} /></button>
+                  <button onClick={() => openEdit(book)} className="p-1.5 rounded-lg bg-white/5 hover:bg-[#06B6D4]/10 text-[#94A3B8] hover:text-[#06B6D4] transition-colors"><Pencil size={12} /></button>
                   <button onClick={() => deleteBook(book.id)} className="p-1.5 rounded-lg bg-white/5 hover:bg-[#EF4444]/10 text-[#94A3B8] hover:text-[#EF4444] transition-colors"><Trash2 size={12} /></button>
                 </div>
               </div>
@@ -309,24 +309,24 @@ function BooksManager() {
         <DialogContent className="bg-[#0F172A] border-white/10 text-white max-h-[80vh] overflow-y-auto">
           <DialogHeader><DialogTitle>{editId ? 'Modifier le Livre' : 'Ajouter un Livre'}</DialogTitle></DialogHeader>
           <div className="space-y-4 mt-4">
-            <input value={form.title || ''} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="Titre" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none" />
-            <input value={form.author || ''} onChange={(e) => setForm({ ...form, author: e.target.value })} placeholder="Auteur" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none" />
-            <textarea value={form.description || ''} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="Description" rows={3} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none resize-none" />
-            <input type="number" value={form.price || ''} onChange={(e) => setForm({ ...form, price: Number(e.target.value) })} placeholder="Prix (FCFA)" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none" />
-            <input value={form.buyLink || ''} onChange={(e) => setForm({ ...form, buyLink: e.target.value })} placeholder="Lien d'achat" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none" />
+            <input value={form.title || ''} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="Titre" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none" />
+            <input value={form.author || ''} onChange={(e) => setForm({ ...form, author: e.target.value })} placeholder="Auteur" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none" />
+            <textarea value={form.description || ''} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="Description" rows={3} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none resize-none" />
+            <input type="number" value={form.price || ''} onChange={(e) => setForm({ ...form, price: Number(e.target.value) })} placeholder="Prix (FCFA)" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none" />
+            <input value={form.buyLink || ''} onChange={(e) => setForm({ ...form, buyLink: e.target.value })} placeholder="Lien d'achat" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none" />
             <CloudinaryUpload onUpload={(url) => setForm({ ...form, coverImage: url })} currentImage={form.coverImage} />
             <div>
               <p className="text-sm text-[#94A3B8] mb-2">Ou choisir une image existante</p>
               <div className="grid grid-cols-4 gap-2">
                 {uploadedImages.map((url) => (
-                  <button key={url} onClick={() => setForm({ ...form, coverImage: url })} className={`aspect-square rounded-xl overflow-hidden transition-all ${form.coverImage === url ? 'ring-2 ring-[#D4AF37]' : ''}`}>
+                  <button key={url} onClick={() => setForm({ ...form, coverImage: url })} className={`aspect-square rounded-xl overflow-hidden transition-all ${form.coverImage === url ? 'ring-2 ring-[#06B6D4]' : ''}`}>
                     <img src={url} alt="" className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>
             </div>
             <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onClick={handleSave}
-              className="w-full py-3 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold rounded-xl">
+              className="w-full py-3 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold rounded-xl">
               {editId ? 'Modifier' : 'Ajouter'}
             </motion.button>
           </div>
@@ -361,7 +361,7 @@ function FormationsManager() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-semibold text-white">Formations ({formations.length})</h3>
-        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={openNew} className="px-4 py-2 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold text-sm rounded-xl flex items-center gap-2">
+        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={openNew} className="px-4 py-2 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold text-sm rounded-xl flex items-center gap-2">
           <Plus size={16} /> Ajouter
         </motion.button>
       </div>
@@ -376,12 +376,12 @@ function FormationsManager() {
               <div className="flex-1 p-3 flex flex-col">
                 <h4 className="text-sm font-semibold text-white line-clamp-1">{f.title}</h4>
                 <div className="flex gap-2 mt-1">
-                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#D4AF37]/10 text-[#D4AF37]">{f.level}</span>
+                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#06B6D4]/10 text-[#06B6D4]">{f.level}</span>
                   <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-[#94A3B8]">{f.duration}</span>
                 </div>
-                <p className="text-sm font-bold gold-gradient-text mt-auto">{f.price.toLocaleString()} FCFA</p>
+                <p className="text-sm font-bold turquoise-gradient-text mt-auto">{f.price.toLocaleString()} FCFA</p>
                 <div className="flex gap-2 mt-2">
-                  <button onClick={() => openEdit(f)} className="p-1.5 rounded-lg bg-white/5 hover:bg-[#D4AF37]/10 text-[#94A3B8] hover:text-[#D4AF37] transition-colors"><Pencil size={12} /></button>
+                  <button onClick={() => openEdit(f)} className="p-1.5 rounded-lg bg-white/5 hover:bg-[#06B6D4]/10 text-[#94A3B8] hover:text-[#06B6D4] transition-colors"><Pencil size={12} /></button>
                   <button onClick={() => deleteFormation(f.id)} className="p-1.5 rounded-lg bg-white/5 hover:bg-[#EF4444]/10 text-[#94A3B8] hover:text-[#EF4444] transition-colors"><Trash2 size={12} /></button>
                 </div>
               </div>
@@ -394,13 +394,13 @@ function FormationsManager() {
         <DialogContent className="bg-[#0F172A] border-white/10 text-white max-h-[80vh] overflow-y-auto">
           <DialogHeader><DialogTitle>{editId ? 'Modifier la Formation' : 'Ajouter une Formation'}</DialogTitle></DialogHeader>
           <div className="space-y-4 mt-4">
-            <input value={form.title || ''} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="Titre" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none" />
-            <textarea value={form.description || ''} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="Description" rows={3} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none resize-none" />
+            <input value={form.title || ''} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="Titre" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none" />
+            <textarea value={form.description || ''} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="Description" rows={3} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none resize-none" />
             <div className="grid grid-cols-2 gap-4">
-              <input type="number" value={form.price || ''} onChange={(e) => setForm({ ...form, price: Number(e.target.value) })} placeholder="Prix (FCFA)" className="px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none" />
-              <input value={form.duration || ''} onChange={(e) => setForm({ ...form, duration: e.target.value })} placeholder="Durée" className="px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none" />
+              <input type="number" value={form.price || ''} onChange={(e) => setForm({ ...form, price: Number(e.target.value) })} placeholder="Prix (FCFA)" className="px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none" />
+              <input value={form.duration || ''} onChange={(e) => setForm({ ...form, duration: e.target.value })} placeholder="Durée" className="px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none" />
             </div>
-            <select value={form.level || 'Débutant'} onChange={(e) => setForm({ ...form, level: e.target.value })} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#D4AF37]/50 focus:outline-none">
+            <select value={form.level || 'Débutant'} onChange={(e) => setForm({ ...form, level: e.target.value })} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#06B6D4]/50 focus:outline-none">
               <option value="Débutant" className="bg-[#0F172A]">Débutant</option>
               <option value="Intermédiaire" className="bg-[#0F172A]">Intermédiaire</option>
               <option value="Avancé" className="bg-[#0F172A]">Avancé</option>
@@ -410,13 +410,13 @@ function FormationsManager() {
               <p className="text-sm text-[#94A3B8] mb-2">Ou choisir une image existante</p>
               <div className="grid grid-cols-4 gap-2">
                 {uploadedImages.map((url) => (
-                  <button key={url} onClick={() => setForm({ ...form, image: url })} className={`aspect-square rounded-xl overflow-hidden transition-all ${form.image === url ? 'ring-2 ring-[#D4AF37]' : ''}`}>
+                  <button key={url} onClick={() => setForm({ ...form, image: url })} className={`aspect-square rounded-xl overflow-hidden transition-all ${form.image === url ? 'ring-2 ring-[#06B6D4]' : ''}`}>
                     <img src={url} alt="" className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>
             </div>
-            <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onClick={handleSave} className="w-full py-3 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold rounded-xl">
+            <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onClick={handleSave} className="w-full py-3 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold rounded-xl">
               {editId ? 'Modifier' : 'Ajouter'}
             </motion.button>
           </div>
@@ -451,7 +451,7 @@ function EventsManager() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-semibold text-white">Événements ({events.length})</h3>
-        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={openNew} className="px-4 py-2 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold text-sm rounded-xl flex items-center gap-2">
+        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={openNew} className="px-4 py-2 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold text-sm rounded-xl flex items-center gap-2">
           <Plus size={16} /> Ajouter
         </motion.button>
       </div>
@@ -468,10 +468,10 @@ function EventsManager() {
                 <span>{new Date(ev.date).toLocaleDateString('fr-FR')}</span>
                 <span>{ev.location}</span>
               </div>
-              <p className="text-sm font-bold gold-gradient-text mt-1">{ev.price.toLocaleString()} FCFA</p>
+              <p className="text-sm font-bold turquoise-gradient-text mt-1">{ev.price.toLocaleString()} FCFA</p>
             </div>
             <div className="flex gap-2">
-              <button onClick={() => openEdit(ev)} className="p-2 rounded-lg bg-white/5 hover:bg-[#D4AF37]/10 text-[#94A3B8] hover:text-[#D4AF37] transition-colors"><Pencil size={14} /></button>
+              <button onClick={() => openEdit(ev)} className="p-2 rounded-lg bg-white/5 hover:bg-[#06B6D4]/10 text-[#94A3B8] hover:text-[#06B6D4] transition-colors"><Pencil size={14} /></button>
               <button onClick={() => deleteEvent(ev.id)} className="p-2 rounded-lg bg-white/5 hover:bg-[#EF4444]/10 text-[#94A3B8] hover:text-[#EF4444] transition-colors"><Trash2 size={14} /></button>
             </div>
           </motion.div>
@@ -482,25 +482,25 @@ function EventsManager() {
         <DialogContent className="bg-[#0F172A] border-white/10 text-white max-h-[80vh] overflow-y-auto">
           <DialogHeader><DialogTitle>{editId ? 'Modifier l\'Événement' : 'Ajouter un Événement'}</DialogTitle></DialogHeader>
           <div className="space-y-4 mt-4">
-            <input value={form.title || ''} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="Titre" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none" />
+            <input value={form.title || ''} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="Titre" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none" />
             <div className="grid grid-cols-2 gap-4">
-              <input type="date" value={form.date || ''} onChange={(e) => setForm({ ...form, date: e.target.value })} className="px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#D4AF37]/50 focus:outline-none" />
-              <input value={form.location || ''} onChange={(e) => setForm({ ...form, location: e.target.value })} placeholder="Lieu" className="px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none" />
+              <input type="date" value={form.date || ''} onChange={(e) => setForm({ ...form, date: e.target.value })} className="px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#06B6D4]/50 focus:outline-none" />
+              <input value={form.location || ''} onChange={(e) => setForm({ ...form, location: e.target.value })} placeholder="Lieu" className="px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none" />
             </div>
-            <textarea value={form.description || ''} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="Description" rows={3} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none resize-none" />
-            <input type="number" value={form.price || ''} onChange={(e) => setForm({ ...form, price: Number(e.target.value) })} placeholder="Prix (FCFA)" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none" />
+            <textarea value={form.description || ''} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="Description" rows={3} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none resize-none" />
+            <input type="number" value={form.price || ''} onChange={(e) => setForm({ ...form, price: Number(e.target.value) })} placeholder="Prix (FCFA)" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none" />
             <CloudinaryUpload onUpload={(url) => setForm({ ...form, image: url })} currentImage={form.image} />
             <div>
               <p className="text-sm text-[#94A3B8] mb-2">Ou choisir une image existante</p>
               <div className="grid grid-cols-4 gap-2">
                 {uploadedImages.map((url) => (
-                  <button key={url} onClick={() => setForm({ ...form, image: url })} className={`aspect-square rounded-xl overflow-hidden transition-all ${form.image === url ? 'ring-2 ring-[#D4AF37]' : ''}`}>
+                  <button key={url} onClick={() => setForm({ ...form, image: url })} className={`aspect-square rounded-xl overflow-hidden transition-all ${form.image === url ? 'ring-2 ring-[#06B6D4]' : ''}`}>
                     <img src={url} alt="" className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>
             </div>
-            <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onClick={handleSave} className="w-full py-3 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold rounded-xl">
+            <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onClick={handleSave} className="w-full py-3 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold rounded-xl">
               {editId ? 'Modifier' : 'Ajouter'}
             </motion.button>
           </div>

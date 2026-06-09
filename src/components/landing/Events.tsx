@@ -33,7 +33,7 @@ function CountdownTimer({ targetDate }: { targetDate: string }) {
         { label: 'S', value: timeLeft.seconds },
       ].map((item) => (
         <div key={item.label} className="text-center">
-          <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] font-bold text-sm">
+          <div className="w-10 h-10 rounded-lg bg-[#06B6D4]/10 border border-[#06B6D4]/20 flex items-center justify-center text-[#06B6D4] font-bold text-sm">
             {String(item.value).padStart(2, '0')}
           </div>
           <span className="text-[10px] text-[#64748B] mt-1">{item.label}</span>
@@ -82,11 +82,11 @@ export default function Events() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-[#D4AF37] text-sm font-semibold tracking-widest uppercase mb-4 block">
+          <span className="text-[#06B6D4] text-sm font-semibold tracking-widest uppercase mb-4 block">
             Agenda
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            Mes <span className="gold-gradient-text">Événements</span>
+            Mes <span className="turquoise-gradient-text">Événements</span>
           </h2>
           <p className="max-w-2xl mx-auto text-[#94A3B8] text-lg">
             Rejoignez-nous pour des expériences uniques de networking et apprentissage
@@ -96,7 +96,7 @@ export default function Events() {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical Line */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#D4AF37]/50 via-[#D4AF37]/20 to-transparent" />
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#06B6D4]/50 via-[#06B6D4]/20 to-transparent" />
 
           {events.map((event, i) => (
             <motion.div
@@ -111,12 +111,12 @@ export default function Events() {
               }`}
             >
               {/* Timeline Dot */}
-              <div className="hidden md:block absolute left-1/2 top-8 -translate-x-1/2 w-4 h-4 rounded-full bg-[#D4AF37] border-4 border-[#081120] z-10" />
+              <div className="hidden md:block absolute left-1/2 top-8 -translate-x-1/2 w-4 h-4 rounded-full bg-[#06B6D4] border-4 border-[#081120] z-10" />
 
               {/* Card */}
               <motion.div
                 whileHover={{ y: -5, scale: 1.01 }}
-                className="glass-card rounded-2xl overflow-hidden hover:border-[#D4AF37]/30 hover:shadow-xl hover:shadow-[#D4AF37]/10 transition-all duration-500"
+                className="glass-card rounded-2xl overflow-hidden hover:border-[#06B6D4]/30 hover:shadow-xl hover:shadow-[#06B6D4]/10 transition-all duration-500"
               >
                 <div className="md:flex">
                   {/* Image */}
@@ -137,7 +137,7 @@ export default function Events() {
                         i % 2 === 0 ? 'md:justify-end' : ''
                       }`}
                     >
-                      <span className="inline-flex items-center gap-1.5 text-xs text-[#D4AF37] bg-[#D4AF37]/10 px-3 py-1 rounded-full w-fit">
+                      <span className="inline-flex items-center gap-1.5 text-xs text-[#06B6D4] bg-[#06B6D4]/10 px-3 py-1 rounded-full w-fit">
                         <Calendar size={12} />
                         {new Date(event.date).toLocaleDateString('fr-FR', {
                           day: 'numeric',
@@ -166,7 +166,7 @@ export default function Events() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => setRegisterEvent(event)}
-                        className="px-5 py-2 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold text-sm rounded-xl flex items-center gap-2"
+                        className="px-5 py-2 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold text-sm rounded-xl flex items-center gap-2"
                       >
                         S&apos;inscrire
                         <ArrowRight size={14} />
@@ -222,7 +222,7 @@ export default function Events() {
                           onChange={(e) => setForm({ ...form, name: e.target.value })}
                           placeholder="Votre nom"
                           required
-                          className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30 transition-all"
+                          className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none focus:ring-1 focus:ring-[#06B6D4]/30 transition-all"
                         />
                       </div>
                     </div>
@@ -236,7 +236,7 @@ export default function Events() {
                           onChange={(e) => setForm({ ...form, email: e.target.value })}
                           placeholder="votre@email.com"
                           required
-                          className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30 transition-all"
+                          className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none focus:ring-1 focus:ring-[#06B6D4]/30 transition-all"
                         />
                       </div>
                     </div>
@@ -250,7 +250,7 @@ export default function Events() {
                           onChange={(e) => setForm({ ...form, phone: e.target.value })}
                           placeholder="+225 07 12 34 56"
                           required
-                          className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none focus:ring-1 focus:ring-[#D4AF37]/30 transition-all"
+                          className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none focus:ring-1 focus:ring-[#06B6D4]/30 transition-all"
                         />
                       </div>
                     </div>
@@ -258,7 +258,7 @@ export default function Events() {
                       type="submit"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full py-4 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-bold text-base rounded-2xl flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-shadow"
+                      className="w-full py-4 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-bold text-base rounded-2xl flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-[#06B6D4]/30 transition-shadow"
                     >
                       <CreditCard size={18} />
                       S&apos;inscrire — {registerEvent.price.toLocaleString()} FCFA

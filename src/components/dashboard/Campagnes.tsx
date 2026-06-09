@@ -324,7 +324,7 @@ export default function Campagnes() {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           onClick={handleNewCampaign}
-          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B8962E] text-[#06080f] font-semibold text-sm flex items-center gap-2 hover:shadow-lg hover:shadow-[#D4AF37]/20 transition-shadow"
+          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-[#06080f] font-semibold text-sm flex items-center gap-2 hover:shadow-lg hover:shadow-[#06B6D4]/20 transition-shadow"
         >
           <Plus className="w-4 h-4" /> Nouvelle Campagne
         </motion.button>
@@ -341,7 +341,7 @@ export default function Campagnes() {
               onClick={() => setStatusFilter(tab.value)}
               className={`px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
                 isActive
-                  ? 'bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/20'
+                  ? 'bg-[#06B6D4]/10 text-[#06B6D4] border border-[#06B6D4]/20'
                   : 'glass text-slate-400 hover:text-white hover:border-white/10'
               }`}
             >
@@ -358,8 +358,8 @@ export default function Campagnes() {
           animate={{ opacity: 1 }}
           className="flex flex-col items-center justify-center py-20 text-center"
         >
-          <div className="w-16 h-16 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-4">
-            <Send className="w-8 h-8 text-[#D4AF37]/50" />
+          <div className="w-16 h-16 rounded-2xl bg-[#06B6D4]/10 flex items-center justify-center mb-4">
+            <Send className="w-8 h-8 text-[#06B6D4]/50" />
           </div>
           <h3 className="text-lg font-semibold text-slate-300">Aucune campagne</h3>
           <p className="text-sm text-slate-500 mt-1">Créez votre première campagne SMS ou WhatsApp</p>
@@ -379,7 +379,7 @@ export default function Campagnes() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3, delay: i * 0.05 }}
                 >
-                  <Card className="bg-[#0c1220] border border-white/[0.06] hover:border-[#D4AF37]/20 transition-all duration-300 group overflow-hidden">
+                  <Card className="bg-[#0c1220] border border-white/[0.06] hover:border-[#06B6D4]/20 transition-all duration-300 group overflow-hidden">
                     <CardContent className="p-5 space-y-4">
                       {/* Header: Name + Status */}
                       <div className="flex items-start justify-between gap-2">
@@ -417,7 +417,7 @@ export default function Campagnes() {
                       {/* Stats */}
                       {campaign.sentCount > 0 && (
                         <div className="grid grid-cols-4 gap-1.5">
-                          <StatBox label="Envoyés" value={campaign.sentCount} color="#D4AF37" />
+                          <StatBox label="Envoyés" value={campaign.sentCount} color="#06B6D4" />
                           <StatBox label="Livrés" value={campaign.deliveredCount} color="#10B981" />
                           <StatBox label="Lus" value={campaign.readCount} color="#06B6D4" />
                           <StatBox label="Rép." value={campaign.replyCount} color="#F59E0B" />
@@ -454,7 +454,7 @@ export default function Campagnes() {
                       <div className="flex items-center gap-2 pt-2 border-t border-white/[0.04]">
                         <button
                           onClick={() => handleEdit(campaign)}
-                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-slate-400 hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all"
+                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-slate-400 hover:text-[#06B6D4] hover:bg-[#06B6D4]/10 transition-all"
                         >
                           <Edit3 className="w-3.5 h-3.5" /> Modifier
                         </button>
@@ -485,7 +485,7 @@ export default function Campagnes() {
         <DialogContent className="bg-[#0c1220] border-white/[0.08] text-white max-w-2xl max-h-[90vh] overflow-y-auto custom-scrollbar">
           <DialogHeader>
             <DialogTitle className="text-lg font-bold flex items-center gap-2">
-              <Zap className="w-5 h-5 text-[#D4AF37]" />
+              <Zap className="w-5 h-5 text-[#06B6D4]" />
               {editingCampaign ? 'Modifier la campagne' : 'Nouvelle campagne'}
             </DialogTitle>
           </DialogHeader>
@@ -498,7 +498,7 @@ export default function Campagnes() {
                 value={formData.name}
                 onChange={(e) => updateForm('name', e.target.value)}
                 placeholder="Ex: Lancement Sommet Digital"
-                className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#D4AF37]/40 focus:ring-[#D4AF37]/20"
+                className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#06B6D4]/40 focus:ring-[#06B6D4]/20"
               />
             </div>
 
@@ -509,7 +509,7 @@ export default function Campagnes() {
                 {([
                   { value: 'sms' as ChannelType, label: 'SMS', icon: Smartphone, color: '#0EA5E9' },
                   { value: 'whatsapp' as ChannelType, label: 'WhatsApp', icon: MessageSquare, color: '#10B981' },
-                  { value: 'both' as ChannelType, label: 'Les deux', icon: Send, color: '#D4AF37' },
+                  { value: 'both' as ChannelType, label: 'Les deux', icon: Send, color: '#06B6D4' },
                 ] as const).map((ch) => (
                   <button
                     key={ch.value}
@@ -570,13 +570,13 @@ export default function Campagnes() {
                     }
                   }}
                   placeholder="Ajouter un tag..."
-                  className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#D4AF37]/40 focus:ring-[#D4AF37]/20 flex-1"
+                  className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#06B6D4]/40 focus:ring-[#06B6D4]/20 flex-1"
                 />
                 <Button
                   type="button"
                   variant="outline"
                   onClick={addTag}
-                  className="border-[#D4AF37]/30 text-[#D4AF37] hover:bg-[#D4AF37]/10 shrink-0"
+                  className="border-[#06B6D4]/30 text-[#06B6D4] hover:bg-[#06B6D4]/10 shrink-0"
                 >
                   <Plus className="w-4 h-4" />
                 </Button>
@@ -586,7 +586,7 @@ export default function Campagnes() {
                   {formData.targetTags.map((tag) => (
                     <Badge
                       key={tag}
-                      className="bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/20 gap-1 pr-1 font-medium"
+                      className="bg-[#06B6D4]/10 text-[#06B6D4] border border-[#06B6D4]/20 gap-1 pr-1 font-medium"
                     >
                       {tag}
                       <button onClick={() => removeTag(tag)} className="hover:text-red-400 transition-colors">
@@ -646,7 +646,7 @@ export default function Campagnes() {
                       : 'Écrivez votre message WhatsApp...'
                   }
                   rows={5}
-                  className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#D4AF37]/40 focus:ring-[#D4AF37]/20 resize-none"
+                  className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#06B6D4]/40 focus:ring-[#06B6D4]/20 resize-none"
                 />
                 <div className="flex items-center justify-between text-[11px]">
                   <span className={`${charCount > charLimit ? 'text-red-400' : 'text-slate-500'}`}>
@@ -675,7 +675,7 @@ export default function Campagnes() {
                         if (msgId) updateMessage(msgId, { mediaUrl: e.target.value });
                       }}
                       placeholder="URL de l'image ou document"
-                      className="bg-white/[0.04] border-white/[0.06] text-white text-xs placeholder:text-slate-600 h-9 focus:border-[#D4AF37]/40"
+                      className="bg-white/[0.04] border-white/[0.06] text-white text-xs placeholder:text-slate-600 h-9 focus:border-[#06B6D4]/40"
                     />
                     {activeMessage?.mediaUrl && (
                       <Select
@@ -707,7 +707,7 @@ export default function Campagnes() {
                         onClick={() => {
                           if (activeMessage?.id) addWhatsAppButton(activeMessage.id);
                         }}
-                        className="text-[10px] text-[#D4AF37] hover:text-[#E8C84A] flex items-center gap-1 transition-colors"
+                        className="text-[10px] text-[#06B6D4] hover:text-[#22D3EE] flex items-center gap-1 transition-colors"
                       >
                         <Plus className="w-3 h-3" /> Ajouter
                       </button>
@@ -720,7 +720,7 @@ export default function Campagnes() {
                             if (activeMessage?.id) updateWhatsAppButton(activeMessage.id, idx, 'label', e.target.value);
                           }}
                           placeholder="Label"
-                          className="bg-white/[0.04] border-white/[0.06] text-white text-xs placeholder:text-slate-600 h-8 flex-1 focus:border-[#D4AF37]/40"
+                          className="bg-white/[0.04] border-white/[0.06] text-white text-xs placeholder:text-slate-600 h-8 flex-1 focus:border-[#06B6D4]/40"
                         />
                         <Input
                           value={btn.url}
@@ -728,7 +728,7 @@ export default function Campagnes() {
                             if (activeMessage?.id) updateWhatsAppButton(activeMessage.id, idx, 'url', e.target.value);
                           }}
                           placeholder="URL"
-                          className="bg-white/[0.04] border-white/[0.06] text-white text-xs placeholder:text-slate-600 h-8 flex-1 focus:border-[#D4AF37]/40"
+                          className="bg-white/[0.04] border-white/[0.06] text-white text-xs placeholder:text-slate-600 h-8 flex-1 focus:border-[#06B6D4]/40"
                         />
                         <button
                           onClick={() => {
@@ -788,7 +788,7 @@ export default function Campagnes() {
                   onClick={() => setScheduleMode('now')}
                   className={`p-3 rounded-xl border text-sm font-medium flex items-center justify-center gap-2 transition-all ${
                     scheduleMode === 'now'
-                      ? 'border-[#D4AF37]/40 bg-[#D4AF37]/10 text-[#D4AF37]'
+                      ? 'border-[#06B6D4]/40 bg-[#06B6D4]/10 text-[#06B6D4]'
                       : 'border-white/[0.06] bg-white/[0.02] text-slate-400 hover:bg-white/[0.04]'
                   }`}
                 >
@@ -798,7 +798,7 @@ export default function Campagnes() {
                   onClick={() => setScheduleMode('schedule')}
                   className={`p-3 rounded-xl border text-sm font-medium flex items-center justify-center gap-2 transition-all ${
                     scheduleMode === 'schedule'
-                      ? 'border-[#D4AF37]/40 bg-[#D4AF37]/10 text-[#D4AF37]'
+                      ? 'border-[#06B6D4]/40 bg-[#06B6D4]/10 text-[#06B6D4]'
                       : 'border-white/[0.06] bg-white/[0.02] text-slate-400 hover:bg-white/[0.04]'
                   }`}
                 >
@@ -816,7 +816,7 @@ export default function Campagnes() {
                     type="datetime-local"
                     value={formData.scheduledAt ? formData.scheduledAt.slice(0, 16) : ''}
                     onChange={(e) => updateForm('scheduledAt', e.target.value)}
-                    className="bg-white/[0.04] border-white/[0.08] text-white focus:border-[#D4AF37]/40 focus:ring-[#D4AF37]/20"
+                    className="bg-white/[0.04] border-white/[0.08] text-white focus:border-[#06B6D4]/40 focus:ring-[#06B6D4]/20"
                   />
                 </motion.div>
               )}
@@ -835,7 +835,7 @@ export default function Campagnes() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={handleSave}
-                className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B8962E] text-[#06080f] font-semibold text-sm flex items-center gap-2 hover:shadow-lg hover:shadow-[#D4AF37]/20 transition-shadow"
+                className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-[#06080f] font-semibold text-sm flex items-center gap-2 hover:shadow-lg hover:shadow-[#06B6D4]/20 transition-shadow"
               >
                 {scheduleMode === 'now' ? (
                   <>

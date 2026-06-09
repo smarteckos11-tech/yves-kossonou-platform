@@ -80,7 +80,7 @@ export default function Sidebar() {
       {/* Header */}
       <div className="h-16 flex items-center px-4 border-b border-[#1e293b]/50 shrink-0">
         <div className="flex items-center gap-3 overflow-hidden">
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#B8962E] flex items-center justify-center shrink-0 text-[#06080f] font-bold text-sm">
+          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#06B6D4] to-[#0891B2] flex items-center justify-center shrink-0 text-[#06080f] font-bold text-sm">
             YK
           </div>
           {sidebarOpen && (
@@ -116,18 +116,18 @@ export default function Sidebar() {
                     className={cn(
                       'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group relative',
                       isActive
-                        ? 'bg-[#D4AF37]/10 text-[#D4AF37]'
+                        ? 'bg-[#06B6D4]/10 text-[#06B6D4]'
                         : 'text-slate-400 hover:text-slate-200 hover:bg-[#1e293b]/30'
                     )}
                   >
                     {isActive && (
                       <motion.div
                         layoutId="sidebar-active"
-                        className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-[#D4AF37] rounded-r-full"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-[#06B6D4] rounded-r-full"
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                       />
                     )}
-                    <item.icon className={cn('w-5 h-5 shrink-0', isActive ? 'text-[#D4AF37]' : 'text-slate-500 group-hover:text-slate-300')} />
+                    <item.icon className={cn('w-5 h-5 shrink-0', isActive ? 'text-[#06B6D4]' : 'text-slate-500 group-hover:text-slate-300')} />
                     {sidebarOpen && (
                       <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-sm font-medium whitespace-nowrap">
                         {item.label}
@@ -153,7 +153,7 @@ export default function Sidebar() {
       <div className="border-t border-[#1e293b]/50 p-3 shrink-0">
         {sidebarOpen && (
           <div className="flex items-center gap-3 px-2 py-2">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-emerald-500 flex items-center justify-center text-[#06080f] font-bold text-sm shrink-0">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#06B6D4] to-emerald-500 flex items-center justify-center text-[#06080f] font-bold text-sm shrink-0">
               {user?.name?.charAt(0) || 'U'}
             </div>
             <div className="overflow-hidden flex-1">
@@ -164,7 +164,7 @@ export default function Sidebar() {
         )}
         <button
           onClick={() => setView('landing')}
-          className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-colors"
+          className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-[#06B6D4] hover:bg-[#06B6D4]/10 transition-colors"
         >
           <Globe className="w-5 h-5 shrink-0" />
           {sidebarOpen && <span className="text-sm">Retour au site</span>}

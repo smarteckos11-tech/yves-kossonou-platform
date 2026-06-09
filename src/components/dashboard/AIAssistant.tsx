@@ -289,8 +289,8 @@ export default function AIAssistant() {
         animate={{ opacity: 1, y: 0 }}
         className="flex items-center gap-3"
       >
-        <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center">
-          <Sparkles size={20} className="text-[#D4AF37]" />
+        <div className="w-10 h-10 rounded-xl bg-[#06B6D4]/10 flex items-center justify-center">
+          <Sparkles size={20} className="text-[#06B6D4]" />
         </div>
         <div>
           <h2 className="text-lg font-bold text-white">Assistant IA</h2>
@@ -320,7 +320,7 @@ export default function AIAssistant() {
                       onClick={() => setChannel('sms')}
                       className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-medium transition-all ${
                         channel === 'sms'
-                          ? 'bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37]'
+                          ? 'bg-[#06B6D4]/15 border border-[#06B6D4]/30 text-[#06B6D4]'
                           : 'bg-white/5 border border-white/10 text-slate-400 hover:bg-white/10'
                       }`}
                     >
@@ -370,7 +370,7 @@ export default function AIAssistant() {
                         onClick={() => setTone(t)}
                         className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                           tone === t
-                            ? 'bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37]'
+                            ? 'bg-[#06B6D4]/15 border border-[#06B6D4]/30 text-[#06B6D4]'
                             : 'bg-white/5 border border-white/10 text-slate-400 hover:bg-white/10'
                         }`}
                       >
@@ -387,7 +387,7 @@ export default function AIAssistant() {
                     value={targetAudience}
                     onChange={(e) => setTargetAudience(e.target.value)}
                     placeholder="ex: Entrepreneurs africains, Prospects chauds..."
-                    className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#D4AF37]/50 text-xs h-9"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#06B6D4]/50 text-xs h-9"
                   />
                 </div>
 
@@ -398,7 +398,7 @@ export default function AIAssistant() {
                     value={keyPoints}
                     onChange={(e) => setKeyPoints(e.target.value)}
                     placeholder="Décrivez les points importants à inclure dans le message..."
-                    className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#D4AF37]/50 text-xs min-h-[70px]"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#06B6D4]/50 text-xs min-h-[70px]"
                     rows={3}
                   />
                 </div>
@@ -409,7 +409,7 @@ export default function AIAssistant() {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => generateMessage('A')}
                   disabled={isGenerating}
-                  className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B8962E] text-[#06080f] font-semibold text-sm flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-[#D4AF37]/20"
+                  className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-[#06080f] font-semibold text-sm flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-[#06B6D4]/20"
                 >
                   {isGenerating ? (
                     <>
@@ -445,19 +445,19 @@ export default function AIAssistant() {
                     <div className="flex items-center justify-between">
                       <CardTitle className="text-white text-sm font-semibold flex items-center gap-2">
                         {channel === 'sms' ? (
-                          <Smartphone size={14} className="text-[#D4AF37]" />
+                          <Smartphone size={14} className="text-[#06B6D4]" />
                         ) : (
                           <MessageSquare size={14} className="text-[#10B981]" />
                         )}
                         Message généré
-                        <Badge className="bg-[#D4AF37]/15 text-[#D4AF37] border-0 text-[10px]">Variante A</Badge>
+                        <Badge className="bg-[#06B6D4]/15 text-[#06B6D4] border-0 text-[10px]">Variante A</Badge>
                       </CardTitle>
                       <div className="flex items-center gap-2">
                         <motion.button
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           onClick={() => copyToClipboard(generatedMessage, 'A')}
-                          className="p-2 rounded-lg hover:bg-white/[0.06] text-slate-400 hover:text-[#D4AF37] transition-colors"
+                          className="p-2 rounded-lg hover:bg-white/[0.06] text-slate-400 hover:text-[#06B6D4] transition-colors"
                           title="Copier"
                         >
                           {copiedA ? <Check size={14} className="text-emerald-400" /> : <Copy size={14} />}
@@ -501,7 +501,7 @@ export default function AIAssistant() {
                               whileHover={{ scale: 1.1 }}
                               whileTap={{ scale: 0.9 }}
                               onClick={() => copyToClipboard(variantB, 'B')}
-                              className="p-2 rounded-lg hover:bg-white/[0.06] text-slate-400 hover:text-[#D4AF37] transition-colors"
+                              className="p-2 rounded-lg hover:bg-white/[0.06] text-slate-400 hover:text-[#06B6D4] transition-colors"
                               title="Copier"
                             >
                               {copiedB ? <Check size={14} className="text-emerald-400" /> : <Copy size={14} />}
@@ -532,16 +532,16 @@ export default function AIAssistant() {
             <Card className="bg-white/[0.03] backdrop-blur-sm border-white/10">
               <CardHeader className="pb-2">
                 <CardTitle className="text-white text-sm font-semibold flex items-center gap-2">
-                  <Clock size={14} className="text-[#D4AF37]" />
+                  <Clock size={14} className="text-[#06B6D4]" />
                   Suggestions d&apos;envoi
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {/* Best Send Time */}
-                <div className="p-3 rounded-xl bg-[#D4AF37]/5 border border-[#D4AF37]/10">
+                <div className="p-3 rounded-xl bg-[#06B6D4]/5 border border-[#06B6D4]/10">
                   <div className="flex items-center gap-2 mb-1">
-                    <Zap size={12} className="text-[#D4AF37]" />
-                    <span className="text-[11px] text-[#D4AF37] font-medium">Meilleur moment d&apos;envoi</span>
+                    <Zap size={12} className="text-[#06B6D4]" />
+                    <span className="text-[11px] text-[#06B6D4] font-medium">Meilleur moment d&apos;envoi</span>
                   </div>
                   <div className="text-lg font-bold text-white">
                     {channel === 'sms' ? '10h00' : '20h00'}
@@ -575,7 +575,7 @@ export default function AIAssistant() {
                             transition={{ delay: 0.5 + i * 0.03, duration: 0.5, ease: 'easeOut' }}
                             className={`w-full rounded-t-sm min-h-[2px] ${
                               isTop
-                                ? 'bg-[#D4AF37]'
+                                ? 'bg-[#06B6D4]'
                                 : 'bg-white/10'
                             }`}
                             style={{ maxHeight: `${height}%` }}
@@ -614,13 +614,13 @@ export default function AIAssistant() {
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.99 }}
                       onClick={() => applyTemplate(template.objective)}
-                      className="w-full text-left p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-[#D4AF37]/20 hover:bg-white/[0.06] transition-all group"
+                      className="w-full text-left p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-[#06B6D4]/20 hover:bg-white/[0.06] transition-all group"
                     >
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-xs font-medium text-white group-hover:text-[#D4AF37] transition-colors">
+                        <span className="text-xs font-medium text-white group-hover:text-[#06B6D4] transition-colors">
                           {template.name}
                         </span>
-                        <ChevronRight size={12} className="text-slate-600 group-hover:text-[#D4AF37] transition-colors" />
+                        <ChevronRight size={12} className="text-slate-600 group-hover:text-[#06B6D4] transition-colors" />
                       </div>
                       <div className="flex items-center gap-1.5 mb-1">
                         <Badge className="bg-white/5 text-slate-400 border-0 text-[9px] px-1.5">
@@ -662,7 +662,7 @@ export default function AIAssistant() {
                         <div className="flex items-center justify-between mb-1">
                           <div className="flex items-center gap-1.5">
                             {entry.channel === 'sms' ? (
-                              <Smartphone size={10} className="text-[#D4AF37]" />
+                              <Smartphone size={10} className="text-[#06B6D4]" />
                             ) : (
                               <MessageSquare size={10} className="text-[#10B981]" />
                             )}
@@ -671,7 +671,7 @@ export default function AIAssistant() {
                             </Badge>
                             <Badge className={`border-0 text-[9px] px-1.5 ${
                               entry.variant === 'A'
-                                ? 'bg-[#D4AF37]/10 text-[#D4AF37]'
+                                ? 'bg-[#06B6D4]/10 text-[#06B6D4]'
                                 : 'bg-[#10B981]/10 text-[#10B981]'
                             }`}>
                               {entry.variant}
@@ -683,7 +683,7 @@ export default function AIAssistant() {
                               whileHover={{ scale: 1.2 }}
                               whileTap={{ scale: 0.9 }}
                               onClick={() => copyToClipboard(entry.content, 'A')}
-                              className="p-1 rounded hover:bg-white/[0.06] text-slate-500 hover:text-[#D4AF37] transition-colors"
+                              className="p-1 rounded hover:bg-white/[0.06] text-slate-500 hover:text-[#06B6D4] transition-colors"
                             >
                               <Copy size={10} />
                             </motion.button>

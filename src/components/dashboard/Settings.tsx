@@ -43,16 +43,16 @@ export default function Settings() {
 
       <Tabs defaultValue="profile">
         <TabsList className="bg-white/5 border border-white/10 p-1 rounded-xl">
-          <TabsTrigger value="profile" className="data-[state=active]:bg-[#D4AF37]/10 data-[state=active]:text-[#D4AF37] text-[#94A3B8] text-sm">
+          <TabsTrigger value="profile" className="data-[state=active]:bg-[#06B6D4]/10 data-[state=active]:text-[#06B6D4] text-[#94A3B8] text-sm">
             <User size={14} className="mr-1.5" /> Profil
           </TabsTrigger>
-          <TabsTrigger value="brand" className="data-[state=active]:bg-[#D4AF37]/10 data-[state=active]:text-[#D4AF37] text-[#94A3B8] text-sm">
+          <TabsTrigger value="brand" className="data-[state=active]:bg-[#06B6D4]/10 data-[state=active]:text-[#06B6D4] text-[#94A3B8] text-sm">
             <Palette size={14} className="mr-1.5" /> Marque
           </TabsTrigger>
-          <TabsTrigger value="notifications" className="data-[state=active]:bg-[#D4AF37]/10 data-[state=active]:text-[#D4AF37] text-[#94A3B8] text-sm">
+          <TabsTrigger value="notifications" className="data-[state=active]:bg-[#06B6D4]/10 data-[state=active]:text-[#06B6D4] text-[#94A3B8] text-sm">
             <Bell size={14} className="mr-1.5" /> Notifications
           </TabsTrigger>
-          <TabsTrigger value="security" className="data-[state=active]:bg-[#D4AF37]/10 data-[state=active]:text-[#D4AF37] text-[#94A3B8] text-sm">
+          <TabsTrigger value="security" className="data-[state=active]:bg-[#06B6D4]/10 data-[state=active]:text-[#06B6D4] text-[#94A3B8] text-sm">
             <Shield size={14} className="mr-1.5" /> Sécurité
           </TabsTrigger>
         </TabsList>
@@ -66,12 +66,12 @@ export default function Settings() {
                 {logos.length > 0 ? (
                   <img src={logos[0].url} alt="Avatar" className="w-full h-full object-cover" />
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-[#D4AF37] to-[#E8C84A] flex items-center justify-center text-[#081120] font-bold text-2xl">
+                  <div className="w-full h-full bg-gradient-to-br from-[#06B6D4] to-[#22D3EE] flex items-center justify-center text-[#081120] font-bold text-2xl">
                     YK
                   </div>
                 )}
               </div>
-              <button className="px-4 py-2 glass rounded-xl text-sm text-[#CBD5E1] hover:border-[#D4AF37]/30 flex items-center gap-2 transition-all">
+              <button className="px-4 py-2 glass rounded-xl text-sm text-[#CBD5E1] hover:border-[#06B6D4]/30 flex items-center gap-2 transition-all">
                 <Upload size={14} /> Changer la photo
               </button>
             </div>
@@ -79,32 +79,32 @@ export default function Settings() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm text-[#94A3B8] mb-1.5 block">Nom</label>
-                  <input value={profile.name} onChange={(e) => setProfile({ ...profile, name: e.target.value })} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#D4AF37]/50 focus:outline-none" />
+                  <input value={profile.name} onChange={(e) => setProfile({ ...profile, name: e.target.value })} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#06B6D4]/50 focus:outline-none" />
                 </div>
                 <div>
                   <label className="text-sm text-[#94A3B8] mb-1.5 block">Email</label>
-                  <input value={profile.email} onChange={(e) => setProfile({ ...profile, email: e.target.value })} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#D4AF37]/50 focus:outline-none" />
+                  <input value={profile.email} onChange={(e) => setProfile({ ...profile, email: e.target.value })} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#06B6D4]/50 focus:outline-none" />
                 </div>
               </div>
               <div>
                 <label className="text-sm text-[#94A3B8] mb-1.5 block">Bio</label>
-                <textarea value={profile.bio} onChange={(e) => setProfile({ ...profile, bio: e.target.value })} rows={3} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#D4AF37]/50 focus:outline-none resize-none" />
+                <textarea value={profile.bio} onChange={(e) => setProfile({ ...profile, bio: e.target.value })} rows={3} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#06B6D4]/50 focus:outline-none resize-none" />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm text-[#94A3B8] mb-1.5 block">Téléphone</label>
-                  <input value={profile.phone} onChange={(e) => setProfile({ ...profile, phone: e.target.value })} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#D4AF37]/50 focus:outline-none" />
+                  <input value={profile.phone} onChange={(e) => setProfile({ ...profile, phone: e.target.value })} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#06B6D4]/50 focus:outline-none" />
                 </div>
                 <div>
                   <label className="text-sm text-[#94A3B8] mb-1.5 block">Localisation</label>
-                  <input value={profile.location} onChange={(e) => setProfile({ ...profile, location: e.target.value })} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#D4AF37]/50 focus:outline-none" />
+                  <input value={profile.location} onChange={(e) => setProfile({ ...profile, location: e.target.value })} className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#06B6D4]/50 focus:outline-none" />
                 </div>
               </div>
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setUser({ name: profile.name, email: profile.email, avatar: logos[0]?.url || '' })}
-                className="px-6 py-3 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold rounded-xl flex items-center gap-2"
+                className="px-6 py-3 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold rounded-xl flex items-center gap-2"
               >
                 <Save size={16} /> Sauvegarder
               </motion.button>
@@ -123,7 +123,7 @@ export default function Settings() {
                   {uploadedImages.map((url) => (
                     <button
                       key={url}
-                      className="aspect-square rounded-xl overflow-hidden hover:ring-2 hover:ring-[#D4AF37] transition-all"
+                      className="aspect-square rounded-xl overflow-hidden hover:ring-2 hover:ring-[#06B6D4] transition-all"
                     >
                       <img src={url} alt="" className="w-full h-full object-cover" />
                     </button>
@@ -138,7 +138,7 @@ export default function Settings() {
                     <span className="text-xs text-[#94A3B8]">Bleu Nuit</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 rounded-lg bg-[#D4AF37]" />
+                    <div className="w-10 h-10 rounded-lg bg-[#06B6D4]" />
                     <span className="text-xs text-[#94A3B8]">Or Premium</span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -171,7 +171,7 @@ export default function Settings() {
                   <button
                     onClick={() => setNotifications({ ...notifications, [item.key]: !notifications[item.key] })}
                     className={`w-11 h-6 rounded-full transition-all duration-300 ${
-                      notifications[item.key] ? 'bg-[#D4AF37]' : 'bg-white/10'
+                      notifications[item.key] ? 'bg-[#06B6D4]' : 'bg-white/10'
                     }`}
                   >
                     <div
@@ -193,20 +193,20 @@ export default function Settings() {
             <div className="space-y-4">
               <div>
                 <label className="text-sm text-[#94A3B8] mb-1.5 block">Mot de passe actuel</label>
-                <input type="password" placeholder="••••••••" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#D4AF37]/50 focus:outline-none" />
+                <input type="password" placeholder="••••••••" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#06B6D4]/50 focus:outline-none" />
               </div>
               <div>
                 <label className="text-sm text-[#94A3B8] mb-1.5 block">Nouveau mot de passe</label>
-                <input type="password" placeholder="••••••••" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#D4AF37]/50 focus:outline-none" />
+                <input type="password" placeholder="••••••••" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#06B6D4]/50 focus:outline-none" />
               </div>
               <div>
                 <label className="text-sm text-[#94A3B8] mb-1.5 block">Confirmer le mot de passe</label>
-                <input type="password" placeholder="••••••••" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#D4AF37]/50 focus:outline-none" />
+                <input type="password" placeholder="••••••••" className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white focus:border-[#06B6D4]/50 focus:outline-none" />
               </div>
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-6 py-3 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold rounded-xl flex items-center gap-2"
+                className="px-6 py-3 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold rounded-xl flex items-center gap-2"
               >
                 <Shield size={16} /> Mettre à jour
               </motion.button>

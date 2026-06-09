@@ -27,16 +27,16 @@ export default function Parametres() {
     <div className="max-w-3xl space-y-6">
       <Tabs defaultValue="profil" className="space-y-6">
         <TabsList className="bg-white/5 border border-white/10">
-          <TabsTrigger value="profil" className="data-[state=active]:bg-[#D4AF37]/10 data-[state=active]:text-[#D4AF37]">
+          <TabsTrigger value="profil" className="data-[state=active]:bg-[#06B6D4]/10 data-[state=active]:text-[#06B6D4]">
             <User className="w-4 h-4 mr-2" />Profil
           </TabsTrigger>
-          <TabsTrigger value="notifications" className="data-[state=active]:bg-[#D4AF37]/10 data-[state=active]:text-[#D4AF37]">
+          <TabsTrigger value="notifications" className="data-[state=active]:bg-[#06B6D4]/10 data-[state=active]:text-[#06B6D4]">
             <Bell className="w-4 h-4 mr-2" />Notifications
           </TabsTrigger>
-          <TabsTrigger value="api" className="data-[state=active]:bg-[#D4AF37]/10 data-[state=active]:text-[#D4AF37]">
+          <TabsTrigger value="api" className="data-[state=active]:bg-[#06B6D4]/10 data-[state=active]:text-[#06B6D4]">
             <Key className="w-4 h-4 mr-2" />API & Connexions
           </TabsTrigger>
-          <TabsTrigger value="apparence" className="data-[state=active]:bg-[#D4AF37]/10 data-[state=active]:text-[#D4AF37]">
+          <TabsTrigger value="apparence" className="data-[state=active]:bg-[#06B6D4]/10 data-[state=active]:text-[#06B6D4]">
             <Palette className="w-4 h-4 mr-2" />Apparence
           </TabsTrigger>
         </TabsList>
@@ -45,7 +45,7 @@ export default function Parametres() {
         <TabsContent value="profil" className="space-y-4">
           <Card className="bg-white/5 border-white/10 backdrop-blur-sm p-6 space-y-4">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#D4AF37] to-emerald-500 flex items-center justify-center text-[#06080f] font-bold text-xl">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#06B6D4] to-emerald-500 flex items-center justify-center text-[#06080f] font-bold text-xl">
                 {user?.name?.charAt(0) || 'U'}
               </div>
               <div>
@@ -59,7 +59,7 @@ export default function Parametres() {
               <div><Label className="text-xs text-slate-400">Entreprise</Label><Input placeholder="Nom de votre entreprise" className="bg-[#06080f] border-[#1e293b] mt-1" /></div>
               <div><Label className="text-xs text-slate-400">Téléphone</Label><Input placeholder="+225 07 XX XX XX" className="bg-[#06080f] border-[#1e293b] mt-1" /></div>
             </div>
-            <Button onClick={handleSave} className="bg-[#D4AF37] hover:bg-[#B8962E] text-[#06080f] font-semibold">
+            <Button onClick={handleSave} className="bg-[#06B6D4] hover:bg-[#0891B2] text-[#06080f] font-semibold">
               {saved ? <Check className="w-4 h-4 mr-2" /> : <Save className="w-4 h-4 mr-2" />}{saved ? 'Sauvegardé' : 'Sauvegarder'}
             </Button>
           </Card>
@@ -68,7 +68,7 @@ export default function Parametres() {
         {/* Notifications */}
         <TabsContent value="notifications" className="space-y-4">
           <Card className="bg-white/5 border-white/10 backdrop-blur-sm p-6 space-y-5">
-            <h3 className="font-semibold flex items-center gap-2"><Bell className="w-5 h-5 text-[#D4AF37]" />Préférences de notification</h3>
+            <h3 className="font-semibold flex items-center gap-2"><Bell className="w-5 h-5 text-[#06B6D4]" />Préférences de notification</h3>
             {[
               { label: 'Nouveaux contacts', desc: 'Alerte quand un nouveau contact est ajouté', default: true },
               { label: 'Paiements reçus', desc: 'Notification pour chaque paiement confirmé', default: true },
@@ -88,7 +88,7 @@ export default function Parametres() {
         {/* API & Connexions */}
         <TabsContent value="api" className="space-y-4">
           <Card className="bg-white/5 border-white/10 backdrop-blur-sm p-6 space-y-5">
-            <h3 className="font-semibold flex items-center gap-2"><Key className="w-5 h-5 text-[#D4AF37]" />Clés API & Services connectés</h3>
+            <h3 className="font-semibold flex items-center gap-2"><Key className="w-5 h-5 text-[#06B6D4]" />Clés API & Services connectés</h3>
 
             <div className="space-y-4">
               <div className="p-4 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
@@ -115,11 +115,11 @@ export default function Parametres() {
                 </div>
               </div>
 
-              <div className="p-4 rounded-lg bg-[#D4AF37]/5 border border-[#D4AF37]/20">
+              <div className="p-4 rounded-lg bg-[#06B6D4]/5 border border-[#06B6D4]/20">
                 <div className="flex items-center gap-3 mb-3">
-                  <CreditCard className="w-5 h-5 text-[#D4AF37]" />
+                  <CreditCard className="w-5 h-5 text-[#06B6D4]" />
                   <span className="font-medium">Paiements Mobile Money</span>
-                  <Badge variant="outline" className="border-[#D4AF37]/30 text-[#D4AF37] text-[10px] ml-auto">Partiel</Badge>
+                  <Badge variant="outline" className="border-[#06B6D4]/30 text-[#06B6D4] text-[10px] ml-auto">Partiel</Badge>
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3"><span className="text-sm text-slate-300 w-28">Wave Business</span><Input placeholder="Clé API Wave" className="bg-[#06080f] border-[#1e293b] text-sm flex-1" /></div>
@@ -129,7 +129,7 @@ export default function Parametres() {
               </div>
             </div>
 
-            <Button onClick={handleSave} className="bg-[#D4AF37] hover:bg-[#B8962E] text-[#06080f] font-semibold">
+            <Button onClick={handleSave} className="bg-[#06B6D4] hover:bg-[#0891B2] text-[#06080f] font-semibold">
               {saved ? <Check className="w-4 h-4 mr-2" /> : <Save className="w-4 h-4 mr-2" />}{saved ? 'Sauvegardé' : 'Sauvegarder les connexions'}
             </Button>
           </Card>
@@ -138,12 +138,12 @@ export default function Parametres() {
         {/* Apparence */}
         <TabsContent value="apparence" className="space-y-4">
           <Card className="bg-white/5 border-white/10 backdrop-blur-sm p-6 space-y-5">
-            <h3 className="font-semibold flex items-center gap-2"><Palette className="w-5 h-5 text-[#D4AF37]" />Personnalisation</h3>
+            <h3 className="font-semibold flex items-center gap-2"><Palette className="w-5 h-5 text-[#06B6D4]" />Personnalisation</h3>
 
             <div>
               <Label className="text-xs text-slate-400">Couleur d'accent</Label>
               <div className="flex gap-3 mt-2">
-                {['#D4AF37', '#10B981', '#E94560', '#06B6D4', '#A855F7', '#F59E0B'].map(c => (
+                {['#06B6D4', '#10B981', '#E94560', '#06B6D4', '#A855F7', '#F59E0B'].map(c => (
                   <button key={c} className="w-8 h-8 rounded-full border-2 border-white/20 hover:border-white/50 transition-colors" style={{ backgroundColor: c }} />
                 ))}
               </div>
@@ -165,7 +165,7 @@ export default function Parametres() {
               <Switch checked disabled />
             </div>
 
-            <Button onClick={handleSave} className="bg-[#D4AF37] hover:bg-[#B8962E] text-[#06080f] font-semibold">
+            <Button onClick={handleSave} className="bg-[#06B6D4] hover:bg-[#0891B2] text-[#06080f] font-semibold">
               {saved ? <Check className="w-4 h-4 mr-2" /> : <Save className="w-4 h-4 mr-2" />}{saved ? 'Sauvegardé' : 'Sauvegarder'}
             </Button>
           </Card>

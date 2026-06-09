@@ -22,7 +22,7 @@ export default function Formations() {
       {/* Background decoration */}
       <div
         className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full opacity-10 blur-[100px] -translate-y-1/2"
-        style={{ background: 'radial-gradient(circle, #D4AF37, transparent)' }}
+        style={{ background: 'radial-gradient(circle, #06B6D4, transparent)' }}
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -34,11 +34,11 @@ export default function Formations() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-[#D4AF37] text-sm font-semibold tracking-widest uppercase mb-4 block">
+          <span className="text-[#06B6D4] text-sm font-semibold tracking-widest uppercase mb-4 block">
             Apprentissage
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            Mes <span className="gold-gradient-text">Formations</span>
+            Mes <span className="turquoise-gradient-text">Formations</span>
           </h2>
           <p className="max-w-2xl mx-auto text-[#94A3B8] text-lg">
             Des programmes intensifs conçus pour vous donner un avantage compétitif
@@ -54,7 +54,7 @@ export default function Formations() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.12 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group glass-card rounded-2xl overflow-hidden hover:border-[#D4AF37]/30 hover:shadow-xl hover:shadow-[#D4AF37]/10 transition-all duration-500"
+              className="group glass-card rounded-2xl overflow-hidden hover:border-[#06B6D4]/30 hover:shadow-xl hover:shadow-[#06B6D4]/10 transition-all duration-500"
             >
               {/* Image */}
               <div className="relative aspect-video overflow-hidden">
@@ -69,8 +69,8 @@ export default function Formations() {
                 <div
                   className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold text-white"
                   style={{
-                    backgroundColor: `${levelColors[formation.level] || '#D4AF37'}30`,
-                    border: `1px solid ${levelColors[formation.level] || '#D4AF37'}50`,
+                    backgroundColor: `${levelColors[formation.level] || '#06B6D4'}30`,
+                    border: `1px solid ${levelColors[formation.level] || '#06B6D4'}50`,
                   }}
                 >
                   {formation.level}
@@ -78,7 +78,7 @@ export default function Formations() {
 
                 {/* Play overlay on hover */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-12 h-12 rounded-full bg-[#D4AF37]/90 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-[#06B6D4]/90 flex items-center justify-center">
                     <Play size={20} className="text-[#081120] ml-0.5" />
                   </div>
                 </div>
@@ -86,7 +86,7 @@ export default function Formations() {
 
               {/* Content */}
               <div className="p-5">
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#D4AF37] transition-colors line-clamp-2">
+                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#06B6D4] transition-colors line-clamp-2">
                   {formation.title}
                 </h3>
                 <p className="text-xs text-[#94A3B8] mb-4 line-clamp-2">
@@ -107,7 +107,7 @@ export default function Formations() {
 
                 {/* Price & CTA */}
                 <div className="flex items-center justify-between">
-                  <span className="text-xl font-bold gold-gradient-text">
+                  <span className="text-xl font-bold turquoise-gradient-text">
                     {formation.price.toLocaleString()}{' '}
                     <span className="text-xs text-[#94A3B8]">FCFA</span>
                   </span>
@@ -115,7 +115,7 @@ export default function Formations() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => setSelectedFormation(formation)}
-                    className="p-2.5 rounded-xl bg-[#D4AF37]/10 text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#081120] transition-all duration-300"
+                    className="p-2.5 rounded-xl bg-[#06B6D4]/10 text-[#06B6D4] hover:bg-[#06B6D4] hover:text-[#081120] transition-all duration-300"
                   >
                     <ArrowRight size={18} />
                   </motion.button>
@@ -159,8 +159,8 @@ export default function Formations() {
                 <div
                   className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold text-white"
                   style={{
-                    backgroundColor: `${levelColors[selectedFormation.level] || '#D4AF37'}30`,
-                    border: `1px solid ${levelColors[selectedFormation.level] || '#D4AF37'}50`,
+                    backgroundColor: `${levelColors[selectedFormation.level] || '#06B6D4'}30`,
+                    border: `1px solid ${levelColors[selectedFormation.level] || '#06B6D4'}50`,
                   }}
                 >
                   {selectedFormation.level}
@@ -173,11 +173,11 @@ export default function Formations() {
               {/* Meta */}
               <div className="flex items-center gap-4 mb-6 text-sm text-[#64748B]">
                 <span className="flex items-center gap-1.5">
-                  <Clock size={16} className="text-[#D4AF37]" />
+                  <Clock size={16} className="text-[#06B6D4]" />
                   {selectedFormation.duration}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <BookOpen size={16} className="text-[#D4AF37]" />
+                  <BookOpen size={16} className="text-[#06B6D4]" />
                   {selectedFormation.modules.length} modules
                 </span>
               </div>
@@ -188,7 +188,7 @@ export default function Formations() {
                 <div className="space-y-2">
                   {selectedFormation.modules.map((module, idx) => (
                     <div key={idx} className="flex items-center gap-3 p-3 glass rounded-xl">
-                      <span className="w-7 h-7 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] text-xs font-bold">
+                      <span className="w-7 h-7 rounded-lg bg-[#06B6D4]/10 flex items-center justify-center text-[#06B6D4] text-xs font-bold">
                         {idx + 1}
                       </span>
                       <span className="text-sm text-white">{module}</span>
@@ -199,14 +199,14 @@ export default function Formations() {
 
               {/* Price & CTA */}
               <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold gold-gradient-text">
+                <span className="text-2xl font-bold turquoise-gradient-text">
                   {selectedFormation.price.toLocaleString()} FCFA
                 </span>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedFormation(null)}
-                  className="px-6 py-3 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-bold rounded-xl flex items-center gap-2 hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-shadow"
+                  className="px-6 py-3 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-bold rounded-xl flex items-center gap-2 hover:shadow-lg hover:shadow-[#06B6D4]/30 transition-shadow"
                 >
                   S&apos;inscrire
                 </motion.button>

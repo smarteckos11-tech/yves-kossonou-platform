@@ -40,9 +40,9 @@ export default function DynamicBackground() {
     window.addEventListener('mousemove', handleMouse);
 
     const colors = [
-      'rgba(212, 175, 55, 0.7)',
-      'rgba(212, 175, 55, 0.4)',
-      'rgba(212, 175, 55, 0.2)',
+      'rgba(6, 182, 212, 0.7)',
+      'rgba(6, 182, 212, 0.4)',
+      'rgba(6, 182, 212, 0.2)',
       'rgba(59, 130, 246, 0.3)',
       'rgba(139, 92, 246, 0.25)',
       'rgba(16, 185, 129, 0.2)',
@@ -119,7 +119,7 @@ export default function DynamicBackground() {
               particlesRef.current[i].x, particlesRef.current[i].y,
               particlesRef.current[j].x, particlesRef.current[j].y
             );
-            gradient.addColorStop(0, `rgba(212, 175, 55, ${0.08 * (1 - dist / 120)})`);
+            gradient.addColorStop(0, `rgba(6, 182, 212, ${0.08 * (1 - dist / 120)})`);
             gradient.addColorStop(1, `rgba(139, 92, 246, ${0.04 * (1 - dist / 120)})`);
             ctx.strokeStyle = gradient;
             ctx.lineWidth = 0.5;
@@ -134,8 +134,8 @@ export default function DynamicBackground() {
           mouseRef.current.x, mouseRef.current.y, 0,
           mouseRef.current.x, mouseRef.current.y, 150
         );
-        gradient.addColorStop(0, 'rgba(212, 175, 55, 0.03)');
-        gradient.addColorStop(1, 'rgba(212, 175, 55, 0)');
+        gradient.addColorStop(0, 'rgba(6, 182, 212, 0.03)');
+        gradient.addColorStop(1, 'rgba(6, 182, 212, 0)');
         ctx.fillStyle = gradient;
         ctx.fillRect(mouseRef.current.x - 150, mouseRef.current.y - 150, 300, 300);
       }
@@ -157,7 +157,7 @@ export default function DynamicBackground() {
       <div className="absolute inset-0 animated-gradient-bg" />
       <div
         className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full opacity-20 blur-[120px]"
-        style={{ background: 'radial-gradient(circle, #D4AF37, transparent)' }}
+        style={{ background: 'radial-gradient(circle, #06B6D4, transparent)' }}
       />
       <div
         className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full opacity-10 blur-[100px]"

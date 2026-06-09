@@ -152,11 +152,11 @@ function FlowNode({ icon: Icon, label, type }: { icon: React.ElementType; label:
       <div
         className={`w-10 h-10 rounded-xl flex items-center justify-center ${
           isTrigger
-            ? 'bg-[#D4AF37]/15 border border-[#D4AF37]/30'
+            ? 'bg-[#06B6D4]/15 border border-[#06B6D4]/30'
             : 'bg-emerald-500/15 border border-emerald-500/30'
         }`}
       >
-        <Icon size={16} className={isTrigger ? 'text-[#D4AF37]' : 'text-emerald-400'} />
+        <Icon size={16} className={isTrigger ? 'text-[#06B6D4]' : 'text-emerald-400'} />
       </div>
       <span className="text-[10px] text-slate-400 text-center leading-tight max-w-[80px] truncate">{label}</span>
     </div>
@@ -318,7 +318,7 @@ export default function Automatisations() {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           onClick={handleNew}
-          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B8962E] text-[#06080f] font-semibold text-sm flex items-center gap-2 shadow-lg shadow-[#D4AF37]/20"
+          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-[#06080f] font-semibold text-sm flex items-center gap-2 shadow-lg shadow-[#06B6D4]/20"
         >
           <Plus className="w-4 h-4" /> Nouvelle Automation
         </motion.button>
@@ -341,13 +341,13 @@ export default function Automatisations() {
                 key={auto.id}
                 variants={cardVariants}
                 layout
-                className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl p-5 hover:border-[#D4AF37]/20 transition-all duration-300 group"
+                className="bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl p-5 hover:border-[#06B6D4]/20 transition-all duration-300 group"
               >
                 {/* Card Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center">
-                      <Zap className="w-5 h-5 text-[#D4AF37]" />
+                    <div className="w-10 h-10 rounded-xl bg-[#06B6D4]/10 flex items-center justify-center">
+                      <Zap className="w-5 h-5 text-[#06B6D4]" />
                     </div>
                     <div>
                       <h3 className="text-sm font-bold text-white">{auto.name}</h3>
@@ -367,16 +367,16 @@ export default function Automatisations() {
                     <Switch
                       checked={auto.isActive}
                       onCheckedChange={() => handleToggle(auto.id, auto.isActive)}
-                      className="data-[state=checked]:bg-[#D4AF37]"
+                      className="data-[state=checked]:bg-[#06B6D4]"
                     />
                   </div>
                 </div>
 
                 {/* Trigger Info */}
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="px-2.5 py-1.5 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center gap-1.5">
-                    <TriggerIcon size={12} className="text-[#D4AF37]" />
-                    <span className="text-[11px] text-[#D4AF37] font-medium">
+                  <div className="px-2.5 py-1.5 rounded-lg bg-[#06B6D4]/10 border border-[#06B6D4]/20 flex items-center gap-1.5">
+                    <TriggerIcon size={12} className="text-[#06B6D4]" />
+                    <span className="text-[11px] text-[#06B6D4] font-medium">
                       {triggerLabelMap[auto.trigger.type]}
                     </span>
                   </div>
@@ -435,7 +435,7 @@ export default function Automatisations() {
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           onClick={() => handleEdit(auto)}
-                          className="p-2 rounded-lg hover:bg-white/[0.06] text-slate-400 hover:text-[#D4AF37] transition-colors"
+                          className="p-2 rounded-lg hover:bg-white/[0.06] text-slate-400 hover:text-[#06B6D4] transition-colors"
                         >
                           <Pencil size={14} />
                         </motion.button>
@@ -474,7 +474,7 @@ export default function Automatisations() {
         <DialogContent className="bg-[#0c0f1a] border-white/10 text-white max-w-2xl max-h-[85vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-white flex items-center gap-2">
-              <Zap size={18} className="text-[#D4AF37]" />
+              <Zap size={18} className="text-[#06B6D4]" />
               {editingId ? 'Modifier l\'automation' : 'Nouvelle automation'}
             </DialogTitle>
           </DialogHeader>
@@ -488,7 +488,7 @@ export default function Automatisations() {
                   value={form.name}
                   onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
                   placeholder="ex: Bienvenue Auto"
-                  className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#D4AF37]/50"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#06B6D4]/50"
                 />
               </div>
               <div className="space-y-2">
@@ -497,7 +497,7 @@ export default function Automatisations() {
                   value={form.description}
                   onChange={(e) => setForm((prev) => ({ ...prev, description: e.target.value }))}
                   placeholder="Décrivez cette automation..."
-                  className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#D4AF37]/50"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#06B6D4]/50"
                 />
               </div>
             </div>
@@ -505,8 +505,8 @@ export default function Automatisations() {
             {/* Trigger Section */}
             <div className="space-y-3">
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-lg bg-[#D4AF37]/15 flex items-center justify-center">
-                  <Zap size={12} className="text-[#D4AF37]" />
+                <div className="w-6 h-6 rounded-lg bg-[#06B6D4]/15 flex items-center justify-center">
+                  <Zap size={12} className="text-[#06B6D4]" />
                 </div>
                 <Label className="text-slate-300 text-xs font-semibold">Déclencheur</Label>
               </div>
@@ -521,7 +521,7 @@ export default function Automatisations() {
                     return (
                       <SelectItem key={type} value={type} className="text-white focus:bg-white/10 focus:text-white">
                         <span className="flex items-center gap-2">
-                          <Icon size={14} className="text-[#D4AF37]" />
+                          <Icon size={14} className="text-[#06B6D4]" />
                           {triggerLabelMap[type]}
                         </span>
                       </SelectItem>
@@ -538,7 +538,7 @@ export default function Automatisations() {
                     value={form.trigger.params[field.key] || ''}
                     onChange={(e) => handleTriggerParamChange(field.key, e.target.value)}
                     placeholder={field.placeholder}
-                    className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#D4AF37]/50 text-sm h-9"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#06B6D4]/50 text-sm h-9"
                   />
                 </div>
               ))}
@@ -621,7 +621,7 @@ export default function Automatisations() {
                                 value={action.params[field.key] || ''}
                                 onChange={(e) => handleActionParamChange(action.id, field.key, e.target.value)}
                                 placeholder={field.placeholder}
-                                className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#D4AF37]/50 text-xs mt-1 min-h-[60px]"
+                                className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#06B6D4]/50 text-xs mt-1 min-h-[60px]"
                                 rows={2}
                               />
                             ) : (
@@ -629,7 +629,7 @@ export default function Automatisations() {
                                 value={action.params[field.key] || ''}
                                 onChange={(e) => handleActionParamChange(action.id, field.key, e.target.value)}
                                 placeholder={field.placeholder}
-                                className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#D4AF37]/50 text-xs h-8 mt-1"
+                                className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#06B6D4]/50 text-xs h-8 mt-1"
                               />
                             )}
                           </div>
@@ -650,7 +650,7 @@ export default function Automatisations() {
               <Switch
                 checked={form.isActive}
                 onCheckedChange={(checked) => setForm((prev) => ({ ...prev, isActive: checked }))}
-                className="data-[state=checked]:bg-[#D4AF37]"
+                className="data-[state=checked]:bg-[#06B6D4]"
               />
             </div>
 
@@ -668,7 +668,7 @@ export default function Automatisations() {
                 whileTap={{ scale: 0.97 }}
                 onClick={handleSave}
                 disabled={!form.name.trim()}
-                className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B8962E] text-[#06080f] font-semibold text-sm disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-[#D4AF37]/20"
+                className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-[#06080f] font-semibold text-sm disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-[#06B6D4]/20"
               >
                 {editingId ? 'Enregistrer' : 'Créer l\'automation'}
               </motion.button>

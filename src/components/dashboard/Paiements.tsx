@@ -84,7 +84,7 @@ function KpiCard({
   accentColor: 'gold' | 'emerald' | 'amber' | 'slate';
 }) {
   const colorMap = {
-    gold: { iconBg: 'bg-[#D4AF37]/15', iconColor: 'text-[#D4AF37]', border: 'hover:border-[#D4AF37]/20' },
+    gold: { iconBg: 'bg-[#06B6D4]/15', iconColor: 'text-[#06B6D4]', border: 'hover:border-[#06B6D4]/20' },
     emerald: { iconBg: 'bg-emerald-500/15', iconColor: 'text-emerald-400', border: 'hover:border-emerald-500/20' },
     amber: { iconBg: 'bg-amber-500/15', iconColor: 'text-amber-400', border: 'hover:border-amber-500/20' },
     slate: { iconBg: 'bg-slate-500/15', iconColor: 'text-slate-400', border: 'hover:border-slate-500/20' },
@@ -248,7 +248,7 @@ export default function Paiements() {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           onClick={handleExport}
-          className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-slate-300 text-xs font-medium flex items-center gap-2 hover:bg-white/10 hover:border-[#D4AF37]/20 transition-all"
+          className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-slate-300 text-xs font-medium flex items-center gap-2 hover:bg-white/10 hover:border-[#06B6D4]/20 transition-all"
         >
           <Download size={14} /> Exporter CSV
         </motion.button>
@@ -340,7 +340,7 @@ export default function Paiements() {
         <Card className="bg-white/[0.03] backdrop-blur-sm border-white/10">
           <CardHeader className="pb-3">
             <CardTitle className="text-white text-sm font-semibold flex items-center gap-2">
-              <CreditCard size={16} className="text-[#D4AF37]" />
+              <CreditCard size={16} className="text-[#06B6D4]" />
               Répartition par méthode
             </CardTitle>
           </CardHeader>

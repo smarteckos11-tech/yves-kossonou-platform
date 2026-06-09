@@ -60,7 +60,7 @@ const STEP_TYPE_CONFIG: Record<SequenceStepType, {
   action: {
     label: 'Action',
     icon: Zap,
-    color: '#D4AF37',
+    color: '#06B6D4',
     bgColor: 'rgba(212, 175, 55, 0.12)',
     borderColor: 'rgba(212, 175, 55, 0.3)',
   },
@@ -229,7 +229,7 @@ function StepEditorCard({
                 value={step.content || ''}
                 onChange={(e) => onUpdate(step.id, { content: e.target.value })}
                 placeholder="Écrivez votre message..."
-                className="bg-[#0a0e1a] border-white/10 text-sm min-h-[80px] resize-none focus:border-[#D4AF37]/40"
+                className="bg-[#0a0e1a] border-white/10 text-sm min-h-[80px] resize-none focus:border-[#06B6D4]/40"
                 rows={3}
               />
             </div>
@@ -239,7 +239,7 @@ function StepEditorCard({
                 value={step.mediaUrl || ''}
                 onChange={(e) => onUpdate(step.id, { mediaUrl: e.target.value })}
                 placeholder="https://example.com/image.jpg"
-                className="bg-[#0a0e1a] border-white/10 text-sm focus:border-[#D4AF37]/40"
+                className="bg-[#0a0e1a] border-white/10 text-sm focus:border-[#06B6D4]/40"
               />
             </div>
           </div>
@@ -254,7 +254,7 @@ function StepEditorCard({
                 min={1}
                 value={step.waitDuration || 1}
                 onChange={(e) => onUpdate(step.id, { waitDuration: parseInt(e.target.value) || 1 })}
-                className="bg-[#0a0e1a] border-white/10 text-sm focus:border-[#D4AF37]/40"
+                className="bg-[#0a0e1a] border-white/10 text-sm focus:border-[#06B6D4]/40"
               />
             </div>
             <div className="w-36">
@@ -263,7 +263,7 @@ function StepEditorCard({
                 value={step.waitUnit || 'jours'}
                 onValueChange={(v) => onUpdate(step.id, { waitUnit: v as SequenceStep['waitUnit'] })}
               >
-                <SelectTrigger className="bg-[#0a0e1a] border-white/10 text-sm focus:border-[#D4AF37]/40">
+                <SelectTrigger className="bg-[#0a0e1a] border-white/10 text-sm focus:border-[#06B6D4]/40">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-[#0F172A] border-white/10">
@@ -323,7 +323,7 @@ function StepEditorCard({
                     onUpdate(step.id, { condition: { field: step.condition?.field || 'tag', operator: step.condition?.operator || 'equals', value: e.target.value } })
                   }
                   placeholder="valeur"
-                  className="bg-[#0a0e1a] border-white/10 text-sm focus:border-[#D4AF37]/40"
+                  className="bg-[#0a0e1a] border-white/10 text-sm focus:border-[#06B6D4]/40"
                 />
               </div>
             </div>
@@ -363,7 +363,7 @@ function StepEditorCard({
                   onUpdate(step.id, { action: { type: step.action?.type || 'add_tag', params } });
                 }}
                 placeholder="tag:VIP&#10;segment:Clients"
-                className="bg-[#0a0e1a] border-white/10 text-sm min-h-[60px] resize-none focus:border-[#D4AF37]/40"
+                className="bg-[#0a0e1a] border-white/10 text-sm min-h-[60px] resize-none focus:border-[#06B6D4]/40"
                 rows={2}
               />
             </div>
@@ -384,7 +384,7 @@ function AddStepSelector({ onSelect }: { onSelect: (type: SequenceStepType) => v
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border-2 border-dashed border-slate-700/50 text-slate-400 hover:text-[#D4AF37] hover:border-[#D4AF37]/30 transition-all text-sm"
+        className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border-2 border-dashed border-slate-700/50 text-slate-400 hover:text-[#06B6D4] hover:border-[#06B6D4]/30 transition-all text-sm"
       >
         <Plus className="w-4 h-4" />
         Ajouter une étape
@@ -572,7 +572,7 @@ export default function Sequences() {
               onClick={() => setShowActiveOnly(false)}
               className={`text-xs font-medium px-2.5 py-1 rounded-md transition-all ${
                 !showActiveOnly
-                  ? 'bg-[#D4AF37]/15 text-[#D4AF37]'
+                  ? 'bg-[#06B6D4]/15 text-[#06B6D4]'
                   : 'text-slate-400 hover:text-slate-200'
               }`}
             >
@@ -598,7 +598,7 @@ export default function Sequences() {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           onClick={openCreateModal}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-[#D4AF37] to-[#B8962E] text-[#06080f] shadow-lg shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/30 transition-shadow"
+          className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-[#06080f] shadow-lg shadow-[#06B6D4]/20 hover:shadow-[#06B6D4]/30 transition-shadow"
         >
           <Plus className="w-4 h-4" />
           Nouvelle Séquence
@@ -608,7 +608,7 @@ export default function Sequences() {
       {/* Summary Stats */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[
-          { label: 'Total séquences', value: sequences.length, color: '#D4AF37' },
+          { label: 'Total séquences', value: sequences.length, color: '#06B6D4' },
           { label: 'Actives', value: sequences.filter((s) => s.isActive).length, color: '#10B981' },
           { label: 'Inscrits total', value: sequences.reduce((a, s) => a + s.enrolledCount, 0), color: '#60A5FA' },
           { label: 'Terminées', value: sequences.reduce((a, s) => a + s.completedCount, 0), color: '#F59E0B' },
@@ -634,7 +634,7 @@ export default function Sequences() {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             onClick={openCreateModal}
-            className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-[#D4AF37] to-[#B8962E] text-[#06080f]"
+            className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-[#06080f]"
           >
             <Plus className="w-4 h-4" />
             Nouvelle Séquence
@@ -649,7 +649,7 @@ export default function Sequences() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.06 }}
             >
-              <Card className="bg-[#0a0e1a] border-white/6 hover:border-[#D4AF37]/15 transition-all group overflow-hidden">
+              <Card className="bg-[#0a0e1a] border-white/6 hover:border-[#06B6D4]/15 transition-all group overflow-hidden">
                 <CardHeader className="pb-2">
                   <div className="flex items-start justify-between">
                     <div className="flex-1 min-w-0">
@@ -687,7 +687,7 @@ export default function Sequences() {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         onClick={() => openEditModal(seq)}
-                        className="p-2 rounded-lg hover:bg-white/5 text-slate-400 hover:text-[#D4AF37] transition-colors"
+                        className="p-2 rounded-lg hover:bg-white/5 text-slate-400 hover:text-[#06B6D4] transition-colors"
                         aria-label="Modifier la séquence"
                       >
                         <Pencil className="w-4 h-4" />
@@ -709,7 +709,7 @@ export default function Sequences() {
                   {/* Step Flow Visualization */}
                   <div className="rounded-lg bg-[#06080f]/50 p-3 border border-white/4">
                     <div className="flex items-center gap-2 mb-2">
-                      <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]/60" />
+                      <Sparkles className="w-3.5 h-3.5 text-[#06B6D4]/60" />
                       <span className="text-[11px] font-medium text-slate-500 uppercase tracking-wider">
                         Flux — {seq.steps.length} étape{seq.steps.length !== 1 ? 's' : ''}
                       </span>
@@ -794,7 +794,7 @@ export default function Sequences() {
                 value={formName}
                 onChange={(e) => setFormName(e.target.value)}
                 placeholder="Ex: Relance Post-Événement"
-                className="bg-[#06080f] border-white/10 text-white focus:border-[#D4AF37]/40 placeholder:text-slate-600"
+                className="bg-[#06080f] border-white/10 text-white focus:border-[#06B6D4]/40 placeholder:text-slate-600"
               />
             </div>
 
@@ -805,7 +805,7 @@ export default function Sequences() {
                 value={formDescription}
                 onChange={(e) => setFormDescription(e.target.value)}
                 placeholder="Décrivez l'objectif de cette séquence..."
-                className="bg-[#06080f] border-white/10 text-white focus:border-[#D4AF37]/40 placeholder:text-slate-600 resize-none"
+                className="bg-[#06080f] border-white/10 text-white focus:border-[#06B6D4]/40 placeholder:text-slate-600 resize-none"
                 rows={2}
               />
             </div>
@@ -814,7 +814,7 @@ export default function Sequences() {
             <div>
               <Label className="text-sm text-slate-300 mb-1.5 block">Segment cible</Label>
               <Select value={formTargetSegment} onValueChange={setFormTargetSegment}>
-                <SelectTrigger className="bg-[#06080f] border-white/10 text-white focus:border-[#D4AF37]/40 w-full">
+                <SelectTrigger className="bg-[#06080f] border-white/10 text-white focus:border-[#06B6D4]/40 w-full">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-[#0F172A] border-white/10">
@@ -830,7 +830,7 @@ export default function Sequences() {
             {/* Steps Builder */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Timer className="w-4 h-4 text-[#D4AF37]" />
+                <Timer className="w-4 h-4 text-[#06B6D4]" />
                 <Label className="text-sm font-semibold text-slate-200">Étapes de la séquence</Label>
                 <Badge variant="outline" className="text-[10px] border-white/10 text-slate-400 ml-auto">
                   {formSteps.length} étape{formSteps.length !== 1 ? 's' : ''}
@@ -871,7 +871,7 @@ export default function Sequences() {
                 <Separator className="bg-white/6" />
                 <div>
                   <div className="flex items-center gap-2 mb-3">
-                    <Sparkles className="w-4 h-4 text-[#D4AF37]/60" />
+                    <Sparkles className="w-4 h-4 text-[#06B6D4]/60" />
                     <span className="text-xs font-medium text-slate-500 uppercase tracking-wider">Aperçu du flux</span>
                   </div>
                   <div className="rounded-lg bg-[#06080f]/50 p-3 border border-white/4">
@@ -896,7 +896,7 @@ export default function Sequences() {
               whileTap={{ scale: 0.98 }}
               onClick={handleSave}
               disabled={!formName.trim()}
-              className="flex items-center gap-2 px-6 py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-[#D4AF37] to-[#B8962E] text-[#06080f] shadow-lg shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/30 disabled:opacity-40 disabled:cursor-not-allowed transition-shadow"
+              className="flex items-center gap-2 px-6 py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-[#06080f] shadow-lg shadow-[#06B6D4]/20 hover:shadow-[#06B6D4]/30 disabled:opacity-40 disabled:cursor-not-allowed transition-shadow"
             >
               <CheckCircle2 className="w-4 h-4" />
               {editingSequence ? 'Enregistrer' : 'Créer la séquence'}

@@ -33,7 +33,7 @@ const templateConfig: Record<CaptureTemplate, {
     label: 'Conférence',
     description: 'Page de capture pour conférences et sommets avec design premium',
     gradient: 'from-[#0a1628] via-[#121e36] to-[#1a2744]',
-    accentColor: '#D4AF37',
+    accentColor: '#06B6D4',
     bgColor: '#081120',
     icon: <Calendar className="w-6 h-6" />,
   },
@@ -73,7 +73,7 @@ const templateConfig: Record<CaptureTemplate, {
     label: 'Personnalisé',
     description: 'Créez votre page de capture sur mesure avec couleurs personnalisées',
     gradient: 'from-[#0f0f0f] via-[#1a1a1a] to-[#252525]',
-    accentColor: '#D4AF37',
+    accentColor: '#06B6D4',
     bgColor: '#0f0f0f',
     icon: <Palette className="w-6 h-6" />,
   },
@@ -99,7 +99,7 @@ const bgPresets = [
   '#061318', '#12081a', '#0f0f0f', '#1a1a2e', '#0d1117',
 ];
 const accentPresets = [
-  '#D4AF37', '#10B981', '#E94560', '#06B6D4', '#A855F7',
+  '#06B6D4', '#10B981', '#E94560', '#06B6D4', '#A855F7',
   '#F59E0B', '#EF4444', '#EC4899', '#14B8A6', '#8B5CF6',
 ];
 
@@ -113,7 +113,7 @@ const defaultFormState = {
   coverImage: '',
   fields: ['name', 'email'] as string[],
   backgroundColor: '#081120',
-  accentColor: '#D4AF37',
+  accentColor: '#06B6D4',
   linkedEventId: '',
   linkedSequenceId: '',
 };
@@ -261,7 +261,7 @@ export default function CapturePages() {
       {/* ─── Stats Row ─── */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
-          { label: 'Visites totales', value: totalVisits.toLocaleString(), icon: <Eye className="w-4 h-4" />, color: '#D4AF37' },
+          { label: 'Visites totales', value: totalVisits.toLocaleString(), icon: <Eye className="w-4 h-4" />, color: '#06B6D4' },
           { label: 'Conversions', value: totalConversions.toLocaleString(), icon: <MousePointerClick className="w-4 h-4" />, color: '#10B981' },
           { label: 'Taux moyen', value: `${avgConversionRate}%`, icon: <TrendingUp className="w-4 h-4" />, color: '#F59E0B' },
         ].map((stat, i) => (
@@ -295,7 +295,7 @@ export default function CapturePages() {
               onClick={() => setFilter(f)}
               className={`px-4 py-2 rounded-lg text-xs font-medium transition-all ${
                 filter === f
-                  ? 'bg-[#D4AF37]/15 text-[#D4AF37] border border-[#D4AF37]/30'
+                  ? 'bg-[#06B6D4]/15 text-[#06B6D4] border border-[#06B6D4]/30'
                   : 'text-slate-400 hover:text-slate-300 border border-transparent hover:border-white/5'
               }`}
             >
@@ -315,7 +315,7 @@ export default function CapturePages() {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           onClick={() => setShowTemplates(true)}
-          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B8962E] text-[#06080f] font-semibold text-sm flex items-center gap-2 shadow-lg shadow-[#D4AF37]/20"
+          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-[#06080f] font-semibold text-sm flex items-center gap-2 shadow-lg shadow-[#06B6D4]/20"
         >
           <Plus className="w-4 h-4" /> Nouvelle Page
         </motion.button>
@@ -328,8 +328,8 @@ export default function CapturePages() {
           animate={{ opacity: 1 }}
           className="glass-card rounded-xl p-12 flex flex-col items-center justify-center text-center"
         >
-          <div className="w-16 h-16 rounded-full bg-[#D4AF37]/10 flex items-center justify-center mb-4">
-            <LayoutTemplate className="w-8 h-8 text-[#D4AF37]/40" />
+          <div className="w-16 h-16 rounded-full bg-[#06B6D4]/10 flex items-center justify-center mb-4">
+            <LayoutTemplate className="w-8 h-8 text-[#06B6D4]/40" />
           </div>
           <h3 className="text-lg font-semibold text-slate-300 mb-2">Aucune page de capture</h3>
           <p className="text-sm text-slate-500 mb-6 max-w-sm">
@@ -344,7 +344,7 @@ export default function CapturePages() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => setShowTemplates(true)}
-              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B8962E] text-[#06080f] font-semibold text-sm flex items-center gap-2"
+              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-[#06080f] font-semibold text-sm flex items-center gap-2"
             >
               <Plus className="w-4 h-4" /> Choisir un modèle
             </motion.button>
@@ -457,7 +457,7 @@ export default function CapturePages() {
                   {/* Linked event */}
                   {evtName && (
                     <div className="flex items-center gap-1.5 text-xs text-slate-400 bg-white/[0.03] rounded-lg px-2.5 py-1.5">
-                      <Calendar className="w-3 h-3 text-[#D4AF37]" />
+                      <Calendar className="w-3 h-3 text-[#06B6D4]" />
                       <span className="truncate">{evtName}</span>
                     </div>
                   )}
@@ -476,7 +476,7 @@ export default function CapturePages() {
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => handleEditPage(page)}
-                      className="p-2 rounded-lg hover:bg-white/5 text-slate-400 hover:text-[#D4AF37] transition-colors"
+                      className="p-2 rounded-lg hover:bg-white/5 text-slate-400 hover:text-[#06B6D4] transition-colors"
                       title="Modifier"
                     >
                       <Pencil className="w-3.5 h-3.5" />
@@ -526,8 +526,8 @@ export default function CapturePages() {
         <DialogContent className="bg-[#0a0f1e] border-white/10 text-white max-w-4xl max-h-[85vh] overflow-y-auto custom-scrollbar">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#D4AF37]/15 flex items-center justify-center">
-                <LayoutTemplate className="w-4 h-4 text-[#D4AF37]" />
+              <div className="w-8 h-8 rounded-lg bg-[#06B6D4]/15 flex items-center justify-center">
+                <LayoutTemplate className="w-4 h-4 text-[#06B6D4]" />
               </div>
               Choisir un modèle
             </DialogTitle>
@@ -614,8 +614,8 @@ export default function CapturePages() {
         <DialogContent className="bg-[#0a0f1e] border-white/10 text-white max-w-3xl max-h-[90vh] overflow-y-auto custom-scrollbar">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#D4AF37]/15 flex items-center justify-center">
-                <Pencil className="w-4 h-4 text-[#D4AF37]" />
+              <div className="w-8 h-8 rounded-lg bg-[#06B6D4]/15 flex items-center justify-center">
+                <Pencil className="w-4 h-4 text-[#06B6D4]" />
               </div>
               {editingId ? 'Modifier la page' : 'Créer une page de capture'}
             </DialogTitle>
@@ -649,7 +649,7 @@ export default function CapturePages() {
                 value={form.title}
                 onChange={(e) => setForm(prev => ({ ...prev, title: e.target.value }))}
                 placeholder="Ex: Sommet Digital 2026"
-                className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#D4AF37]/50"
+                className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#06B6D4]/50"
               />
             </div>
 
@@ -661,7 +661,7 @@ export default function CapturePages() {
                   value={form.headline}
                   onChange={(e) => setForm(prev => ({ ...prev, headline: e.target.value }))}
                   placeholder="Ex: Le Plus Grand Rassemblement Digital"
-                  className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#D4AF37]/50"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#06B6D4]/50"
                 />
               </div>
               <div className="space-y-2">
@@ -670,7 +670,7 @@ export default function CapturePages() {
                   value={form.subheadline}
                   onChange={(e) => setForm(prev => ({ ...prev, subheadline: e.target.value }))}
                   placeholder="Ex: Rejoignez 500+ leaders du digital..."
-                  className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#D4AF37]/50 min-h-[38px] resize-none"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#06B6D4]/50 min-h-[38px] resize-none"
                   rows={1}
                 />
               </div>
@@ -684,7 +684,7 @@ export default function CapturePages() {
                   value={form.ctaText}
                   onChange={(e) => setForm(prev => ({ ...prev, ctaText: e.target.value }))}
                   placeholder="Ex: Réserver Ma Place"
-                  className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#D4AF37]/50"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#06B6D4]/50"
                 />
               </div>
               <div className="space-y-2">
@@ -693,7 +693,7 @@ export default function CapturePages() {
                   value={form.coverImage}
                   onChange={(e) => setForm(prev => ({ ...prev, coverImage: e.target.value }))}
                   placeholder="https://..."
-                  className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#D4AF37]/50"
+                  className="bg-white/5 border-white/10 text-white placeholder:text-slate-600 focus:border-[#06B6D4]/50"
                 />
               </div>
             </div>
@@ -707,14 +707,14 @@ export default function CapturePages() {
                     key={field.id}
                     className={`flex items-center gap-2 px-3 py-2 rounded-lg border cursor-pointer transition-all text-xs ${
                       form.fields.includes(field.id)
-                        ? 'border-[#D4AF37]/30 bg-[#D4AF37]/10 text-[#D4AF37]'
+                        ? 'border-[#06B6D4]/30 bg-[#06B6D4]/10 text-[#06B6D4]'
                         : 'border-white/10 bg-white/[0.03] text-slate-400 hover:border-white/20'
                     }`}
                   >
                     <Checkbox
                       checked={form.fields.includes(field.id)}
                       onCheckedChange={() => toggleField(field.id)}
-                      className="data-[state=checked]:bg-[#D4AF37] data-[state=checked]:border-[#D4AF37] data-[state=checked]:text-[#06080f]"
+                      className="data-[state=checked]:bg-[#06B6D4] data-[state=checked]:border-[#06B6D4] data-[state=checked]:text-[#06080f]"
                     />
                     {field.icon}
                     {field.label}
@@ -735,7 +735,7 @@ export default function CapturePages() {
                       key={color}
                       onClick={() => setForm(prev => ({ ...prev, backgroundColor: color }))}
                       className={`w-7 h-7 rounded-lg border-2 transition-all ${
-                        form.backgroundColor === color ? 'border-[#D4AF37] scale-110' : 'border-transparent hover:border-white/20'
+                        form.backgroundColor === color ? 'border-[#06B6D4] scale-110' : 'border-transparent hover:border-white/20'
                       }`}
                       style={{ backgroundColor: color }}
                       title={color}
@@ -852,7 +852,7 @@ export default function CapturePages() {
               <Button
                 onClick={() => handleSave(true)}
                 disabled={!form.title.trim()}
-                className="bg-gradient-to-r from-[#D4AF37] to-[#B8962E] text-[#06080f] font-semibold hover:from-[#E8C84A] hover:to-[#D4AF37] shadow-lg shadow-[#D4AF37]/20"
+                className="bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-[#06080f] font-semibold hover:from-[#22D3EE] hover:to-[#06B6D4] shadow-lg shadow-[#06B6D4]/20"
               >
                 <Globe className="w-4 h-4 mr-2" />
                 {editingId ? 'Mettre à jour & Publier' : 'Créer & Publier'}

@@ -129,12 +129,12 @@ function KpiCard({
   index: number;
 }) {
   const isGold = accentColor === 'gold';
-  const iconBg = isGold ? 'bg-[#D4AF37]/15' : 'bg-emerald-500/15';
-  const iconColor = isGold ? 'text-[#D4AF37]' : 'text-emerald-400';
+  const iconBg = isGold ? 'bg-[#06B6D4]/15' : 'bg-emerald-500/15';
+  const iconColor = isGold ? 'text-[#06B6D4]' : 'text-emerald-400';
 
   return (
     <motion.div variants={cardVariants} custom={index}>
-      <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:border-[#D4AF37]/20 transition-all duration-300 group">
+      <Card className="bg-white/5 backdrop-blur-sm border-white/10 hover:border-[#06B6D4]/20 transition-all duration-300 group">
         <CardContent className="p-5">
           <div className="flex items-center justify-between mb-4">
             <div className={`w-11 h-11 rounded-xl flex items-center justify-center ${iconBg} transition-transform duration-300 group-hover:scale-110`}>
@@ -208,7 +208,7 @@ export default function Overview() {
         text: `Campagne envoyée : ${latestCampaign.name}`,
         time: latestCampaign.createdAt,
         type: 'campaign',
-        color: 'bg-[#D4AF37]',
+        color: 'bg-[#06B6D4]',
       });
     }
 
@@ -350,7 +350,7 @@ export default function Overview() {
             <CardHeader className="pb-2">
               <div className="flex items-center justify-between">
                 <CardTitle className="text-white text-base font-semibold flex items-center gap-2">
-                  <Send size={16} className="text-[#D4AF37]" />
+                  <Send size={16} className="text-[#06B6D4]" />
                   Campagnes Récentes
                 </CardTitle>
                 <Badge variant="outline" className="border-white/10 text-slate-400 text-[10px]">
@@ -388,7 +388,7 @@ export default function Overview() {
                           <Smartphone size={12} className="text-emerald-400" />
                         )}
                         {(campaign.channel === 'whatsapp' || campaign.channel === 'both') && (
-                          <MessageSquare size={12} className="text-[#D4AF37]" />
+                          <MessageSquare size={12} className="text-[#06B6D4]" />
                         )}
                         <span className="capitalize">{campaign.channel === 'both' ? 'SMS + WA' : campaign.channel === 'whatsapp' ? 'WhatsApp' : 'SMS'}</span>
                       </span>
@@ -482,7 +482,7 @@ export default function Overview() {
             <CardHeader className="pb-2">
               <div className="flex items-center justify-between">
                 <CardTitle className="text-white text-base font-semibold flex items-center gap-2">
-                  <CalendarDays size={16} className="text-[#D4AF37]" />
+                  <CalendarDays size={16} className="text-[#06B6D4]" />
                   Prochains Événements
                 </CardTitle>
                 <Badge variant="outline" className="border-white/10 text-slate-400 text-[10px]">
@@ -501,7 +501,7 @@ export default function Overview() {
                       initial="hidden"
                       animate="visible"
                       transition={{ delay: i * 0.1 }}
-                      className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.04] hover:border-[#D4AF37]/15 transition-all duration-200"
+                      className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.04] hover:border-[#06B6D4]/15 transition-all duration-200"
                     >
                       <div className="flex items-start justify-between mb-3">
                         <div className="min-w-0 flex-1">
@@ -525,7 +525,7 @@ export default function Overview() {
                           </div>
                         </div>
                         <div className="text-right flex-shrink-0 ml-3">
-                          <div className="text-sm font-bold text-[#D4AF37]">
+                          <div className="text-sm font-bold text-[#06B6D4]">
                             {formatCurrency(event.price, event.currency)}
                           </div>
                         </div>

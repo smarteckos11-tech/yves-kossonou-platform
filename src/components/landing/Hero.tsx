@@ -70,26 +70,26 @@ export default function Hero() {
             <div className="relative">
               {/* Animated rings around photo */}
               <motion.div
-                className="absolute -inset-4 rounded-full border-2 border-[#D4AF37]/20"
+                className="absolute -inset-4 rounded-full border-2 border-[#06B6D4]/20"
                 animate={{ rotate: 360, scale: [1, 1.05, 1] }}
                 transition={{ rotate: { duration: 20, repeat: Infinity, ease: 'linear' }, scale: { duration: 3, repeat: Infinity } }}
               />
               <motion.div
-                className="absolute -inset-8 rounded-full border border-[#D4AF37]/10"
+                className="absolute -inset-8 rounded-full border border-[#06B6D4]/10"
                 animate={{ rotate: -360 }}
                 transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
               >
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#D4AF37]" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#06B6D4]" />
               </motion.div>
 
               {/* Glow behind photo */}
-              <div className="absolute inset-0 rounded-full bg-[#D4AF37]/20 blur-3xl scale-110" />
+              <div className="absolute inset-0 rounded-full bg-[#06B6D4]/20 blur-3xl scale-110" />
 
               {/* Photo container */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: 'spring', stiffness: 300 }}
-                className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-[#D4AF37]/40 shadow-2xl shadow-[#D4AF37]/20"
+                className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-[#06B6D4]/40 shadow-2xl shadow-[#06B6D4]/20"
               >
                 <img
                   src={profilePhoto}
@@ -104,7 +104,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.5 }}
-                className="absolute -bottom-2 left-1/2 -translate-x-1/2 glass-strong px-4 py-1.5 rounded-full flex items-center gap-2 border border-[#D4AF37]/30"
+                className="absolute -bottom-2 left-1/2 -translate-x-1/2 glass-strong px-4 py-1.5 rounded-full flex items-center gap-2 border border-[#06B6D4]/30"
               >
                 <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
                 <span className="text-xs text-[#CBD5E1] whitespace-nowrap">Disponible pour consulting</span>
@@ -121,9 +121,9 @@ export default function Hero() {
               transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6"
             >
-              <Sparkles size={14} className="text-[#D4AF37]" />
+              <Sparkles size={14} className="text-[#06B6D4]" />
               <span className="text-sm text-[#CBD5E1]">Plateforme Premium</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4] animate-pulse" />
             </motion.div>
 
             {/* Greeting */}
@@ -143,7 +143,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4"
             >
-              <span className="gold-gradient-text text-glow-gold">Yves</span>{' '}
+              <span className="turquoise-gradient-text text-glow-turquoise">Yves</span>{' '}
               <span className="text-white">Kossonou</span>
             </motion.h1>
 
@@ -155,7 +155,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -30 }}
                 transition={{ duration: 0.5 }}
-                className="text-lg sm:text-xl md:text-2xl text-[#D4AF37] font-medium"
+                className="text-lg sm:text-xl md:text-2xl text-[#06B6D4] font-medium"
               >
                 {headlines[headlineIndex]}
               </motion.p>
@@ -186,7 +186,7 @@ export default function Hero() {
                   const el = document.querySelector('#formations');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-bold text-base rounded-2xl hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all duration-300 flex items-center gap-2 pulse-glow"
+                className="px-8 py-4 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-bold text-base rounded-2xl hover:shadow-lg hover:shadow-[#06B6D4]/30 transition-all duration-300 flex items-center gap-2 pulse-glow"
               >
                 <Rocket size={18} />
                 Commencer Maintenant
@@ -198,7 +198,7 @@ export default function Hero() {
                   const el = document.querySelector('#books');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="px-8 py-4 glass text-[#CBD5E1] font-semibold text-base rounded-2xl hover:border-[#D4AF37]/50 transition-all duration-300 flex items-center gap-2"
+                className="px-8 py-4 glass text-[#CBD5E1] font-semibold text-base rounded-2xl hover:border-[#06B6D4]/50 transition-all duration-300 flex items-center gap-2"
               >
                 <BookOpen size={18} />
                 Découvrir les Livres
@@ -207,7 +207,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setView('auth')}
-                className="px-6 py-4 text-[#D4AF37] font-medium text-base rounded-2xl hover:bg-[#D4AF37]/5 transition-all duration-300 flex items-center gap-2"
+                className="px-6 py-4 text-[#06B6D4] font-medium text-base rounded-2xl hover:bg-[#06B6D4]/5 transition-all duration-300 flex items-center gap-2"
               >
                 <Play size={18} />
                 Espace Client
@@ -229,7 +229,7 @@ export default function Hero() {
                   transition={{ duration: 0.5, delay: 0.9 + i * 0.1 }}
                   className="glass-card rounded-2xl p-3 sm:p-4"
                 >
-                  <div className="text-xl sm:text-2xl font-bold gold-gradient-text mb-0.5">
+                  <div className="text-xl sm:text-2xl font-bold turquoise-gradient-text mb-0.5">
                     <AnimatedCounter target={stat.value} />
                     {stat.suffix}
                   </div>
@@ -252,7 +252,7 @@ export default function Hero() {
             const el = document.querySelector('#expertise');
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
-          className="flex flex-col items-center gap-2 text-[#94A3B8] hover:text-[#D4AF37] transition-colors"
+          className="flex flex-col items-center gap-2 text-[#94A3B8] hover:text-[#06B6D4] transition-colors"
         >
           <span className="text-xs tracking-widest uppercase">Découvrir</span>
           <ArrowDown size={20} />

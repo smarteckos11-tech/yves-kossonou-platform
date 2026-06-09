@@ -41,7 +41,7 @@ export default function LeadManager() {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="px-4 py-2 glass rounded-xl text-[#CBD5E1] text-sm flex items-center gap-2 hover:border-[#D4AF37]/30"
+          className="px-4 py-2 glass rounded-xl text-[#CBD5E1] text-sm flex items-center gap-2 hover:border-[#06B6D4]/30"
         >
           <Download size={16} /> Exporter
         </motion.button>
@@ -53,7 +53,7 @@ export default function LeadManager() {
           onClick={() => setFilterStatus('all')}
           className={`px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
             filterStatus === 'all'
-              ? 'bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/20'
+              ? 'bg-[#06B6D4]/10 text-[#06B6D4] border border-[#06B6D4]/20'
               : 'glass text-[#94A3B8] hover:text-white'
           }`}
         >
@@ -99,7 +99,7 @@ export default function LeadManager() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.03 }}
-            className="glass-card rounded-xl p-4 flex items-center gap-4 hover:border-[#D4AF37]/20 transition-all cursor-pointer"
+            className="glass-card rounded-xl p-4 flex items-center gap-4 hover:border-[#06B6D4]/20 transition-all cursor-pointer"
             onClick={() => setSelectedLead(lead)}
           >
             <div
@@ -125,7 +125,7 @@ export default function LeadManager() {
               <span className="truncate max-w-[150px]">{lead.email}</span>
             </div>
             <div className="text-xs text-[#64748B]">{lead.date}</div>
-            <button className="p-1.5 rounded-lg hover:bg-white/5 text-[#64748B] hover:text-[#D4AF37] transition-colors">
+            <button className="p-1.5 rounded-lg hover:bg-white/5 text-[#64748B] hover:text-[#06B6D4] transition-colors">
               <Eye size={16} />
             </button>
           </motion.div>
@@ -158,8 +158,8 @@ export default function LeadManager() {
                 </div>
               </div>
               <div className="space-y-2">
-                <div className="flex items-center gap-2 text-sm"><Mail size={14} className="text-[#D4AF37]" /> {selectedLead.email}</div>
-                <div className="flex items-center gap-2 text-sm"><Phone size={14} className="text-[#D4AF37]" /> {selectedLead.phone}</div>
+                <div className="flex items-center gap-2 text-sm"><Mail size={14} className="text-[#06B6D4]" /> {selectedLead.email}</div>
+                <div className="flex items-center gap-2 text-sm"><Phone size={14} className="text-[#06B6D4]" /> {selectedLead.phone}</div>
                 <div className="text-sm text-[#94A3B8]">Intérêt : {selectedLead.interest}</div>
                 <div className="text-sm text-[#94A3B8]">Source : {selectedLead.source}</div>
                 <div className="text-sm text-[#94A3B8]">Date : {selectedLead.date}</div>

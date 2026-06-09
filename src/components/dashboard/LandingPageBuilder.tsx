@@ -87,7 +87,7 @@ export default function LandingPageBuilder() {
             setSelectedTemplate(templates[0]);
             setDialogOpen(true);
           }}
-          className="px-4 py-2 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold text-sm rounded-xl flex items-center gap-2"
+          className="px-4 py-2 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold text-sm rounded-xl flex items-center gap-2"
         >
           <Plus size={16} /> Créer une Page
         </motion.button>
@@ -103,7 +103,7 @@ export default function LandingPageBuilder() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {landingPages.map((page) => (
-            <motion.div key={page.id} layout className="glass-card rounded-2xl p-5 group hover:border-[#D4AF37]/20 transition-all">
+            <motion.div key={page.id} layout className="glass-card rounded-2xl p-5 group hover:border-[#06B6D4]/20 transition-all">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
                   <span
@@ -116,7 +116,7 @@ export default function LandingPageBuilder() {
                 <div className="flex gap-1">
                   <button
                     onClick={() => { setPreviewPage(page); setPreviewOpen(true); }}
-                    className="p-1.5 rounded-lg hover:bg-white/5 text-[#64748B] hover:text-[#D4AF37] transition-colors"
+                    className="p-1.5 rounded-lg hover:bg-white/5 text-[#64748B] hover:text-[#06B6D4] transition-colors"
                   >
                     <Eye size={14} />
                   </button>
@@ -140,7 +140,7 @@ export default function LandingPageBuilder() {
               </p>
               <div className="flex flex-wrap gap-1">
                 {page.fields.map((f) => (
-                  <span key={f} className="text-[10px] px-2 py-0.5 rounded-full bg-[#D4AF37]/10 text-[#D4AF37]">
+                  <span key={f} className="text-[10px] px-2 py-0.5 rounded-full bg-[#06B6D4]/10 text-[#06B6D4]">
                     {f}
                   </span>
                 ))}
@@ -163,7 +163,7 @@ export default function LandingPageBuilder() {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Ex: Masterclass Transformation Digitale"
-                className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#D4AF37]/50 focus:outline-none"
+                className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-[#64748B] focus:border-[#06B6D4]/50 focus:outline-none"
               />
             </div>
 
@@ -179,7 +179,7 @@ export default function LandingPageBuilder() {
                     }}
                     className={`p-4 rounded-xl text-left transition-all ${
                       selectedTemplate.id === t.id
-                        ? 'bg-[#D4AF37]/10 border border-[#D4AF37]/30'
+                        ? 'bg-[#06B6D4]/10 border border-[#06B6D4]/30'
                         : 'glass hover:border-white/20'
                     }`}
                   >
@@ -199,7 +199,7 @@ export default function LandingPageBuilder() {
                     onClick={() => toggleField(f.id)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                       selectedFields.includes(f.id)
-                        ? 'bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/30'
+                        ? 'bg-[#06B6D4]/10 text-[#06B6D4] border border-[#06B6D4]/30'
                         : 'glass text-[#94A3B8]'
                     }`}
                   >
@@ -213,7 +213,7 @@ export default function LandingPageBuilder() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleCreate}
-              className="w-full py-3 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold rounded-xl"
+              className="w-full py-3 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold rounded-xl"
             >
               Créer la Landing Page
             </motion.button>
@@ -231,7 +231,7 @@ export default function LandingPageBuilder() {
             <div className="mt-4 rounded-2xl overflow-hidden border border-white/10">
               {/* Simulated Preview */}
               <div className="animated-gradient-bg p-8 text-center">
-                <h2 className="text-2xl font-bold gold-gradient-text mb-4">{previewPage.title}</h2>
+                <h2 className="text-2xl font-bold turquoise-gradient-text mb-4">{previewPage.title}</h2>
                 <p className="text-[#94A3B8] mb-6">Inscrivez-vous pour en savoir plus</p>
                 <div className="max-w-sm mx-auto space-y-3">
                   {previewPage.fields.map((f) => (
@@ -245,7 +245,7 @@ export default function LandingPageBuilder() {
                       />
                     </div>
                   ))}
-                  <button className="w-full py-3 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold rounded-xl mt-2">
+                  <button className="w-full py-3 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold rounded-xl mt-2">
                     S&apos;inscrire
                   </button>
                 </div>

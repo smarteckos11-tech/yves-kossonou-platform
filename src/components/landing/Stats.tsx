@@ -5,7 +5,7 @@ import { useRef, useEffect, useState } from 'react';
 import { Users, FolderKanban, GraduationCap, Award } from 'lucide-react';
 
 const stats = [
-  { icon: Users, label: 'Clients Accompagnés', value: 500, suffix: '+', color: '#D4AF37' },
+  { icon: Users, label: 'Clients Accompagnés', value: 500, suffix: '+', color: '#06B6D4' },
   { icon: FolderKanban, label: 'Projets Réalisés', value: 150, suffix: '+', color: '#3B82F6' },
   { icon: GraduationCap, label: 'Formations Dispensées', value: 80, suffix: '+', color: '#8B5CF6' },
   { icon: Award, label: "Années d'Expérience", value: 10, suffix: '+', color: '#10B981' },
@@ -49,7 +49,7 @@ export default function Stats() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="glass-card rounded-2xl p-6 sm:p-8 text-center group hover:border-[#D4AF37]/30 transition-all duration-500"
+              className="glass-card rounded-2xl p-6 sm:p-8 text-center group hover:border-[#06B6D4]/30 transition-all duration-500"
             >
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"
@@ -59,7 +59,7 @@ export default function Stats() {
               </div>
               <div className="text-3xl sm:text-4xl font-bold text-white mb-2">
                 <Counter target={stat.value} />
-                <span className="gold-gradient-text">{stat.suffix}</span>
+                <span className="turquoise-gradient-text">{stat.suffix}</span>
               </div>
               <div className="text-sm text-[#94A3B8]">{stat.label}</div>
             </motion.div>

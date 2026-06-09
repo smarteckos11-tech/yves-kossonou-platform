@@ -43,7 +43,7 @@ export default function CRM() {
         </div>
         <div className="glass-card rounded-xl p-4">
           <div className="text-sm text-[#94A3B8]">Valeur Pipeline</div>
-          <div className="text-2xl font-bold gold-gradient-text">{(totalValue / 1000).toFixed(0)}K</div>
+          <div className="text-2xl font-bold turquoise-gradient-text">{(totalValue / 1000).toFixed(0)}K</div>
         </div>
         <div className="glass-card rounded-xl p-4">
           <div className="text-sm text-[#94A3B8]">Convertis</div>
@@ -53,7 +53,7 @@ export default function CRM() {
         </div>
         <div className="glass-card rounded-xl p-4">
           <div className="text-sm text-[#94A3B8]">Revenus Potentiels</div>
-          <div className="text-2xl font-bold gold-gradient-text">{(convertedValue / 1000000).toFixed(1)}M</div>
+          <div className="text-2xl font-bold turquoise-gradient-text">{(convertedValue / 1000000).toFixed(1)}M</div>
         </div>
       </div>
 

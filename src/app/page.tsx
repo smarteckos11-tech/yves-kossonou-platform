@@ -72,10 +72,10 @@ export default function Home() {
           className="flex flex-col items-center gap-4"
         >
           <div className="relative">
-            <div className="w-16 h-16 border-4 border-[#D4AF37]/30 rounded-full" />
-            <div className="absolute top-0 left-0 w-16 h-16 border-4 border-transparent border-t-[#D4AF37] rounded-full animate-spin" />
+            <div className="w-16 h-16 border-4 border-[#06B6D4]/30 rounded-full" />
+            <div className="absolute top-0 left-0 w-16 h-16 border-4 border-transparent border-t-[#06B6D4] rounded-full animate-spin" />
           </div>
-          <span className="text-[#D4AF37] font-semibold tracking-wider text-lg">Yves Kossonou</span>
+          <span className="text-[#06B6D4] font-semibold tracking-wider text-lg">Yves Kossonou</span>
         </motion.div>
       </div>
     );

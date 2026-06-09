@@ -212,7 +212,7 @@ export default function Evenements() {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           onClick={handleNewEvent}
-          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B8962E] text-[#06080f] font-semibold text-sm flex items-center gap-2 hover:shadow-lg hover:shadow-[#D4AF37]/20 transition-shadow"
+          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-[#06080f] font-semibold text-sm flex items-center gap-2 hover:shadow-lg hover:shadow-[#06B6D4]/20 transition-shadow"
         >
           <Plus className="w-4 h-4" /> Nouvel Événement
         </motion.button>
@@ -231,7 +231,7 @@ export default function Evenements() {
               onClick={() => setStatusFilter(tab.value)}
               className={`px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
                 isActive
-                  ? 'bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/20'
+                  ? 'bg-[#06B6D4]/10 text-[#06B6D4] border border-[#06B6D4]/20'
                   : 'glass text-slate-400 hover:text-white hover:border-white/10'
               }`}
             >
@@ -248,8 +248,8 @@ export default function Evenements() {
           animate={{ opacity: 1 }}
           className="flex flex-col items-center justify-center py-20 text-center"
         >
-          <div className="w-16 h-16 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-4">
-            <Calendar className="w-8 h-8 text-[#D4AF37]/50" />
+          <div className="w-16 h-16 rounded-2xl bg-[#06B6D4]/10 flex items-center justify-center mb-4">
+            <Calendar className="w-8 h-8 text-[#06B6D4]/50" />
           </div>
           <h3 className="text-lg font-semibold text-slate-300">Aucun événement</h3>
           <p className="text-sm text-slate-500 mt-1">Créez votre premier événement pour commencer</p>
@@ -272,7 +272,7 @@ export default function Evenements() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3, delay: i * 0.05 }}
                 >
-                  <Card className="bg-[#0c1220] border border-white/[0.06] hover:border-[#D4AF37]/20 transition-all duration-300 group overflow-hidden">
+                  <Card className="bg-[#0c1220] border border-white/[0.06] hover:border-[#06B6D4]/20 transition-all duration-300 group overflow-hidden">
                     {/* Cover Image with Gradient Overlay */}
                     <div
                       className="relative h-36 bg-gradient-to-br from-[#0F172A] to-[#1E293B] overflow-hidden cursor-pointer"
@@ -286,7 +286,7 @@ export default function Evenements() {
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">
-                          <Calendar className="w-10 h-10 text-[#D4AF37]/20" />
+                          <Calendar className="w-10 h-10 text-[#06B6D4]/20" />
                         </div>
                       )}
                       {/* Gradient Overlay */}
@@ -302,14 +302,14 @@ export default function Evenements() {
 
                       {/* QR Code Badge */}
                       {evt.qrCodeEnabled && (
-                        <Badge className="absolute top-3 right-3 bg-[#D4AF37]/15 text-[#D4AF37] border border-[#D4AF37]/20 text-[10px] font-semibold px-2 py-0.5 gap-1">
+                        <Badge className="absolute top-3 right-3 bg-[#06B6D4]/15 text-[#06B6D4] border border-[#06B6D4]/20 text-[10px] font-semibold px-2 py-0.5 gap-1">
                           <QrCode className="w-3 h-3" /> QR
                         </Badge>
                       )}
 
                       {/* Price Tag */}
                       <div className="absolute bottom-3 right-3">
-                        <span className="text-sm font-bold text-[#D4AF37] bg-[#0c1220]/80 backdrop-blur-sm px-2.5 py-1 rounded-lg">
+                        <span className="text-sm font-bold text-[#06B6D4] bg-[#0c1220]/80 backdrop-blur-sm px-2.5 py-1 rounded-lg">
                           {evt.price > 0 ? `${evt.price.toLocaleString()} ${evt.currency}` : 'Gratuit'}
                         </span>
                       </div>
@@ -318,7 +318,7 @@ export default function Evenements() {
                     <CardContent className="p-4 space-y-3">
                       {/* Title */}
                       <h3
-                        className="text-sm font-bold text-white leading-tight line-clamp-2 cursor-pointer hover:text-[#D4AF37] transition-colors"
+                        className="text-sm font-bold text-white leading-tight line-clamp-2 cursor-pointer hover:text-[#06B6D4] transition-colors"
                         onClick={() => handleViewDetail(evt)}
                       >
                         {evt.title}
@@ -399,7 +399,7 @@ export default function Evenements() {
                         </button>
                         <button
                           onClick={() => handleEdit(evt)}
-                          className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] text-slate-400 hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all"
+                          className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] text-slate-400 hover:text-[#06B6D4] hover:bg-[#06B6D4]/10 transition-all"
                         >
                           <Edit3 className="w-3.5 h-3.5" /> Modifier
                         </button>
@@ -441,7 +441,7 @@ export default function Evenements() {
         <DialogContent className="bg-[#0c1220] border-white/[0.08] text-white max-w-2xl max-h-[90vh] overflow-y-auto custom-scrollbar">
           <DialogHeader>
             <DialogTitle className="text-lg font-bold flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-[#D4AF37]" />
+              <Sparkles className="w-5 h-5 text-[#06B6D4]" />
               {editingEvent ? 'Modifier l\'événement' : 'Nouvel Événement'}
             </DialogTitle>
           </DialogHeader>
@@ -454,7 +454,7 @@ export default function Evenements() {
                 value={formData.title}
                 onChange={(e) => updateForm('title', e.target.value)}
                 placeholder="Ex: Sommet Digital Afrique 2026"
-                className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#D4AF37]/40 focus:ring-[#D4AF37]/20"
+                className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#06B6D4]/40 focus:ring-[#06B6D4]/20"
               />
             </div>
 
@@ -466,7 +466,7 @@ export default function Evenements() {
                 onChange={(e) => updateForm('description', e.target.value)}
                 placeholder="Décrivez votre événement..."
                 rows={3}
-                className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#D4AF37]/40 focus:ring-[#D4AF37]/20 resize-none"
+                className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#06B6D4]/40 focus:ring-[#06B6D4]/20 resize-none"
               />
             </div>
 
@@ -480,7 +480,7 @@ export default function Evenements() {
                   type="date"
                   value={formData.date}
                   onChange={(e) => updateForm('date', e.target.value)}
-                  className="bg-white/[0.04] border-white/[0.08] text-white focus:border-[#D4AF37]/40 focus:ring-[#D4AF37]/20"
+                  className="bg-white/[0.04] border-white/[0.08] text-white focus:border-[#06B6D4]/40 focus:ring-[#06B6D4]/20"
                 />
               </div>
               <div className="space-y-2">
@@ -491,7 +491,7 @@ export default function Evenements() {
                   type="time"
                   value={formData.time}
                   onChange={(e) => updateForm('time', e.target.value)}
-                  className="bg-white/[0.04] border-white/[0.08] text-white focus:border-[#D4AF37]/40 focus:ring-[#D4AF37]/20"
+                  className="bg-white/[0.04] border-white/[0.08] text-white focus:border-[#06B6D4]/40 focus:ring-[#06B6D4]/20"
                 />
               </div>
             </div>
@@ -506,7 +506,7 @@ export default function Evenements() {
                 onChange={(e) => updateForm('location', e.target.value)}
                 placeholder="Ex: Palais de la Culture, Abidjan"
                 disabled={formData.isOnline}
-                className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#D4AF37]/40 focus:ring-[#D4AF37]/20 disabled:opacity-40"
+                className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#06B6D4]/40 focus:ring-[#06B6D4]/20 disabled:opacity-40"
               />
             </div>
 
@@ -545,7 +545,7 @@ export default function Evenements() {
                     value={formData.onlineLink || ''}
                     onChange={(e) => updateForm('onlineLink', e.target.value)}
                     placeholder="https://zoom.us/..."
-                    className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#D4AF37]/40 focus:ring-[#D4AF37]/20"
+                    className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#06B6D4]/40 focus:ring-[#06B6D4]/20"
                   />
                 </motion.div>
               )}
@@ -558,7 +558,7 @@ export default function Evenements() {
                 value={formData.coverImage}
                 onChange={(e) => updateForm('coverImage', e.target.value)}
                 placeholder="https://example.com/image.jpg"
-                className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#D4AF37]/40 focus:ring-[#D4AF37]/20"
+                className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#06B6D4]/40 focus:ring-[#06B6D4]/20"
               />
               {formData.coverImage && (
                 <div className="h-24 rounded-lg overflow-hidden border border-white/[0.06] mt-2">
@@ -586,7 +586,7 @@ export default function Evenements() {
                   onChange={(e) => updateForm('price', Number(e.target.value))}
                   placeholder="0"
                   min={0}
-                  className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#D4AF37]/40 focus:ring-[#D4AF37]/20"
+                  className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#06B6D4]/40 focus:ring-[#06B6D4]/20"
                 />
               </div>
               <div className="space-y-2">
@@ -618,14 +618,14 @@ export default function Evenements() {
                 onChange={(e) => updateForm('maxAttendees', Number(e.target.value))}
                 placeholder="50"
                 min={1}
-                className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#D4AF37]/40 focus:ring-[#D4AF37]/20"
+                className="bg-white/[0.04] border-white/[0.08] text-white placeholder:text-slate-600 focus:border-[#06B6D4]/40 focus:ring-[#06B6D4]/20"
               />
             </div>
 
             {/* QR Code Toggle */}
             <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/[0.04]">
               <div className="flex items-center gap-2">
-                <QrCode className="w-4 h-4 text-[#D4AF37]" />
+                <QrCode className="w-4 h-4 text-[#06B6D4]" />
                 <div>
                   <p className="text-sm font-medium text-slate-200">Code QR</p>
                   <p className="text-[11px] text-slate-500">Générer un QR code pour le check-in</p>
@@ -717,7 +717,7 @@ export default function Evenements() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={handleSave}
-                className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B8962E] text-[#06080f] font-semibold text-sm flex items-center gap-2 hover:shadow-lg hover:shadow-[#D4AF37]/20 transition-shadow"
+                className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-[#06080f] font-semibold text-sm flex items-center gap-2 hover:shadow-lg hover:shadow-[#06B6D4]/20 transition-shadow"
               >
                 <Plus className="w-4 h-4" /> {editingEvent ? 'Mettre à jour' : 'Créer l\'événement'}
               </motion.button>
@@ -733,7 +733,7 @@ export default function Evenements() {
             <div className="space-y-6">
               <SheetHeader className="p-0">
                 <SheetTitle className="text-lg font-bold text-white flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-[#D4AF37]" />
+                  <Calendar className="w-5 h-5 text-[#06B6D4]" />
                   Détail de l'événement
                 </SheetTitle>
               </SheetHeader>
@@ -748,7 +748,7 @@ export default function Evenements() {
                   />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-[#0F172A] to-[#1E293B] flex items-center justify-center">
-                    <Calendar className="w-12 h-12 text-[#D4AF37]/20" />
+                    <Calendar className="w-12 h-12 text-[#06B6D4]/20" />
                   </div>
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0c1220] via-transparent to-transparent" />
@@ -770,14 +770,14 @@ export default function Evenements() {
                 {/* Info Grid */}
                 <div className="grid grid-cols-1 gap-3">
                   <div className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.04]">
-                    <Calendar className="w-4 h-4 text-[#D4AF37]" />
+                    <Calendar className="w-4 h-4 text-[#06B6D4]" />
                     <div>
                       <p className="text-xs text-slate-500">Date</p>
                       <p className="text-sm font-medium text-white">{formatDateFR(selectedEvent.date)}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.04]">
-                    <Clock className="w-4 h-4 text-[#D4AF37]" />
+                    <Clock className="w-4 h-4 text-[#06B6D4]" />
                     <div>
                       <p className="text-xs text-slate-500">Heure</p>
                       <p className="text-sm font-medium text-white">{selectedEvent.time}</p>
@@ -787,7 +787,7 @@ export default function Evenements() {
                     {selectedEvent.isOnline ? (
                       <Video className="w-4 h-4 text-emerald-400" />
                     ) : (
-                      <MapPin className="w-4 h-4 text-[#D4AF37]" />
+                      <MapPin className="w-4 h-4 text-[#06B6D4]" />
                     )}
                     <div>
                       <p className="text-xs text-slate-500">Lieu</p>
@@ -799,7 +799,7 @@ export default function Evenements() {
                           href={selectedEvent.onlineLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-xs text-[#D4AF37] hover:underline flex items-center gap-1 mt-0.5"
+                          className="text-xs text-[#06B6D4] hover:underline flex items-center gap-1 mt-0.5"
                         >
                           <Globe className="w-3 h-3" /> {selectedEvent.onlineLink}
                         </a>
@@ -807,10 +807,10 @@ export default function Evenements() {
                     </div>
                   </div>
                   <div className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.04]">
-                    <DollarSign className="w-4 h-4 text-[#D4AF37]" />
+                    <DollarSign className="w-4 h-4 text-[#06B6D4]" />
                     <div>
                       <p className="text-xs text-slate-500">Prix</p>
-                      <p className="text-sm font-bold text-[#D4AF37]">
+                      <p className="text-sm font-bold text-[#06B6D4]">
                         {selectedEvent.price > 0 ? `${selectedEvent.price.toLocaleString()} ${selectedEvent.currency}` : 'Gratuit'}
                       </p>
                     </div>
@@ -819,8 +819,8 @@ export default function Evenements() {
 
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-2">
-                  <div className="p-3 rounded-xl bg-[#D4AF37]/5 border border-[#D4AF37]/10 text-center">
-                    <p className="text-lg font-bold text-[#D4AF37]">{getRegistrationPct(selectedEvent)}%</p>
+                  <div className="p-3 rounded-xl bg-[#06B6D4]/5 border border-[#06B6D4]/10 text-center">
+                    <p className="text-lg font-bold text-[#06B6D4]">{getRegistrationPct(selectedEvent)}%</p>
                     <p className="text-[10px] text-slate-500 font-medium">Taux d'inscription</p>
                   </div>
                   <div className="p-3 rounded-xl bg-[#10B981]/5 border border-[#10B981]/10 text-center">
@@ -873,7 +873,7 @@ export default function Evenements() {
                 {selectedEvent.qrCodeEnabled && (
                   <div className="space-y-3">
                     <h3 className="text-sm font-semibold text-slate-300 flex items-center gap-2">
-                      <QrCode className="w-4 h-4 text-[#D4AF37]" /> Code QR de check-in
+                      <QrCode className="w-4 h-4 text-[#06B6D4]" /> Code QR de check-in
                     </h3>
                     <div className="flex items-center justify-center p-6 rounded-xl bg-white/[0.02] border border-white/[0.04]">
                       <div className="w-40 h-40 bg-white rounded-xl flex items-center justify-center p-3">
@@ -904,9 +904,9 @@ export default function Evenements() {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <h3 className="text-sm font-semibold text-slate-300 flex items-center gap-2">
-                      <Users className="w-4 h-4 text-[#D4AF37]" /> Liste des inscrits
+                      <Users className="w-4 h-4 text-[#06B6D4]" /> Liste des inscrits
                     </h3>
-                    <Badge className="bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/20 text-[10px] font-semibold">
+                    <Badge className="bg-[#06B6D4]/10 text-[#06B6D4] border border-[#06B6D4]/20 text-[10px] font-semibold">
                       {mockRegistrations.length} inscrits
                     </Badge>
                   </div>
@@ -932,8 +932,8 @@ export default function Evenements() {
                           key={reg.id}
                           className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.04] hover:border-white/[0.08] transition-all"
                         >
-                          <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 flex items-center justify-center shrink-0">
-                            <span className="text-xs font-bold text-[#D4AF37]">
+                          <div className="w-8 h-8 rounded-full bg-[#06B6D4]/10 flex items-center justify-center shrink-0">
+                            <span className="text-xs font-bold text-[#06B6D4]">
                               {reg.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
                             </span>
                           </div>
@@ -963,7 +963,7 @@ export default function Evenements() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={handleSendReminder}
-                    className="w-full py-3 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B8962E] text-[#06080f] font-semibold text-sm flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-[#D4AF37]/20 transition-shadow"
+                    className="w-full py-3 rounded-xl bg-gradient-to-r from-[#06B6D4] to-[#0891B2] text-[#06080f] font-semibold text-sm flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-[#06B6D4]/20 transition-shadow"
                   >
                     <Send className="w-4 h-4" /> Envoyer un rappel (SMS/WA)
                   </motion.button>
@@ -974,7 +974,7 @@ export default function Evenements() {
                         setDetailSheetOpen(false);
                         handleEdit(selectedEvent);
                       }}
-                      className="border-[#D4AF37]/20 text-[#D4AF37] hover:bg-[#D4AF37]/10 hover:text-[#D4AF37]"
+                      className="border-[#06B6D4]/20 text-[#06B6D4] hover:bg-[#06B6D4]/10 hover:text-[#06B6D4]"
                     >
                       <Edit3 className="w-4 h-4 mr-2" /> Modifier
                     </Button>

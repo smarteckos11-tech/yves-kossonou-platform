@@ -68,7 +68,7 @@ export default function Testimonials() {
       {/* Background */}
       <div
         className="absolute top-1/2 right-0 w-[500px] h-[500px] rounded-full opacity-10 blur-[120px] -translate-y-1/2"
-        style={{ background: 'radial-gradient(circle, #D4AF37, transparent)' }}
+        style={{ background: 'radial-gradient(circle, #06B6D4, transparent)' }}
       />
 
       <div className="max-w-5xl mx-auto relative z-10">
@@ -80,11 +80,11 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-[#D4AF37] text-sm font-semibold tracking-widest uppercase mb-4 block">
+          <span className="text-[#06B6D4] text-sm font-semibold tracking-widest uppercase mb-4 block">
             Témoignages
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            Ce que disent mes <span className="gold-gradient-text">Clients</span>
+            Ce que disent mes <span className="turquoise-gradient-text">Clients</span>
           </h2>
         </motion.div>
 
@@ -100,7 +100,7 @@ export default function Testimonials() {
           >
             {/* Quote Icon */}
             <div className="mb-6">
-              <Quote size={48} className="text-[#D4AF37]/30 mx-auto" />
+              <Quote size={48} className="text-[#06B6D4]/30 mx-auto" />
             </div>
 
             {/* Quote */}
@@ -111,13 +111,13 @@ export default function Testimonials() {
             {/* Stars */}
             <div className="flex items-center justify-center gap-1 mb-6">
               {Array.from({ length: testimonials[activeIndex].rating }).map((_, i) => (
-                <Star key={i} size={18} className="text-[#D4AF37] fill-[#D4AF37]" />
+                <Star key={i} size={18} className="text-[#06B6D4] fill-[#06B6D4]" />
               ))}
             </div>
 
             {/* Author */}
             <div className="flex items-center justify-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#E8C84A] flex items-center justify-center text-[#081120] font-bold text-sm">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#06B6D4] to-[#22D3EE] flex items-center justify-center text-[#081120] font-bold text-sm">
                 {testimonials[activeIndex].avatar}
               </div>
               <div className="text-left">
@@ -135,7 +135,7 @@ export default function Testimonials() {
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={goPrev}
-              className="p-2 glass rounded-xl hover:border-[#D4AF37]/30 transition-all"
+              className="p-2 glass rounded-xl hover:border-[#06B6D4]/30 transition-all"
             >
               <ChevronLeft size={18} className="text-[#CBD5E1]" />
             </button>
@@ -146,7 +146,7 @@ export default function Testimonials() {
                   onClick={() => goTo(i)}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     i === activeIndex
-                      ? 'bg-[#D4AF37] w-6'
+                      ? 'bg-[#06B6D4] w-6'
                       : 'bg-[#64748B] hover:bg-[#94A3B8]'
                   }`}
                 />
@@ -154,7 +154,7 @@ export default function Testimonials() {
             </div>
             <button
               onClick={goNext}
-              className="p-2 glass rounded-xl hover:border-[#D4AF37]/30 transition-all"
+              className="p-2 glass rounded-xl hover:border-[#06B6D4]/30 transition-all"
             >
               <ChevronRight size={18} className="text-[#CBD5E1]" />
             </button>

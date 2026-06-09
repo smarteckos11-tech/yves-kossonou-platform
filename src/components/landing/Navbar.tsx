@@ -86,11 +86,11 @@ export default function Navbar() {
                   className="h-10 w-10 rounded-lg object-cover"
                 />
               ) : (
-                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-[#D4AF37] to-[#E8C84A] flex items-center justify-center text-[#081120] font-bold text-lg">
+                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-[#06B6D4] to-[#22D3EE] flex items-center justify-center text-[#081120] font-bold text-lg">
                   YK
                 </div>
               )}
-              <span className="text-lg font-semibold gold-gradient-text hidden sm:block">
+              <span className="text-lg font-semibold turquoise-gradient-text hidden sm:block">
                 Yves Kossonou
               </span>
             </motion.div>
@@ -101,7 +101,7 @@ export default function Navbar() {
                 <button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="px-4 py-2 text-sm text-[#CBD5E1] hover:text-[#D4AF37] transition-colors duration-300 rounded-lg hover:bg-white/5"
+                  className="px-4 py-2 text-sm text-[#CBD5E1] hover:text-[#06B6D4] transition-colors duration-300 rounded-lg hover:bg-white/5"
                 >
                   {link.label}
                 </button>
@@ -116,7 +116,7 @@ export default function Navbar() {
                     onClick={() => setView('dashboard')}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="hidden md:flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold text-sm rounded-xl hover:shadow-lg hover:shadow-[#D4AF37]/25 transition-shadow duration-300"
+                    className="hidden md:flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold text-sm rounded-xl hover:shadow-lg hover:shadow-[#06B6D4]/25 transition-shadow duration-300"
                   >
                     <LayoutDashboard size={16} />
                     Dashboard
@@ -134,7 +134,7 @@ export default function Navbar() {
                   onClick={() => setView('auth')}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="hidden md:flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold text-sm rounded-xl hover:shadow-lg hover:shadow-[#D4AF37]/25 transition-shadow duration-300"
+                  className="hidden md:flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold text-sm rounded-xl hover:shadow-lg hover:shadow-[#06B6D4]/25 transition-shadow duration-300"
                 >
                   <LogIn size={16} />
                   Connexion
@@ -144,7 +144,7 @@ export default function Navbar() {
               {/* Mobile menu button */}
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="md:hidden p-2 text-[#CBD5E1] hover:text-[#D4AF37] transition-colors"
+                className="md:hidden p-2 text-[#CBD5E1] hover:text-[#06B6D4] transition-colors"
               >
                 {mobileOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -171,7 +171,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1 }}
                   onClick={() => handleNavClick(link.href)}
-                  className="w-full py-3 px-6 text-lg text-[#CBD5E1] hover:text-[#D4AF37] transition-colors text-center rounded-xl hover:bg-white/5"
+                  className="w-full py-3 px-6 text-lg text-[#CBD5E1] hover:text-[#06B6D4] transition-colors text-center rounded-xl hover:bg-white/5"
                 >
                   {link.label}
                 </motion.button>
@@ -186,7 +186,7 @@ export default function Navbar() {
                   <>
                     <button
                       onClick={() => { setMobileOpen(false); setView('dashboard'); }}
-                      className="w-full py-3 px-6 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold text-lg rounded-xl flex items-center justify-center gap-2"
+                      className="w-full py-3 px-6 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold text-lg rounded-xl flex items-center justify-center gap-2"
                     >
                       <LayoutDashboard size={20} />
                       Dashboard
@@ -202,7 +202,7 @@ export default function Navbar() {
                 ) : (
                   <button
                     onClick={() => { setMobileOpen(false); setView('auth'); }}
-                    className="w-full py-3 px-6 bg-gradient-to-r from-[#D4AF37] to-[#E8C84A] text-[#081120] font-semibold text-lg rounded-xl flex items-center justify-center gap-2"
+                    className="w-full py-3 px-6 bg-gradient-to-r from-[#06B6D4] to-[#22D3EE] text-[#081120] font-semibold text-lg rounded-xl flex items-center justify-center gap-2"
                   >
                     <LogIn size={20} />
                     Connexion

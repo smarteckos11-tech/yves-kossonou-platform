@@ -40,12 +40,12 @@ export default function Payments() {
           className="glass-card rounded-xl p-5"
         >
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center">
-              <Wallet size={20} className="text-[#D4AF37]" />
+            <div className="w-10 h-10 rounded-xl bg-[#06B6D4]/10 flex items-center justify-center">
+              <Wallet size={20} className="text-[#06B6D4]" />
             </div>
             <span className="text-sm text-[#94A3B8]">Solde Total</span>
           </div>
-          <div className="text-2xl font-bold gold-gradient-text">{(totalRevenue / 1000000).toFixed(1)}M FCFA</div>
+          <div className="text-2xl font-bold turquoise-gradient-text">{(totalRevenue / 1000000).toFixed(1)}M FCFA</div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

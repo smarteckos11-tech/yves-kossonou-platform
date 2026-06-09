@@ -93,7 +93,7 @@ export default function DashboardLayout() {
           >
             <div className="mb-8">
               <h1 className="text-2xl lg:text-3xl font-bold">{tabTitles[activeTab] || 'Tableau de bord'}</h1>
-              <div className="h-1 w-16 bg-gradient-to-r from-[#D4AF37] to-emerald-500 rounded-full mt-2" />
+              <div className="h-1 w-16 bg-gradient-to-r from-[#06B6D4] to-emerald-500 rounded-full mt-2" />
             </div>
             <ActiveComponent />
           </motion.div>

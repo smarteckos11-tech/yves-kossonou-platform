@@ -149,8 +149,8 @@ function ChannelBarChart({
       <div>
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[#D4AF37]/15 flex items-center justify-center">
-              <Smartphone size={14} className="text-[#D4AF37]" />
+            <div className="w-8 h-8 rounded-lg bg-[#06B6D4]/15 flex items-center justify-center">
+              <Smartphone size={14} className="text-[#06B6D4]" />
             </div>
             <span className="text-sm text-slate-300 font-medium">SMS</span>
           </div>
@@ -164,7 +164,7 @@ function ChannelBarChart({
             className="h-full rounded-lg"
             style={{
               background:
-                'linear-gradient(90deg, #D4AF37, #D4AF37cc)',
+                'linear-gradient(90deg, #06B6D4, #06B6D4cc)',
             }}
           />
         </div>
@@ -449,7 +449,7 @@ export default function Analytics() {
       { method: 'Wave', amount: totals.wave, color: '#1DC7EA', icon: Smartphone },
       { method: 'Orange Money', amount: totals.orange_money, color: '#FF7900', icon: Smartphone },
       { method: 'MTN Money', amount: totals.mtn_money, color: '#FFCC00', icon: Smartphone },
-      { method: 'Carte', amount: totals.carte, color: '#D4AF37', icon: CreditCard },
+      { method: 'Carte', amount: totals.carte, color: '#06B6D4', icon: CreditCard },
     ];
   }, [payments]);
 
@@ -506,7 +506,7 @@ export default function Analytics() {
           value={fmtPct(kpis.livraison)}
           change={{ value: '+2.4%', positive: true }}
           icon={MailCheck}
-          accent="#D4AF37"
+          accent="#06B6D4"
           index={0}
         />
         <KPICard
@@ -542,8 +542,8 @@ export default function Analytics() {
           <Card className="bg-[#0c1018] border-white/[0.06] hover:border-white/[0.12] transition-colors duration-300">
             <CardHeader className="pb-2">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-[#D4AF37]/15 flex items-center justify-center">
-                  <BarChart3 size={16} className="text-[#D4AF37]" />
+                <div className="w-8 h-8 rounded-lg bg-[#06B6D4]/15 flex items-center justify-center">
+                  <BarChart3 size={16} className="text-[#06B6D4]" />
                 </div>
                 <CardTitle className="text-base font-semibold text-white">
                   Messages par Canal
@@ -587,8 +587,8 @@ export default function Analytics() {
         <Card className="bg-[#0c1018] border-white/[0.06] hover:border-white/[0.12] transition-colors duration-300">
           <CardHeader className="pb-2">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-[#D4AF37]/15 flex items-center justify-center">
-                <BarChart3 size={16} className="text-[#D4AF37]" />
+              <div className="w-8 h-8 rounded-lg bg-[#06B6D4]/15 flex items-center justify-center">
+                <BarChart3 size={16} className="text-[#06B6D4]" />
               </div>
               <CardTitle className="text-base font-semibold text-white">
                 Performance des Campagnes
@@ -660,7 +660,7 @@ export default function Analytics() {
                               camp.channel === 'whatsapp'
                                 ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
                                 : camp.channel === 'sms'
-                                ? 'bg-[#D4AF37]/10 text-[#D4AF37] border-[#D4AF37]/20'
+                                ? 'bg-[#06B6D4]/10 text-[#06B6D4] border-[#06B6D4]/20'
                                 : 'bg-slate-500/10 text-slate-400 border-slate-500/20'
                             }`}
                           >
@@ -850,14 +850,14 @@ export default function Analytics() {
           <CardHeader className="pb-2">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-[#D4AF37]/15 flex items-center justify-center">
-                  <CreditCard size={16} className="text-[#D4AF37]" />
+                <div className="w-8 h-8 rounded-lg bg-[#06B6D4]/15 flex items-center justify-center">
+                  <CreditCard size={16} className="text-[#06B6D4]" />
                 </div>
                 <CardTitle className="text-base font-semibold text-white">
                   Répartition des Revenus
                 </CardTitle>
               </div>
-              <div className="text-sm font-bold text-[#D4AF37]">
+              <div className="text-sm font-bold text-[#06B6D4]">
                 {fmt(
                   revenueByMethod.reduce((s, r) => s + r.amount, 0)
                 )}{' '}

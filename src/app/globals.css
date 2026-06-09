@@ -43,8 +43,8 @@
   --radius-xl: calc(var(--radius) + 4px);
   --color-bleu-nuit: #081120;
   --color-bleu-premium: #0F172A;
-  --color-or-premium: #D4AF37;
-  --color-or-light: #E8C84A;
+  --color-turquoise: #06B6D4;
+  --color-turquoise-light: #22D3EE;
   --color-gris: #CBD5E1;
 }
 
@@ -56,31 +56,31 @@
   --card-foreground: #FFFFFF;
   --popover: #0F172A;
   --popover-foreground: #FFFFFF;
-  --primary: #D4AF37;
+  --primary: #06B6D4;
   --primary-foreground: #081120;
   --secondary: #1E293B;
   --secondary-foreground: #CBD5E1;
   --muted: #1E293B;
   --muted-foreground: #94A3B8;
-  --accent: #D4AF37;
+  --accent: #06B6D4;
   --accent-foreground: #081120;
   --destructive: #EF4444;
   --border: rgba(255, 255, 255, 0.08);
   --input: rgba(255, 255, 255, 0.12);
-  --ring: #D4AF37;
-  --chart-1: #D4AF37;
+  --ring: #06B6D4;
+  --chart-1: #06B6D4;
   --chart-2: #3B82F6;
   --chart-3: #10B981;
   --chart-4: #F59E0B;
   --chart-5: #EF4444;
   --sidebar: #0A0F1E;
   --sidebar-foreground: #CBD5E1;
-  --sidebar-primary: #D4AF37;
+  --sidebar-primary: #06B6D4;
   --sidebar-primary-foreground: #081120;
   --sidebar-accent: #1E293B;
   --sidebar-accent-foreground: #CBD5E1;
   --sidebar-border: rgba(255, 255, 255, 0.08);
-  --sidebar-ring: #D4AF37;
+  --sidebar-ring: #06B6D4;
 }
 
 html {
@@ -111,11 +111,11 @@ body {
   background: rgba(15, 23, 42, 0.5);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.3);
+  background: rgba(6, 182, 212, 0.3);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(212, 175, 55, 0.5);
+  background: rgba(6, 182, 212, 0.5);
 }
 
 /* Glassmorphism Utilities */
@@ -141,25 +141,25 @@ body {
 }
 
 /* Glow Effects */
-.glow-gold {
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3), 0 0 60px rgba(212, 175, 55, 0.1);
+.glow-turquoise {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 60px rgba(6, 182, 212, 0.1);
 }
 
-.glow-gold-strong {
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5), 0 0 80px rgba(212, 175, 55, 0.2);
+.glow-turquoise-strong {
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.5), 0 0 80px rgba(6, 182, 212, 0.2);
 }
 
-.glow-gold-subtle {
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+.glow-turquoise-subtle {
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.15);
 }
 
-.text-glow-gold {
-  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5), 0 0 40px rgba(212, 175, 55, 0.2);
+.text-glow-turquoise {
+  text-shadow: 0 0 20px rgba(6, 182, 212, 0.5), 0 0 40px rgba(6, 182, 212, 0.2);
 }
 
-/* Gold Gradient Text */
-.gold-gradient-text {
-  background: linear-gradient(135deg, #D4AF37, #E8C84A, #D4AF37);
+/* Turquoise Gradient Text */
+.turquoise-gradient-text {
+  background: linear-gradient(135deg, #06B6D4, #22D3EE, #06B6D4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -180,8 +180,8 @@ body {
 
 /* Pulse Glow Animation */
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.6); }
+  0%, 100% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(6, 182, 212, 0.6); }
 }
 
 .pulse-glow {
@@ -214,7 +214,7 @@ body {
 }
 
 .shimmer {
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), transparent);
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
 }
@@ -244,16 +244,16 @@ body {
   background: transparent;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.2);
+  background: rgba(6, 182, 212, 0.2);
   border-radius: 2px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(212, 175, 55, 0.4);
+  background: rgba(6, 182, 212, 0.4);
 }
 
 /* Border gradient */
 .border-gradient {
-  border-image: linear-gradient(135deg, rgba(212, 175, 55, 0.5), transparent, rgba(212, 175, 55, 0.3)) 1;
+  border-image: linear-gradient(135deg, rgba(6, 182, 212, 0.5), transparent, rgba(6, 182, 212, 0.3)) 1;
 }
 
 /* Perspective for 3D effects */
@@ -275,8 +275,8 @@ body {
 
 /* Neon border animation */
 @keyframes neonBorder {
-  0%, 100% { border-color: rgba(212, 175, 55, 0.2); }
-  50% { border-color: rgba(212, 175, 55, 0.5); }
+  0%, 100% { border-color: rgba(6, 182, 212, 0.2); }
+  50% { border-color: rgba(6, 182, 212, 0.5); }
 }
 .neon-border {
   animation: neonBorder 3s ease-in-out infinite;
@@ -361,6 +361,6 @@ body {
 
 /* Focus ring for accessibility */
 *:focus-visible {
-  outline: 2px solid rgba(212, 175, 55, 0.5);
+  outline: 2px solid rgba(6, 182, 212, 0.5);
   outline-offset: 2px;
 }
