@@ -15,10 +15,8 @@ const headlines = [
 
 function AnimatedCounter({ target, duration = 2000 }: { target: number; duration?: number }) {
   const [count, setCount] = useState(0);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     let start = 0;
     const increment = target / (duration / 16);
     const timer = setInterval(() => {
@@ -33,7 +31,7 @@ function AnimatedCounter({ target, duration = 2000 }: { target: number; duration
     return () => clearInterval(timer);
   }, [target, duration]);
 
-  return <span>{mounted ? count.toLocaleString() : target.toLocaleString()}</span>;
+  return <span>{count.toLocaleString()}</span>;
 }
 
 export default function Hero() {

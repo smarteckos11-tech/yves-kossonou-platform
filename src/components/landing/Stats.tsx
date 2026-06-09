@@ -13,13 +13,11 @@ const stats = [
 
 function Counter({ target, duration = 2000 }: { target: number; duration?: number }) {
   const [count, setCount] = useState(0);
-  const [mounted, setMounted] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
     if (!isInView) return;
-    setMounted(true);
     let start = 0;
     const increment = target / (duration / 16);
     const timer = setInterval(() => {
@@ -34,7 +32,7 @@ function Counter({ target, duration = 2000 }: { target: number; duration?: numbe
     return () => clearInterval(timer);
   }, [target, duration, isInView]);
 
-  return <span ref={ref}>{mounted ? count.toLocaleString() : target.toLocaleString()}</span>;
+  return <span ref={ref}>{count.toLocaleString()}</span>;
 }
 
 export default function Stats() {
